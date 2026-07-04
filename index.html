@@ -3,152 +3,192 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BPMSquare — The operating system for service businesses</title>
-<meta name="description" content="BPMSquare runs your customers, quotations, field jobs and contracts as one connected process. Built for service and repair operations." />
+<title>BPMSquare — Service Operations Platform</title>
+<meta name="description" content="BPMSquare unifies customers, quotations, field jobs and contracts into one connected process. Built for service and repair operations." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#FBF7F0; --cream2:#F5EEE2; --card:#FFFFFF;
-    --ink:#26332B; --ink2:#3a4b41; --mute:#6b7a70; --faint:#9aa79d;
-    --terra:#DD6B4D; --terra2:#C7553A; --terraSoft:#FBEDE7;
-    --teal:#3F7D6E; --tealSoft:#E7F1ED;
-    --line:#EADFCF; --line2:#e0d3bf;
+    --white:#FFFFFF;
+    --bg:#F5F7FA;
+    --navy:#0C1B33;
+    --navy2:#1A2E4A;
+    --navy3:#253D5B;
+    --orange:#F47C20;
+    --orange2:#E06B10;
+    --orangeSoft:#FEF0E6;
+    --text:#1A2035;
+    --text2:#4A5568;
+    --mute:#718096;
+    --border:#DDE3ED;
+    --border2:#C8D0DC;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--white);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  .serif{font-family:"Fraunces",Georgia,"Times New Roman",serif}
-  .mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace}
-  .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
-  .eyebrow::before{content:"";width:22px;height:2px;background:var(--terra)}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;border-radius:10px;padding:12px 22px;cursor:pointer;transition:.16s;border:1.5px solid transparent}
-  .btn-terra{background:var(--terra);color:#fff}
-  .btn-terra:hover{background:var(--terra2);transform:translateY(-1px);box-shadow:0 10px 24px -10px rgba(221,107,77,.6)}
-  .btn-line{border-color:var(--line2);color:var(--ink);background:transparent}
-  .btn-line:hover{background:var(--cream2);border-color:var(--ink2)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
 
-  .logo{display:flex;align-items:center;gap:11px}
-  .logo .mark{width:35px;height:35px;flex-shrink:0}
-  .logo .name{font-size:20px;font-weight:700;letter-spacing:-.01em}
-  .logo .name b{color:var(--terra)}
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;border-radius:6px;padding:11px 22px;cursor:pointer;transition:.15s;border:1.5px solid transparent;letter-spacing:.01em}
+  .btn-primary{background:var(--orange);color:#fff;border-color:var(--orange)}
+  .btn-primary:hover{background:var(--orange2);border-color:var(--orange2)}
+  .btn-outline{border-color:var(--border2);color:var(--text);background:transparent}
+  .btn-outline:hover{border-color:var(--navy);color:var(--navy)}
+  .btn-white{background:#fff;color:var(--navy);border-color:transparent}
+  .btn-white:hover{background:#f0f4f8}
+  .btn-white-outline{border-color:rgba(255,255,255,.4);color:#fff;background:transparent}
+  .btn-white-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 
-  header{position:sticky;top:0;z-index:60;background:rgba(251,247,240,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-  nav.links{display:flex;gap:30px}
-  nav.links a{color:var(--ink2);font-size:14.5px;font-weight:500;transition:.15s}
-  nav.links a:hover{color:var(--terra)}
-  .nav-cta{display:flex;align-items:center;gap:14px}
-  .nav-cta .login{font-size:14.5px;font-weight:600}
+  /* NAV */
+  header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--border)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo .mark{width:32px;height:32px;flex-shrink:0}
+  .logo .name{font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--navy)}
+  .logo .name span{color:var(--orange)}
+  nav.links{display:flex;gap:28px}
+  nav.links a{color:var(--text2);font-size:14px;font-weight:500;transition:.15s;padding:4px 0}
+  nav.links a:hover{color:var(--navy)}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .nav-login{font-size:14px;font-weight:600;color:var(--text2);transition:.15s}
+  .nav-login:hover{color:var(--navy)}
 
   /* HERO */
-  .hero{position:relative;overflow:hidden}
-  .hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 55% at 30% 0%,#000 30%,transparent 100%);opacity:.6;pointer-events:none}
-  .hero .blob{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none}
-  .hero .b1{top:-120px;right:-80px;width:420px;height:420px;background:rgba(221,107,77,.16)}
-  .hero .b2{bottom:-140px;left:-100px;width:380px;height:380px;background:rgba(63,125,110,.12)}
-  .hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding:78px 28px 94px}
-  .hero h1{font-size:clamp(42px,5.4vw,68px);line-height:1.02;font-weight:600;letter-spacing:-.02em;margin:22px 0 22px}
-  .hero h1 em{font-style:italic;color:var(--terra)}
-  .hero p.lead{font-size:19px;color:var(--ink2);max-width:520px;margin-bottom:32px}
-  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
-  .hero .stats{display:flex;gap:34px}
-  .hero .stats .n{font-size:26px;font-weight:600;letter-spacing:-.02em}
-  .hero .stats .l{font-size:12.5px;color:var(--faint)}
-  .badge{display:inline-flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line);border-radius:30px;padding:7px 15px;font-size:13px;font-weight:500;color:var(--ink2);box-shadow:0 2px 10px rgba(38,51,43,.04)}
-  .badge .live{width:7px;height:7px;border-radius:50%;background:var(--teal)}
+  .hero{background:var(--navy);color:#fff}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-top:80px;padding-bottom:80px}
+  .hero .label{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:5px 13px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:24px}
+  .hero .label .dot{width:6px;height:6px;border-radius:50%;background:var(--orange)}
+  .hero h1{font-size:clamp(34px,4.2vw,54px);line-height:1.08;font-weight:800;letter-spacing:-.025em;margin-bottom:20px;color:#fff}
+  .hero h1 span{color:var(--orange)}
+  .hero p.lead{font-size:17px;color:rgba(255,255,255,.68);max-width:500px;margin-bottom:34px;line-height:1.7}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+  .hero .rule{border-top:1px solid rgba(255,255,255,.12);padding-top:32px;display:flex;gap:40px}
+  .hero .rule .n{font-size:24px;font-weight:700;color:#fff}
+  .hero .rule .l{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:2px}
 
   /* product mock */
-  .mock{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 40px 80px -34px rgba(38,51,43,.30);transform:perspective(1500px) rotateY(-8deg) rotateX(2deg);transform-origin:left center}
-  .mock .bar{display:flex;align-items:center;gap:6px;padding:0 4px 14px}
-  .mock .bar i{width:10px;height:10px;border-radius:50%;background:var(--line);display:inline-block}
-  .mock .bar span{margin-left:10px;font-size:12px;color:var(--faint)}
-  .mrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
-  .kpi{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
-  .kpi .t{font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.05em}
-  .kpi .v{font-size:23px;font-weight:600;margin-top:3px}
-  .kpi.a{border-top:2.5px solid var(--terra)} .kpi.b{border-top:2.5px solid var(--teal)} .kpi.c{border-top:2.5px solid #caa24a}
-  .mlist{background:var(--cream);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .mitem{display:flex;align-items:center;gap:10px;padding:11px 13px;border-top:1px solid var(--line)}
-  .mitem:first-child{border-top:none}
-  .mitem .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-  .mitem .ref{font-size:12px;font-weight:700;color:var(--terra2)}
-  .mitem .who{font-size:12px;color:var(--ink2);flex:1}
-  .mitem .st{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px}
+  .mock-wrap{position:relative}
+  .mock{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.36)}
+  .mock-bar{background:#F5F7FA;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;padding:10px 14px}
+  .mock-bar i{width:9px;height:9px;border-radius:50%}
+  .mock-bar i:nth-child(1){background:#FF6058}
+  .mock-bar i:nth-child(2){background:#FFBD2E}
+  .mock-bar i:nth-child(3){background:#27C93F}
+  .mock-bar span{margin-left:8px;font-size:11.5px;color:var(--mute);font-family:ui-monospace,monospace}
+  .mock-body{padding:14px}
+  .mock-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:9px}
+  .mock-kpi{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:11px 12px}
+  .mock-kpi .t{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mute)}
+  .mock-kpi .v{font-size:22px;font-weight:700;color:var(--navy);margin-top:2px}
+  .mock-kpi.accent{border-top:2.5px solid var(--orange)}
+  .mock-table{background:var(--bg);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+  .mock-row{display:flex;align-items:center;gap:10px;padding:9px 12px;border-top:1px solid var(--border);font-size:12px}
+  .mock-row:first-child{border-top:none}
+  .mock-row .pipe{width:3px;height:24px;border-radius:2px;flex-shrink:0}
+  .mock-row .ref{font-weight:700;color:var(--navy);min-width:56px;font-family:ui-monospace,monospace;font-size:11px}
+  .mock-row .who{flex:1;color:var(--text2)}
+  .mock-row .st{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:3px}
+  .mock-row .st.done{background:#E8F5E9;color:#2E7D32}
+  .mock-row .st.prog{background:#FEF0E6;color:#BF5515}
+  .mock-row .st.wait{background:#EBF5FB;color:#1565C0}
 
-  section{position:relative}
-  .sec{padding:94px 0}
-  h2.title{font-family:"Fraunces",Georgia,serif;font-size:clamp(32px,3.8vw,48px);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin:16px 0 14px}
-  h2.title em{font-style:italic;color:var(--terra)}
-  p.sub{font-size:18px;color:var(--mute);max-width:660px}
+  /* DIVIDER */
+  .divider-band{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:24px 0}
+  .divider-band .wrap{display:flex;justify-content:center;gap:56px;flex-wrap:wrap}
+  .divider-band .item{font-size:13.5px;font-weight:600;color:var(--mute);display:flex;align-items:center;gap:8px}
+  .divider-band .item::before{content:"✓";color:var(--orange);font-weight:700}
 
-  /* bento */
-  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:46px}
-  .cell{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;transition:.18s}
-  .cell:hover{transform:translateY(-3px);box-shadow:0 18px 44px -22px rgba(38,51,43,.22);border-color:var(--line2)}
-  .cell .ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:16px}
-  .cell h3{font-family:"Fraunces",Georgia,serif;font-size:21px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
-  .cell p{font-size:14.5px;color:var(--mute)}
-  .cell.feature{grid-column:span 3;min-height:214px}
-  .cell.wide{grid-column:span 3}
-  .c-2{grid-column:span 2}
-  .highlight{background:linear-gradient(150deg,var(--terraSoft),var(--card));border-color:#f0d3c6}
+  /* SECTIONS */
+  section{padding:80px 0}
+  .sec-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+  h2.title{font-size:clamp(28px,3.2vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.1;color:var(--navy);margin-bottom:14px}
+  p.subtitle{font-size:16.5px;color:var(--text2);max-width:580px;line-height:1.7}
 
-  /* process */
-  .process{background:var(--ink);color:var(--cream);border-radius:0}
-  .process .eyebrow{color:#e9b6a4}
-  .process .eyebrow::before{background:var(--terra)}
-  .process h2.title{color:#fff}
-  .process h2.title em{color:#e9b6a4}
-  .process p.sub{color:#b9c6bd}
-  .process .track{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:48px}
-  .process .node{padding:0 12px;position:relative}
-  .process .node::before{content:"";position:absolute;top:19px;left:0;right:0;height:2px;background:rgba(233,182,164,.35);z-index:0}
-  .process .node:first-child::before{left:50%}
-  .process .node:last-child::before{right:50%}
-  .process .n{position:relative;z-index:1;width:40px;height:40px;border-radius:12px;background:#31413a;border:1px solid #45564d;display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-weight:600;font-size:16px;margin-bottom:16px}
-  .process .node.done .n{background:var(--terra);border:none;color:#fff}
-  .process .node.end .n{background:var(--teal);border:none;color:#fff}
-  .process h4{font-size:16px;font-weight:700;margin-bottom:5px}
-  .process .node p{font-size:13px;color:#b9c6bd}
+  /* FEATURES GRID */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:48px}
+  .feat-cell{background:#fff;padding:32px 28px;transition:.15s}
+  .feat-cell:hover{background:var(--bg)}
+  .feat-cell .ic{width:40px;height:40px;border-radius:8px;background:var(--orangeSoft);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px}
+  .feat-cell h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px;letter-spacing:-.01em}
+  .feat-cell p{font-size:14px;color:var(--text2);line-height:1.65}
 
-  /* stat band */
-  .statband{background:var(--cream2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .statband .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:58px 28px}
-  .statband .n{font-family:"Fraunces",Georgia,serif;font-size:clamp(28px,3.6vw,42px);font-weight:600;letter-spacing:-.02em;color:var(--terra)}
-  .statband .l{font-size:14px;color:var(--mute);margin-top:4px}
+  /* PROCESS */
+  .process-sec{background:var(--navy)}
+  .process-sec .sec-label{color:rgba(244,124,32,.9)}
+  .process-sec h2.title{color:#fff}
+  .process-sec p.subtitle{color:rgba(255,255,255,.6)}
+  .steps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:52px;position:relative}
+  .steps::before{content:"";position:absolute;top:19px;left:calc(100%/12);right:calc(100%/12);height:1px;background:rgba(255,255,255,.12)}
+  .step{text-align:center;position:relative;padding:0 8px}
+  .step .num{width:38px;height:38px;border-radius:50%;background:var(--navy2);border:1px solid rgba(255,255,255,.15);display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:16px;position:relative;z-index:1}
+  .step.done .num{background:var(--orange);border-color:var(--orange);color:#fff}
+  .step h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
+  .step p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.5}
 
-  /* who */
-  .tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-  .tag{border:1px solid var(--line2);background:var(--card);border-radius:30px;padding:11px 20px;font-weight:600;font-size:15px}
+  /* STATS */
+  .stats-band{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#fff}
+  .stats-band .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding:52px 32px;gap:0}
+  .stats-band .stat{padding:0 28px;border-right:1px solid var(--border)}
+  .stats-band .stat:first-child{padding-left:0}
+  .stats-band .stat:last-child{border-right:none}
+  .stats-band .n{font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-.03em;color:var(--navy)}
+  .stats-band .l{font-size:13.5px;color:var(--mute);margin-top:4px}
 
-  /* cta */
-  .cta-band{position:relative;overflow:hidden;border-radius:26px;background:var(--ink);color:var(--cream);margin:0 28px}
-  .cta-band .blob{position:absolute;bottom:-160px;left:50%;transform:translateX(-50%);width:520px;height:340px;border-radius:50%;background:rgba(221,107,77,.28);filter:blur(80px)}
-  .cta-inner{max-width:1160px;margin:0 auto;text-align:center;padding:82px 28px;position:relative}
-  .cta-band h2{font-family:"Fraunces",Georgia,serif;font-size:clamp(32px,4vw,50px);font-weight:600;letter-spacing:-.02em;margin-bottom:16px}
-  .cta-band h2 em{font-style:italic;color:#e9b6a4}
-  .cta-band p{font-size:18px;color:#c3d0c7;max-width:560px;margin:0 auto 30px}
+  /* TWO COL */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .two-col .text-block .sec-label{margin-bottom:14px}
+  .two-col .text-block p{font-size:15.5px;color:var(--text2);line-height:1.72;margin-bottom:16px}
+  .two-col .vis-block{background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .trow{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);font-size:14px}
+  .trow:last-child{border-bottom:none}
+  .trow .tl{font-weight:600;color:var(--navy)}
+  .trow .tr{font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:3px}
+  .trow .tr.g{background:#E8F5E9;color:#2E7D32}
+  .trow .tr.o{background:#FEF0E6;color:#BF5515}
+  .trow .tr.b{background:#EBF5FB;color:#1565C0}
+  .vis-head{background:var(--navy);color:#fff;padding:14px 20px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 
-  footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:94px}
-  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
-  footer .fnav{display:flex;gap:26px;font-size:14px;color:var(--mute)}
-  footer .fnav a:hover{color:var(--terra)}
-  footer small{color:var(--faint);font-size:13px}
+  /* USE CASES */
+  .use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .use-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px 22px;transition:.15s}
+  .use-card:hover{border-color:var(--orange);box-shadow:0 4px 20px rgba(244,124,32,.08)}
+  .use-card h4{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+  .use-card p{font-size:13.5px;color:var(--text2);line-height:1.6}
+  .use-card .bar{width:32px;height:3px;background:var(--orange);border-radius:2px;margin-bottom:16px}
 
-  @media(max-width:900px){
+  /* CTA */
+  .cta-sec{background:var(--navy);padding:80px 0}
+  .cta-sec .wrap{text-align:center}
+  .cta-sec h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-.03em;color:#fff;margin-bottom:14px;line-height:1.1}
+  .cta-sec p{font-size:16.5px;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto 34px;line-height:1.7}
+  .cta-sec .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:40px 0}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  footer .fnav{display:flex;gap:24px;font-size:13.5px;color:var(--mute)}
+  footer .fnav a:hover{color:var(--navy)}
+  footer small{color:var(--mute);font-size:12.5px}
+
+  @media(max-width:920px){
     nav.links{display:none}
-    .hero .wrap{grid-template-columns:1fr;gap:44px}
-    .mock{transform:none}
-    .bento{grid-template-columns:1fr 1fr}
-    .cell,.cell.feature,.cell.wide,.c-2{grid-column:span 2}
-    .process .track{grid-template-columns:1fr 1fr;gap:28px 12px}
-    .process .node::before{display:none}
-    .statband .wrap{grid-template-columns:1fr 1fr}
+    .hero .wrap{grid-template-columns:1fr;gap:44px;padding-top:56px;padding-bottom:56px}
+    .feat-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr;gap:24px}
+    .steps::before{display:none}
+    .stats-band .wrap{grid-template-columns:1fr 1fr;gap:24px}
+    .stats-band .stat{border-right:none;padding-left:0}
+    .two-col{grid-template-columns:1fr;gap:40px}
+    .use-grid{grid-template-columns:1fr 1fr}
+    .hero .rule{gap:28px}
+  }
+  @media(max-width:560px){
+    .feat-grid{grid-template-columns:1fr}
+    .use-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -156,185 +196,272 @@
 
 <svg width="0" height="0" style="position:absolute">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#E58063"/><stop offset="1" stop-color="#CE5739"/>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/>
     </linearGradient>
     <symbol id="mark" viewBox="0 0 40 40">
-      <rect x="1" y="1" width="38" height="38" rx="10" fill="url(#bg)"/>
-      <rect x="9"    y="9"    width="9.5" height="9.5" rx="2.4" fill="#FBF7F0"/>
-      <rect x="21.5" y="9"    width="9.5" height="9.5" rx="2.4" fill="#FBF7F0" opacity=".5"/>
-      <rect x="9"    y="21.5" width="9.5" height="9.5" rx="2.4" fill="#FBF7F0" opacity=".5"/>
-      <rect x="21.5" y="21.5" width="9.5" height="9.5" rx="2.4" fill="#3F7D6E"/>
+      <rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/>
+      <rect x="8"    y="8"    width="10" height="10" rx="2.5" fill="#fff"/>
+      <rect x="22"   y="8"    width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/>
+      <rect x="8"    y="22"   width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/>
+      <rect x="22"   y="22"   width="10" height="10" rx="2.5" fill="#fff"/>
     </symbol>
   </defs>
 </svg>
 
+<!-- NAV -->
 <header>
   <div class="wrap">
-    <a class="logo" href="#top"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<b>Square</b></span></a>
+    <a class="logo" href="#top">
+      <svg class="mark"><use href="#mark"/></svg>
+      <span class="name">BPM<span>Square</span></span>
+    </a>
     <nav class="links">
       <a href="#platform">Platform</a>
       <a href="#process">How it works</a>
       <a href="#features">Features</a>
-      <a href="#who">Use cases</a>
+      <a href="#usecases">Use cases</a>
     </nav>
     <div class="nav-cta">
-      <a class="login" href="#login">Log in</a>
-      <a class="btn btn-terra" href="#demo">Book a demo</a>
+      <a class="nav-login" href="#login">Log in</a>
+      <a class="btn btn-primary" href="mailto:hello@bpmsquare.com?subject=Demo%20request">Book a demo</a>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
 <div class="hero" id="top">
-  <div class="grid-bg"></div>
-  <div class="blob b1"></div><div class="blob b2"></div>
   <div class="wrap">
     <div>
-      <div class="badge"><span class="live"></span> Now launching · bpmsquare.com</div>
-      <h1 class="serif">The operating system for <em>service businesses</em></h1>
-      <p class="lead">Customers, quotations, field jobs and contracts — run as one connected process,
-        not five disconnected tools. Every job moves forward on its own.</p>
-      <div class="cta">
-        <a class="btn btn-terra" href="#demo">Book a demo →</a>
-        <a class="btn btn-line" href="#platform">Explore the platform</a>
+      <div class="label"><span class="dot"></span>Service Operations Platform</div>
+      <h1>One platform for every job,<br>every customer,<br><span>every process.</span></h1>
+      <p class="lead">BPMSquare connects your customers, quotations, field jobs and contracts into a single guided workflow. No more spreadsheets, missed steps, or scattered data.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:hello@bpmsquare.com?subject=Demo%20request">Book a demo</a>
+        <a class="btn btn-white-outline" href="#platform">Explore the platform</a>
       </div>
-      <div class="stats">
-        <div><div class="n serif">6-stage</div><div class="l">guided job flow</div></div>
-        <div><div class="n serif">1 hub</div><div class="l">for every customer</div></div>
-        <div><div class="n serif">0</div><div class="l">spreadsheets</div></div>
+      <div class="rule">
+        <div><div class="n">6-stage</div><div class="l">guided job flow</div></div>
+        <div><div class="n">1 hub</div><div class="l">per customer</div></div>
+        <div><div class="n">Zero</div><div class="l">spreadsheets</div></div>
       </div>
     </div>
 
-    <div class="mock">
-      <div class="bar"><i></i><i></i><i></i><span class="mono">bpmsquare.com/app</span></div>
-      <div class="mrow">
-        <div class="kpi a"><div class="t">Open jobs</div><div class="v serif">18</div></div>
-        <div class="kpi b"><div class="t">Pipeline</div><div class="v serif">₹2.4L</div></div>
-        <div class="kpi c"><div class="t">Awaiting</div><div class="v serif">3</div></div>
-      </div>
-      <div class="mlist">
-        <div class="mitem"><span class="dot" style="background:var(--terra)"></span><span class="ref mono">CS-0092</span><span class="who">Hosapete Steel</span><span class="st" style="background:var(--terraSoft);color:var(--terra2)">Report sent</span></div>
-        <div class="mitem"><span class="dot" style="background:var(--teal)"></span><span class="ref mono">WO-0301</span><span class="who">Krishna Textiles</span><span class="st" style="background:var(--tealSoft);color:var(--teal)">In progress</span></div>
-        <div class="mitem"><span class="dot" style="background:#caa24a"></span><span class="ref mono">QT-0148</span><span class="who">Bharat Forge</span><span class="st" style="background:#f6edd6;color:#8a6d1f">Quote sent</span></div>
-        <div class="mitem"><span class="dot" style="background:var(--teal)"></span><span class="ref mono">WO-0305</span><span class="who">Sahyadri Hosp.</span><span class="st" style="background:var(--tealSoft);color:var(--teal)">Scheduled</span></div>
+    <div class="mock-wrap">
+      <div class="mock">
+        <div class="mock-bar">
+          <i></i><i></i><i></i>
+          <span>bpmsquare.com/app</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-kpis">
+            <div class="mock-kpi accent"><div class="t">Open jobs</div><div class="v">18</div></div>
+            <div class="mock-kpi"><div class="t">Pipeline</div><div class="v">₹2.4L</div></div>
+            <div class="mock-kpi"><div class="t">Pending</div><div class="v">3</div></div>
+          </div>
+          <div class="mock-table">
+            <div class="mock-row"><span class="pipe" style="background:var(--orange)"></span><span class="ref">CS-0092</span><span class="who">Hosapete Steel</span><span class="st done">Report sent</span></div>
+            <div class="mock-row"><span class="pipe" style="background:#1565C0"></span><span class="ref">WO-0301</span><span class="who">Krishna Textiles</span><span class="st prog">In progress</span></div>
+            <div class="mock-row"><span class="pipe" style="background:#2E7D32"></span><span class="ref">QT-0148</span><span class="who">Bharat Forge</span><span class="st wait">Quote sent</span></div>
+            <div class="mock-row"><span class="pipe" style="background:#1565C0"></span><span class="ref">WO-0305</span><span class="who">Sahyadri Hosp.</span><span class="st wait">Scheduled</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- PLATFORM -->
-<section class="sec" id="platform">
+<!-- TRUST BAR -->
+<div class="divider-band">
   <div class="wrap">
-    <div class="eyebrow">The platform</div>
-    <h2 class="title">Not another CRM. Your whole operation, <em>connected.</em></h2>
-    <p class="sub">Most tools cover one slice. BPMSquare joins the dots — the customer, the quote, the job and the contract all live in one flow.</p>
-    <div class="bento">
-      <div class="cell feature highlight">
-        <div class="ic" style="background:var(--terraSoft)">◉</div>
-        <h3>The customer hub</h3>
-        <p>Contacts, equipment, every past job, quotes and a live activity trail — one profile, zero digging.</p>
+    <span class="item">Multi-tenant by design</span>
+    <span class="item">Role-based access control</span>
+    <span class="item">End-to-end job lifecycle</span>
+    <span class="item">Quote &amp; contract management</span>
+    <span class="item">Real-time dashboard</span>
+  </div>
+</div>
+
+<!-- PLATFORM OVERVIEW -->
+<section id="platform">
+  <div class="wrap">
+    <div class="sec-label">The platform</div>
+    <h2 class="title">Not another CRM. Your whole operation, connected.</h2>
+    <p class="subtitle">Most tools cover one slice. BPMSquare joins the dots — the customer, the quote, the job and the contract all live in one flow, not five disconnected tools.</p>
+    <div class="feat-grid">
+      <div class="feat-cell">
+        <div class="ic">◉</div>
+        <h3>Customer hub</h3>
+        <p>Every contact, every piece of equipment, every past job and every quote — one profile, zero digging. Your team always has the full picture.</p>
       </div>
-      <div class="cell feature">
-        <div class="ic" style="background:var(--tealSoft)">◴</div>
-        <h3>A process that runs itself</h3>
-        <p>A guided, repeatable flow means the team always knows the next step — nothing stalls, nothing slips.</p>
+      <div class="feat-cell">
+        <div class="ic">◴</div>
+        <h3>Guided job process</h3>
+        <p>A repeatable 6-stage flow means nothing stalls and nothing slips. Every technician knows the next step without asking.</p>
       </div>
-      <div class="cell wide">
-        <div class="ic" style="background:#f6edd6">₹</div>
+      <div class="feat-cell">
+        <div class="ic">₹</div>
         <h3>Quotes &amp; contracts</h3>
-        <p>Line-item quotations with tax, approvals, versioning and recurring AMC agreements.</p>
+        <p>Line-item quotations with tax, discounts, versioning and PDF export. Recurring AMC agreements auto-scheduled on the calendar.</p>
       </div>
-      <div class="cell wide">
-        <div class="ic" style="background:var(--tealSoft)">▦</div>
-        <h3>Live dashboard</h3>
-        <p>What needs attention today — surfaced the moment you open the app.</p>
+      <div class="feat-cell">
+        <div class="ic">▤</div>
+        <h3>Work order management</h3>
+        <p>Assign jobs to technicians, set schedules and track progress from intake to delivery — no clipboard, no whiteboards.</p>
+      </div>
+      <div class="feat-cell">
+        <div class="ic">▦</div>
+        <h3>Live operations dashboard</h3>
+        <p>Open jobs, pending approvals and pipeline value surfaced the moment you open the app. No report-building required.</p>
+      </div>
+      <div class="feat-cell">
+        <div class="ic">◍</div>
+        <h3>Team &amp; dispatch</h3>
+        <p>See who is free, who is skilled and what is on — then assign in two clicks. Capacity at a glance across the whole team.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="sec process" id="process">
+<section class="process-sec" id="process">
   <div class="wrap">
-    <div class="eyebrow">How it works</div>
-    <h2 class="title">Every job follows one <em>clear path</em></h2>
-    <p class="sub">From the unit arriving to the day it's delivered — guided, tracked, and visible to the whole team.</p>
-    <div class="track">
-      <div class="node done"><div class="n">1</div><h4>Intake</h4><p>Log the job, customer &amp; photos.</p></div>
-      <div class="node done"><div class="n">2</div><h4>Inspect</h4><p>Record findings, build a report.</p></div>
-      <div class="node done"><div class="n">3</div><h4>Quote</h4><p>Send it, track the approval.</p></div>
-      <div class="node done"><div class="n">4</div><h4>Repair</h4><p>Assign a work order, do the work.</p></div>
-      <div class="node done"><div class="n">5</div><h4>QA</h4><p>Check it, mark it ready.</p></div>
-      <div class="node end"><div class="n">6</div><h4>Deliver</h4><p>Hand back, invoice, keep history.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- STAT BAND -->
-<div class="statband">
-  <div class="wrap">
-    <div><div class="n">One place</div><div class="l">for every job and customer</div></div>
-    <div><div class="n">Same-day</div><div class="l">quote in the customer's hands</div></div>
-    <div><div class="n">Zero</div><div class="l">jobs lost between steps</div></div>
-    <div><div class="n">Real-time</div><div class="l">view of the whole shop</div></div>
-  </div>
-</div>
-
-<!-- FEATURES -->
-<section class="sec" id="features">
-  <div class="wrap">
-    <div class="eyebrow">What's inside</div>
-    <h2 class="title">Everything the operation needs</h2>
-    <div class="bento">
-      <div class="cell c-2"><div class="ic" style="background:var(--terraSoft)">◉</div><h3>Customer hub</h3><p>Accounts, contacts, equipment &amp; full history.</p></div>
-      <div class="cell c-2"><div class="ic" style="background:#f6edd6">₹</div><h3>Quotations</h3><p>Discounts, tax, versioning, PDF export.</p></div>
-      <div class="cell c-2"><div class="ic" style="background:var(--tealSoft)">▤</div><h3>Work orders</h3><p>Assign, schedule &amp; track to completion.</p></div>
-      <div class="cell c-2"><div class="ic" style="background:var(--tealSoft)">▥</div><h3>AMC contracts</h3><p>Recurring maintenance, auto-scheduled.</p></div>
-      <div class="cell c-2"><div class="ic" style="background:var(--terraSoft)">◍</div><h3>Team &amp; dispatch</h3><p>Who's free, who's skilled, what's on.</p></div>
-      <div class="cell c-2"><div class="ic" style="background:#f6edd6">▦</div><h3>Live dashboard</h3><p>Open jobs, approvals &amp; pipeline value.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHO -->
-<section class="sec" id="who">
-  <div class="wrap">
-    <div class="eyebrow">Use cases</div>
-    <h2 class="title">Made for <em>process-driven</em> service teams</h2>
-    <p class="sub">If you take in work, quote it, do it and deliver it — BPMSquare fits how you already run.</p>
-    <div class="tags">
-      <span class="tag">Motor &amp; transformer rewinding</span>
-      <span class="tag">Pump &amp; equipment repair</span>
-      <span class="tag">Field service teams</span>
-      <span class="tag">AMC / maintenance providers</span>
-      <span class="tag">Industrial workshops</span>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="sec" id="demo" style="padding-top:0">
-  <div class="cta-band">
-    <div class="blob"></div>
-    <div class="cta-inner">
-      <h2>One place. Every job. <em>Every customer.</em></h2>
-      <p>See BPMSquare run a real operation end to end. Book a walkthrough — we'll show you the live product.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative">
-        <a class="btn btn-terra" href="mailto:hello@bpmsquare.com?subject=BPMSquare%20demo">Book a demo</a>
-        <a class="btn btn-line" style="border-color:rgba(255,255,255,.3);color:#fff" href="#login">Log in to the app</a>
+    <div class="sec-label">How it works</div>
+    <h2 class="title">Every job follows one clear path</h2>
+    <p class="subtitle">From the unit arriving to the day it is delivered — guided, tracked and visible to the whole team in real time.</p>
+    <div class="steps">
+      <div class="step done">
+        <div class="num">1</div>
+        <h4>Intake</h4>
+        <p>Log the job, customer and equipment photos.</p>
+      </div>
+      <div class="step done">
+        <div class="num">2</div>
+        <h4>Inspect</h4>
+        <p>Record findings, build an inspection report.</p>
+      </div>
+      <div class="step done">
+        <div class="num">3</div>
+        <h4>Quote</h4>
+        <p>Send the quotation, track the approval.</p>
+      </div>
+      <div class="step done">
+        <div class="num">4</div>
+        <h4>Repair</h4>
+        <p>Assign a work order, execute the job.</p>
+      </div>
+      <div class="step done">
+        <div class="num">5</div>
+        <h4>QA check</h4>
+        <p>Quality check, mark the unit ready.</p>
+      </div>
+      <div class="step done">
+        <div class="num">6</div>
+        <h4>Deliver</h4>
+        <p>Hand back, invoice and keep the history.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- STATS -->
+<div class="stats-band">
+  <div class="wrap">
+    <div class="stat"><div class="n">One place</div><div class="l">for every job and customer</div></div>
+    <div class="stat"><div class="n">Same day</div><div class="l">quote in the customer's hands</div></div>
+    <div class="stat"><div class="n">Zero jobs</div><div class="l">lost between workflow steps</div></div>
+    <div class="stat"><div class="n">Real time</div><div class="l">view of the whole operation</div></div>
+  </div>
+</div>
+
+<!-- DETAIL: Customer hub -->
+<section id="features" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="text-block">
+        <div class="sec-label">Customer hub</div>
+        <h2 class="title">Everything you know about a customer, in one place.</h2>
+        <p>Every account has a dedicated profile — contacts, equipment, the full job history, every quote sent and every contract signed. No switching between apps.</p>
+        <p>When a customer calls, your team has the complete context in under five seconds.</p>
+        <a class="btn btn-primary" href="mailto:hello@bpmsquare.com?subject=Demo%20request">See it in action</a>
+      </div>
+      <div class="vis-block">
+        <div class="vis-head">Customer — Hosapete Steel Ltd.</div>
+        <div class="trow"><span class="tl">Open work orders</span><span class="tr b">2 active</span></div>
+        <div class="trow"><span class="tl">Last quotation</span><span class="tr o">QT-0148 · Awaiting</span></div>
+        <div class="trow"><span class="tl">AMC contract</span><span class="tr g">Active · renews Jan 2027</span></div>
+        <div class="trow"><span class="tl">Equipment on record</span><span class="tr b">4 units</span></div>
+        <div class="trow"><span class="tl">Jobs completed</span><span class="tr g">23 total</span></div>
+        <div class="trow"><span class="tl">Last activity</span><span class="tr g">Today, 10:42 am</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section id="usecases">
+  <div class="wrap">
+    <div class="sec-label">Use cases</div>
+    <h2 class="title">Built for process-driven service teams</h2>
+    <p class="subtitle">If you take in work, quote it, do it and deliver it — BPMSquare fits how you already run.</p>
+    <div class="use-grid">
+      <div class="use-card">
+        <div class="bar"></div>
+        <h4>Motor &amp; transformer rewinding</h4>
+        <p>Manage incoming units, inspection reports, repair work orders and delivery in one connected flow.</p>
+      </div>
+      <div class="use-card">
+        <div class="bar"></div>
+        <h4>Pump &amp; equipment repair</h4>
+        <p>Track every unit through diagnosis, quotation, repair and QA with full photo documentation.</p>
+      </div>
+      <div class="use-card">
+        <div class="bar"></div>
+        <h4>Field service teams</h4>
+        <p>Dispatch technicians, capture site reports and close jobs from the field — all in the same platform.</p>
+      </div>
+      <div class="use-card">
+        <div class="bar"></div>
+        <h4>AMC / maintenance providers</h4>
+        <p>Manage recurring contracts, auto-schedule visits and track service history per customer and per asset.</p>
+      </div>
+      <div class="use-card">
+        <div class="bar"></div>
+        <h4>Industrial workshops</h4>
+        <p>Coordinate multiple technicians, work queues and customer approvals without the whiteboard chaos.</p>
+      </div>
+      <div class="use-card">
+        <div class="bar"></div>
+        <h4>Service &amp; repair businesses</h4>
+        <p>Any operation that takes in customer assets, services them and returns them — BPMSquare handles the process end to end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Ready to run a tighter operation?</h2>
+    <p>Book a walkthrough and we will show you the live product running a real service operation end to end. No slides, no fluff.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:hello@bpmsquare.com?subject=Demo%20request">Book a demo</a>
+      <a class="btn btn-white-outline" href="#top">Log in to the app</a>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
-    <a class="logo" href="#top"><svg class="mark" style="width:30px;height:30px"><use href="#mark"/></svg><span class="name">BPM<b>Square</b></span></a>
+    <a class="logo" href="#top">
+      <svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg>
+      <span class="name" style="font-size:16px">BPM<span>Square</span></span>
+    </a>
     <div class="fnav">
       <a href="#platform">Platform</a>
       <a href="#process">How it works</a>
       <a href="#features">Features</a>
+      <a href="#usecases">Use cases</a>
       <a href="mailto:hello@bpmsquare.com">Contact</a>
     </div>
     <small>© 2026 BPMSquare · bpmsquare.com</small>
