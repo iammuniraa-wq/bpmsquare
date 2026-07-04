@@ -1,0 +1,17 @@
+<svg width="300" height="72" viewBox="0 0 300 72" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E58063"/><stop offset="1" stop-color="#CE5739"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(8,16)">
+    <rect x="0" y="0" width="40" height="40" rx="10.5" fill="url(#bg)"/>
+    <rect x="8.4"  y="8.4"  width="10" height="10" rx="2.5" fill="#FBF7F0"/>
+    <rect x="21.6" y="8.4"  width="10" height="10" rx="2.5" fill="#FBF7F0" opacity=".5"/>
+    <rect x="8.4"  y="21.6" width="10" height="10" rx="2.5" fill="#FBF7F0" opacity=".5"/>
+    <rect x="21.6" y="21.6" width="10" height="10" rx="2.5" fill="#FBF7F0"/>
+  </g>
+  <text x="60" y="46" font-size="30" font-weight="700" letter-spacing="-0.3">
+    <tspan fill="#FBF7F0">BPM</tspan><tspan fill="#E9917A">Square</tspan>
+  </text>
+</svg>
