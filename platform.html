@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Platform — BPMSquare</title>
-<meta name="description" content="One multi-tenant platform: Sales, Service, Marketing and Workforce modules, analytics, Talk to data, a REST API with OpenAPI and webhooks, MCP for AI clients, and Data Workbench for bulk load." />
+<meta name="description" content="One app. Switch on what you need: Sales, Service, Marketing, Workforce. Analytics and Talk to data, REST API, webhooks, MCP, Data Workbench." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,12 +37,11 @@
   <div class="wrap">
     <div>
       <div class="label"><span class="dot"></span>The platform</div>
-      <h1>One workspace.<br><span>Switch on the modules you sell with.</span></h1>
-      <p class="lead">Sales, Service, Marketing and Workforce share the same customers, the same records and the same rules. Each company gets its own workspace on its own domain, sees only its own data, and turns on only what it needs.</p>
+      <h1>One app.<br><span>Switch on what you need.</span></h1>
+      <p class="lead">Sales, Service, Marketing and Workforce share one customer list and one set of rules. Your company gets its own workspace on its own domain.</p>
       <div class="actions">
         <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Platform">Book a demo</a>
         <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
-        <a class="btn btn-white-outline" href="#api">API &amp; integrations</a>
       </div>
     </div>
   </div>
@@ -51,9 +50,9 @@
 <div class="divider-band">
   <div class="wrap">
     <span class="item">Your own domain</span>
-    <span class="item">Roles and work centres</span>
-    <span class="item">Custom fields on every object</span>
-    <span class="item">Change history</span>
+    <span class="item">Roles per person</span>
+    <span class="item">Custom fields on everything</span>
+    <span class="item">Full change history</span>
     <span class="item">Light and dark themes</span>
   </div>
 </div>
@@ -62,14 +61,14 @@
 <section id="modules">
   <div class="wrap">
     <div class="sec-label">Modules</div>
-    <h2 class="title">Four modules, one record of the customer.</h2>
+    <h2 class="title">What is inside</h2>
     <div class="feat-grid">
-      <div class="feat-cell"><div class="ic">◉</div><h3>Sales</h3><p>Accounts, contacts, products, quotations and standard quotes, pipeline, invoices and payments. Quotes approved from a link; invoices emailed with the PDF.</p></div>
-      <div class="feat-cell"><div class="ic">◴</div><h3>Service</h3><p>Cases, inspection reports, AMC contracts, work orders, dispatch and technicians, with the equipment register behind them.</p></div>
-      <div class="feat-cell"><div class="ic">◍</div><h3>Marketing</h3><p>Campaigns by email, segmentation and target groups, leads with source attribution, partners.</p></div>
-      <div class="feat-cell"><div class="ic">◷</div><h3>Workforce</h3><p>Face and geofenced attendance, shifts and roster, leave and overtime, monthly summary for payroll, and project costing from punch to invoice.</p></div>
-      <div class="feat-cell"><div class="ic">▦</div><h3>Analytics</h3><p>A dashboard each person adapts, an analytics page per module, and Talk to data for anything in between.</p></div>
-      <div class="feat-cell"><div class="ic">▤</div><h3>Administration</h3><p>Users and business roles, work centres, custom fields, page layouts, tax and numbering, Data Workbench, change history, integrations.</p></div>
+      <div class="feat-cell short"><div class="ic">₹</div><h3>Sales</h3><p>Quote it, track it, invoice it.</p><div class="chips"><span>Quotations</span><span>Standard quotes</span><span>Pipeline</span><span>Invoices</span><span>Purchase orders</span></div></div>
+      <div class="feat-cell short"><div class="ic">◴</div><h3>Service</h3><p>Every job on one path.</p><div class="chips"><span>Cases</span><span>AMC contracts</span><span>Work orders</span><span>Dispatch</span><span>Technicians</span></div></div>
+      <div class="feat-cell short"><div class="ic">📣</div><h3>Marketing</h3><p>Reach customers, capture leads.</p><div class="chips"><span>Campaigns</span><span>Segmentation</span><span>Leads</span></div></div>
+      <div class="feat-cell short"><div class="ic">▧</div><h3>Master data</h3><p>One list of everything you deal with.</p><div class="chips"><span>Accounts</span><span>Contacts</span><span>Assets</span><span>Products</span><span>Suppliers</span><span>Inventory</span><span>Employees</span><span>Partners</span></div></div>
+      <div class="feat-cell short"><div class="ic">◷</div><h3>Workforce</h3><p>Attendance, leave, projects, billing.</p><div class="chips"><span>Live board</span><span>Roster</span><span>Corrections</span><span>Leave &amp; holidays</span><span>Projects</span><span>Time summary</span></div></div>
+      <div class="feat-cell short"><div class="ic">◫</div><h3>Analytics &amp; admin</h3><p>See the numbers, control the workspace.</p><div class="chips"><span>Dashboard</span><span>Analytics</span><span>Talk to data</span><span>Data Workbench</span><span>Audit &amp; users</span></div></div>
     </div>
   </div>
 </section>
@@ -80,24 +79,20 @@
     <div class="two-col">
       <div class="text-block">
         <div class="sec-label">Analytics &amp; Talk to data</div>
-        <h2 class="title">Ask a question in plain English. Get a chart and the rows behind it.</h2>
-        <p>"Quotes by status this month." "Billable amount by account last quarter." "Who worked on the retrofit in August." Talk to data picks the object, the filter and the grouping, runs the query on live data, and shows what it measured.</p>
-        <p>Every number is computed by the system, never by the model. The same engine answers the assistant in the app and the <code>/ask</code> endpoint on the API.</p>
+        <h2 class="title">Ask in English. Get the chart.</h2>
+        <p>"Quotes by status this month." "Billable amount by account last quarter." Talk to data picks the object, the filter and the grouping, runs it on live data, and shows what it measured.</p>
         <ul>
-          <li>Scoped to the objects and work centres the viewer is allowed to see</li>
-          <li>Save a report; it appears on the dashboard</li>
-          <li>Personal data stays redacted on the API unless a key is explicitly scoped for it</li>
+          <li>Numbers come from the system, never from the AI</li>
+          <li>Each person sees only what they are allowed to</li>
+          <li>Save a report; it lands on the dashboard</li>
         </ul>
       </div>
-      <div><div class="shot light"><img src="assets/L17_talk.jpg" alt="Talk to data answering billable amount by account" width="1568" height="582"></div></div>
+      <div><div class="shot light"><img src="assets/L17_talk.jpg" alt="Talk to data" width="1568" height="581"></div></div>
     </div>
     <div class="walk" style="margin-top:56px">
       <div class="walk-step flip">
-        <div class="walk-text">
-          <h3>A dashboard per person.</h3>
-          <p>Tiles for every module, arranged by each user, with what needs attention first. Workforce and project costing tiles appear when those modules are on.</p>
-        </div>
-        <div><div class="shot light"><img src="assets/L16_analytics.jpg" alt="Dashboard tiles including hours by project and project billing" width="1568" height="520"></div></div>
+        <div class="walk-text"><h3>A dashboard per person</h3><p>Tiles for every module. Each user arranges their own.</p></div>
+        <div><div class="shot light"><img src="assets/L16_analytics.jpg" alt="Dashboard tiles" width="1568" height="521"></div></div>
       </div>
     </div>
   </div>
@@ -107,17 +102,16 @@
 <section id="api">
   <div class="wrap">
     <div class="sec-label">API &amp; integrations</div>
-    <h2 class="title">Everything on the screen is on the API.</h2>
-    <p class="subtitle">A versioned REST API with scoped keys and an OpenAPI description, webhooks and a change feed for your ERP, MCP for AI clients, and Data Workbench for import, export and bulk update.</p>
+    <h2 class="title">Everything on screen is on the API.</h2>
     <table class="tbl">
-      <thead><tr><th>Surface</th><th>What it gives you</th><th>Typical use</th></tr></thead>
+      <thead><tr><th>Surface</th><th>What it does</th><th>Use it for</th></tr></thead>
       <tbody>
-        <tr><td>REST API v1</td><td>Accounts, contacts, cases, quotations, invoices, products, inventory, purchase orders, employees, projects, project hours, and more. Enriched list queries, OpenAPI at <code>/api/v1/openapi.json</code>.</td><td>ERP and accounting sync, client portals</td></tr>
-        <tr><td>Scoped API keys</td><td>Keys limited to named objects; personal data only with an explicit scope.</td><td>One key per integration, least privilege</td></tr>
-        <tr><td>Webhooks and change feed</td><td>Signed pushes on create, update and delete; a pull feed for catch-up.</td><td>Keep a data warehouse or ERP in step</td></tr>
-        <tr><td><code>/api/v1/ask</code></td><td>The Talk to data engine over HTTP: a question in, a query plan and rows out.</td><td>Reports from a chat tool or a script</td></tr>
-        <tr><td>MCP server</td><td>List and get tools for every object, so an AI client can read the workspace with the same scoping.</td><td>Claude and other AI assistants</td></tr>
-        <tr><td>Data Workbench</td><td>Import, export and update in bulk from spreadsheets, with the workspace's own custom fields in the template.</td><td>Migration from spreadsheets or a previous system</td></tr>
+        <tr><td>REST API v1</td><td>Accounts, contacts, cases, quotations, invoices, products, inventory, purchase orders, employees, projects, project hours. OpenAPI included.</td><td>ERP and accounting sync</td></tr>
+        <tr><td>Scoped API keys</td><td>One key per integration, limited to named objects. Personal data only when explicitly allowed.</td><td>Least privilege</td></tr>
+        <tr><td>Webhooks &amp; change feed</td><td>Signed push on every create, update, delete. Pull feed to catch up.</td><td>Keep other systems in step</td></tr>
+        <tr><td>Ask endpoint</td><td>Talk to data over HTTP. Question in, rows out.</td><td>Reports from a script or chat tool</td></tr>
+        <tr><td>MCP server</td><td>Lets an AI assistant read the workspace with the same permissions.</td><td>Claude and other AI clients</td></tr>
+        <tr><td>Data Workbench</td><td>Import, export and bulk update from spreadsheets.</td><td>Migration and bulk changes</td></tr>
       </tbody>
     </table>
   </div>
@@ -126,17 +120,17 @@
 <!-- TRUST -->
 <section class="alt tight" id="trust">
   <div class="wrap">
-    <div class="sec-label">Tenancy and control</div>
+    <div class="sec-label">Your data</div>
     <h2 class="title">Your workspace is yours.</h2>
     <div class="rules">
-      <div class="rule-item"><span><b>One workspace per company</b>, on its own domain. Identity is resolved from the hostname on every request; there is no tenant switch to get wrong.</span></div>
-      <div class="rule-item"><span><b>Row-level isolation in the database.</b> Every table carries the workspace id and a policy that enforces it.</span></div>
-      <div class="rule-item"><span><b>Personal data encrypted at rest.</b> Phone numbers, emails and tax ids are encrypted field by field.</span></div>
-      <div class="rule-item"><span><b>Roles and work centres.</b> Business roles grant or deny each area; supervisors see their sites, employees see themselves.</span></div>
-      <div class="rule-item"><span><b>Change history on everything.</b> Who changed what, when, with the before and after.</span></div>
-      <div class="rule-item"><span><b>Email output control.</b> Demo and test workspaces are locked to an internal inbox so no test document can reach a real customer.</span></div>
-      <div class="rule-item"><span><b>Custom fields, layouts and terminology</b> per workspace, without touching code.</span></div>
-      <div class="rule-item"><span><b>Client-specific behaviour lives in an extension layer</b>, so one customer's customisation never changes another's product.</span></div>
+      <div class="rule-item"><span><b>One workspace per company</b>, on its own domain.</span></div>
+      <div class="rule-item"><span><b>Data separated at the database level.</b> Every row is tied to your workspace.</span></div>
+      <div class="rule-item"><span><b>Personal data encrypted</b> at rest. Phones, emails, tax ids.</span></div>
+      <div class="rule-item"><span><b>Roles decide who sees what.</b> Supervisors see their sites. Employees see themselves.</span></div>
+      <div class="rule-item"><span><b>Change history on everything.</b> Who, what, when, before and after.</span></div>
+      <div class="rule-item"><span><b>Test workspaces cannot email real customers.</b> Ever.</span></div>
+      <div class="rule-item"><span><b>Custom fields and layouts</b> without touching code.</span></div>
+      <div class="rule-item"><span><b>Your customisations stay yours.</b> They never change another company's product.</span></div>
     </div>
   </div>
 </section>
@@ -144,11 +138,11 @@
 <div class="cta-sec" id="demo">
   <div class="wrap">
     <h2>See it on a live workspace.</h2>
-    <p>Twenty minutes, your use case, no slides. Companies are running their operations on it today.</p>
+    <p>Twenty minutes. Your use case. No slides.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Platform">Book a demo</a>
       <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
-      <a class="btn btn-white-outline" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in to the app</a>
+      <a class="btn btn-white-outline" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a>
     </div>
   </div>
 </div>

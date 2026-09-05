@@ -206,6 +206,29 @@ footer .fnav{display:flex;gap:22px;font-size:13.5px;color:var(--mute);flex-wrap:
 footer .fnav a:hover{color:var(--navy)}
 footer small{color:var(--mute);font-size:12.5px}
 
+/* FLOW chips: Customer → Quote → Job → Invoice */
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px 0;margin-top:6px}
+.flow .chip{font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:7px 14px;white-space:nowrap}
+.flow .chip.hot{background:var(--orange);border-color:var(--orange)}
+.flow .arr{color:rgba(255,255,255,.45);padding:0 8px;font-weight:700}
+.flow.dark .chip{color:var(--navy);background:#fff;border-color:var(--border2)}
+.flow.dark .chip.hot{color:#fff;background:var(--orange);border-color:var(--orange)}
+.flow.dark .arr{color:var(--mute)}
+.flow-cap{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:10px}
+.hero .flows{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+
+/* GLANCE box: the page in three lines */
+.glance{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.glance .g{background:#fff;border:1px solid var(--border);border-radius:10px;padding:22px 22px;border-top:4px solid var(--orange)}
+.glance .g .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.glance .g .v{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.25}
+.glance .g .s{font-size:13.5px;color:var(--text2);margin-top:8px;line-height:1.55}
+
+/* one-line feature cells */
+.feat-cell.short p{font-size:14.5px}
+.feat-cell .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.feat-cell .chips span{font-size:12px;font-weight:600;color:var(--navy);background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:4px 10px}
+
 /* GCC page extras */
 .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
 .pill{font-size:13px;font-weight:600;color:var(--navy);background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:7px 14px}
@@ -215,7 +238,10 @@ footer small{color:var(--mute);font-size:12.5px}
 .status.plan{background:var(--blueSoft);color:var(--blue)}
 
 @media(max-width:920px){
-  nav.links{display:none}
+  header .wrap{height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;gap:8px 16px}
+  nav.links{order:3;width:100%;gap:16px;flex-wrap:wrap}
+  nav.links a{font-size:13px}
+  .glance{grid-template-columns:1fr}
   .hero .wrap,.hero.single .wrap{grid-template-columns:1fr;gap:40px;padding-top:52px;padding-bottom:52px}
   .doors-grid{grid-template-columns:1fr}
   .feat-grid,.feat-grid.two{grid-template-columns:1fr 1fr}
