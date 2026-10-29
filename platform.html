@@ -65,14 +65,14 @@
     <div class="sec-label">Modules</div>
     <h2 class="title">What is inside</h2>
     <div class="feat-grid">
-      <div class="feat-cell short"><div class="ic">₹</div><h3>Sales</h3><p>Quote it, track it, invoice it.</p><div class="chips"><span>Quotations</span><span>Standard quotes</span><span>Pipeline</span><span>Invoices</span><span>Purchase orders</span></div></div>
+      <div class="feat-cell short"><div class="ic">₹</div><h3>Sales</h3><p>Quote it, track it, invoice it.</p><div class="chips"><span>Quotations</span><span>Standard quotes</span><span>Sales orders</span><span>Pipeline</span><span>Invoices</span><span>Purchase orders</span></div></div>
       <div class="feat-cell short"><div class="ic">◴</div><h3>Service</h3><p>Every job on one path.</p><div class="chips"><span>Cases</span><span>AMC contracts</span><span>Work orders</span><span>Dispatch</span><span>Technicians</span></div></div>
       <div class="feat-cell short"><div class="ic">📣</div><h3>Marketing</h3><p>Reach customers, capture leads.</p><div class="chips"><span>Campaigns</span><span>Segmentation</span><span>Leads</span></div></div>
       <div class="feat-cell short"><div class="ic">▧</div><h3>Master data</h3><p>One list of everything you deal with.</p><div class="chips"><span>Accounts</span><span>Contacts</span><span>Assets</span><span>Products</span><span>Suppliers</span><span>Inventory</span><span>Employees</span><span>Partners</span></div></div>
       <div class="feat-cell short"><div class="ic">◷</div><h3>Workforce</h3><p>Attendance, leave, projects, billing.</p><div class="chips"><span>Live board</span><span>Roster</span><span>Corrections</span><span>Leave &amp; holidays</span><span>Projects</span><span>Time summary</span></div></div>
       <div class="feat-cell short"><div class="ic">◫</div><h3>Analytics &amp; admin</h3><p>See the numbers, control the workspace.</p><div class="chips"><span>Dashboard</span><span>Analytics</span><span>Talk to data</span><span>Data Workbench</span><span>Audit &amp; users</span></div></div>
       <div class="feat-cell short"><div class="ic">◫</div><h3>Tenders &amp; projects</h3><p>Price the client's BOQ. Win it. Run it.</p><div class="chips"><span>Bill of quantities</span><span>Estimates</span><span>RFQs</span><span>Bids</span><span>Contract projects</span></div></div>
-      <div class="feat-cell short"><div class="ic">⇄</div><h3>Integrations</h3><p>Connect the systems you already run.</p><div class="chips"><span>Dynamics 365</span><span>SAP S/4HANA</span><span>ePROMIS</span><span>Gmail</span><span>Webhooks</span></div></div>
+      <div class="feat-cell short"><div class="ic">⇄</div><h3>Integrations</h3><p>Connect the systems you already run.</p><div class="chips"><span>Dynamics 365</span><span>SAP S/4HANA</span><span>ePROMIS</span><span>Gmail</span><span>Shared inbox</span><span>Webhooks</span></div></div>
       <div class="feat-cell short"><div class="ic">◉</div><h3>People &amp; access</h3><p>Who can sign in, and what they can open.</p><div class="chips"><span>Roles</span><span>Lock and reset</span><span>Validity dates</span><span>Change history</span></div></div>
     </div>
   </div>
@@ -107,18 +107,19 @@
 <section id="api">
   <div class="wrap">
     <div class="sec-label">API &amp; integrations</div>
-    <h2 class="title">Everything on screen is on the API.</h2>
+    <h2 class="title">Your records, on an API.</h2>
     <p style="margin-top:8px"><a class="btn btn-outline" href="api.html">Read the API documentation →</a> <a class="btn btn-outline" href="solution-guide.html">Read the Solution guide →</a></p>
     <table class="tbl">
       <thead><tr><th>Surface</th><th>What it does</th><th>Use it for</th></tr></thead>
       <tbody>
-        <tr><td>REST API v1</td><td>Accounts, contacts, cases, quotations, invoices, products, inventory, purchase orders, employees, projects, project hours. OpenAPI included.</td><td>ERP and accounting sync</td></tr>
-        <tr><td>Scoped API keys</td><td>One key per integration, limited to named objects. Personal data only when explicitly allowed.</td><td>Least privilege</td></tr>
-        <tr><td>Webhooks &amp; change feed</td><td>Signed push on every create, update, delete. Pull feed to catch up.</td><td>Keep other systems in step</td></tr>
+        <tr><td>REST API v1</td><td>Accounts, cases, quotations, standard quotes, sales orders, invoices, products, inventory, purchase orders, deals, projects, project hours and more. Quotations can be written; the rest is read-only. OpenAPI included.</td><td>ERP and accounting sync</td></tr>
+        <tr><td>Scoped API keys</td><td>One key per integration, read or write, limited to named objects, with an expiry. Staff data, supplier prices and estimates only when named.</td><td>Least privilege</td></tr>
+        <tr><td>Webhooks &amp; change feed</td><td>Every create, update and delete, as a pull feed or as signed push in scheduled batches.</td><td>Keep other systems in step</td></tr>
         <tr><td>Ask endpoint</td><td>Talk to data over HTTP. Question in, rows out.</td><td>Reports from a script or chat tool</td></tr>
-        <tr><td>MCP server</td><td>Lets an AI assistant read the workspace with the same permissions.</td><td>Claude and other AI clients</td></tr>
-        <tr><td>Connectors</td><td>Dynamics 365, SAP S/4HANA, ePROMIS, Gmail, Slack, Google Calendar and a mail server (SMTP / IMAP).</td><td>Connect the systems you already run</td></tr>
-        <tr><td>Data Workbench</td><td>Import, export and bulk update from spreadsheets.</td><td>Migration and bulk changes</td></tr>
+        <tr><td>MCP server</td><td>34 tools that let an AI assistant read the workspace with the permissions of its key.</td><td>Claude and other AI clients</td></tr>
+        <tr><td>Connectors</td><td>Dynamics 365, SAP S/4HANA, ePROMIS, Gmail and a mail server (SMTP / IMAP). Slack and Google Calendar can be connected and tested.</td><td>Connect the systems you already run</td></tr>
+        <tr><td>Integration middleware</td><td>Links per object, field mapping, a message monitor and resync for your ERP.</td><td>ERP sync you can watch</td></tr>
+        <tr><td>Data Workbench</td><td>Import, export and bulk update from spreadsheets. An update always matches on the record's own ID.</td><td>Migration and bulk changes</td></tr>
       </tbody>
     </table>
   </div>

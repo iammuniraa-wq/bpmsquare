@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>API documentation — BPMSquare</title>
-<meta name="description" content="The BPMSquare REST API: scoped keys, filters and aggregates, plain-English queries, a change feed, signed webhooks and an MCP server. OpenAPI included." />
+<meta name="description" content="The BPMSquare REST API: scoped keys, filters and aggregates, plain-English queries, a change feed, signed webhooks and an MCP server with 34 tools. OpenAPI included." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,10 +39,11 @@
   <div class="wrap">
     <div>
       <div class="label"><span class="dot"></span>API documentation</div>
-      <h1>Everything on screen<br><span>is on the API.</span></h1>
+      <h1>Your records,<br><span>on an API.</span></h1>
       <p class="lead">A REST API over your own workspace. Read your records, write quotations, query in plain English, and keep other systems in step with signed webhooks. Scoped keys, JSON everywhere, OpenAPI included.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#quickstart">Quick start</a>
+        <a class="btn btn-white-outline" href="assets/integration-guide/BPMSquare-Integration-Guide.pdf" download>Integration Guide (PDF)</a>
         <a class="btn btn-white-outline" href="mailto:sna2care@gmail.com?subject=API%20access%20%E2%80%94%20BPMSquare">Ask for API access</a>
       </div>
     </div>
@@ -56,16 +57,16 @@
     <span class="item">OpenAPI spec</span>
     <span class="item">Signed webhooks</span>
     <span class="item">Change feed</span>
-    <span class="item">MCP for AI assistants</span>
+    <span class="item">MCP, 34 tools</span>
   </div>
 </div>
 
-<section style="padding:40px 0 0"><div class="wrap"><div class="callout" style="margin-top:0"><b>Looking for how to use the product, not the API?</b> Read the <a href="solution-guide.html" style="color:var(--orange);font-weight:600">Solution guide</a>: setup, every module, step by step.</div></div></section>
+<section style="padding:40px 0 0"><div class="wrap"><div class="callout" style="margin-top:0"><b>This page is the short version.</b> The <a href="solution-guide.html#integration" style="color:var(--orange);font-weight:600">Integration Guide</a> (PDF, 120 pages) has every endpoint with a full example, the webhook receiver code in Node and Python, connectors and Data Workbench. Looking for how to use the product instead? Read the <a href="solution-guide.html" style="color:var(--orange);font-weight:600">Solution guide</a>.</div></div></section>
 
 <section style="padding:32px 0 24px">
   <div class="wrap">
     <div class="docs-chips">
-      <a href="#quickstart">Quick start</a><a href="#auth">Authentication</a><a href="#scopes">Scopes</a><a href="#reading">Reading data</a><a href="#endpoints">Endpoints</a><a href="#writing">Writing</a><a href="#errors">Errors</a><a href="#ask">Ask</a><a href="#changes">Change feed</a><a href="#webhooks">Webhooks</a><a href="#mcp">MCP</a><a href="#spec">OpenAPI</a>
+      <a href="#quickstart">Quick start</a><a href="#auth">Authentication</a><a href="#scopes">Scopes</a><a href="#reading">Reading data</a><a href="#endpoints">Endpoints</a><a href="#writing">Writing</a><a href="#errors">Errors</a><a href="#ask">Ask</a><a href="#changes">Change feed</a><a href="#webhooks">Webhooks</a><a href="#mcp">MCP</a><a href="#spec">OpenAPI</a><a href="#beyond">Beyond the API</a>
     </div>
     <div class="docs">
       <nav class="docs-nav" aria-label="On this page">
@@ -86,6 +87,7 @@
         <div class="grp">More</div>
         <a href="#mcp">MCP server</a>
         <a href="#spec">OpenAPI and metadata</a>
+        <a href="#beyond">Beyond the REST API</a>
       </nav>
 
       <div class="docs-main">
@@ -95,7 +97,7 @@
           <h2>Quick start</h2>
           <p>Three steps from nothing to your first response.</p>
           <div class="qs">
-            <div class="q"><div class="n">1</div><b>Create a key</b><span>A workspace admin opens Settings, API keys &amp; developer, then New key. Pick read, write and the objects it may touch.</span></div>
+            <div class="q"><div class="n">1</div><b>Create a key</b><span>A workspace admin opens Settings, Integrations, API keys &amp; developer, then New key. Pick read, write and the objects it may touch.</span></div>
             <div class="q"><div class="n">2</div><b>Call your domain</b><span>Every workspace has its own address. Send the key as a bearer token.</span></div>
             <div class="q"><div class="n">3</div><b>Read the spec</b><span>Fetch <code class="i">/api/v1/openapi.json</code> to generate a client or import into Postman.</span></div>
           </div>
@@ -118,11 +120,11 @@
           <table class="tbl">
             <thead><tr><th>Key</th><th>How you get it</th><th>Access</th></tr></thead>
             <tbody>
-              <tr><td>Scoped key</td><td>Settings, API keys &amp; developer, New key. Workspace admin only.</td><td>Read and/or write, all objects or a named list, optional expiry.</td></tr>
-              <tr><td>Workspace key</td><td>Settings, API keys &amp; developer, Generate. One key per workspace.</td><td>Read and write on every object except those that need an explicit grant.</td></tr>
+              <tr><td>Scoped key</td><td>Settings, Integrations, API keys &amp; developer, New key. Workspace admin only. The token is shown once and only a one-way hash is kept.</td><td>Read and/or write, all objects or a named list, optional expiry (a future date).</td></tr>
+              <tr><td>Workspace key</td><td>The same screen, Generate. One key per workspace. Regenerate replaces it and the old key stops at once.</td><td>Read and write on every object except those that need an explicit grant.</td></tr>
             </tbody>
           </table>
-          <div class="callout"><b>Treat a key like a password.</b> Give each integration its own scoped key, so you can revoke one without touching the others. An expired or revoked key is answered as an unknown key (401).</div>
+          <div class="callout"><b>Treat a key like a password.</b> Give each integration its own scoped key, read-only unless it must write, with an expiry, so you can revoke one without touching the others. An expired or revoked key is answered as an unknown key (401).</div>
         </section>
 
         <section id="scopes">
@@ -131,6 +133,7 @@
           <p>Objects a key can name: <code class="i">quotations</code> <code class="i">accounts</code> <code class="i">cases</code> <code class="i">inventory</code> <code class="i">invoices</code> <code class="i">purchase-orders</code> <code class="i">pricing</code> <code class="i">products</code> <code class="i">projects</code> <code class="i">opportunities</code> <code class="i">employees</code> <code class="i">rfqs</code> <code class="i">estimates</code> <code class="i">abm_programs</code> <code class="i">abm_targets</code> <code class="i">standard_quotes</code> <code class="i">sales_orders</code></p>
           <h3>Personal and sensitive data is opt-in</h3>
           <p>A key that allows "all objects" does <b>not</b> reach employees, RFQs, estimates or ABM targets. A key must name them. Existing keys never gain access to new sensitive endpoints by accident.</p>
+          <p>Contacts, tenders and contract projects have no endpoint at all. Contact people do appear inside <code class="i">GET /accounts/:id</code> with their phone and email, under the <code class="i">accounts</code> scope, so give that scope only to integrations that may see them. The cost price of a product is never returned, and estimates and sales orders carry no cost or margin.</p>
           <h3>A module you did not buy is not there</h3>
           <p>Each object belongs to a module. A workspace without that module gets <code class="i">404 {"error":"Not found"}</code> on its endpoints, so the existence of the endpoint is not revealed.</p>
         </section>
@@ -166,16 +169,17 @@
           <div class="code"><div class="cap"><span>Request</span><span>curl</span></div><pre>curl -s -H "Authorization: Bearer $KEY" \
   "$BASE/invoices?aggregate=sum:total&amp;group_by=issued_at&amp;group_period=month&amp;count=only"</pre></div>
           <p>Conventions: ids are UUIDs, dates are <code class="i">YYYY-MM-DD</code>, timestamps are ISO 8601, money is a plain number in the workspace currency, and absent values are <code class="i">null</code>.</p>
+          <p>Store the <code class="i">id</code> next to your own key, never the reference such as <code class="i">QT-2026-0042</code>. A reference is a label for people; the id is permanent. A list call loads the workspace rows for that object and then applies your query, so narrow it with <code class="i">filter</code> and <code class="i">select</code>.</p>
         </section>
 
         <section id="endpoints">
           <h2>Endpoints</h2>
-          <p>All paths are under <code class="i">/api/v1</code>. Each list also has a single-record form, <code class="i">/:id</code>.</p>
+          <p>All paths are under <code class="i">/api/v1</code>. Each list also has a single-record form, <code class="i">/:id</code>, except <code class="i">/cases</code> and <code class="i">/project-hours</code>. Most lists take a few shortcut parameters too, such as <code class="i">?status=</code> or <code class="i">?account_id=</code>; they combine with <code class="i">filter</code>.</p>
           <table class="tbl">
             <thead><tr><th>Path</th><th>Scope</th><th>What it returns</th></tr></thead>
             <tbody>
-              <tr><td><span class="m m-get">GET</span><code>/accounts</code></td><td>accounts</td><td>Customers, vendors and prospects, with record counts</td></tr>
-              <tr><td><span class="m m-get">GET</span><code>/cases</code></td><td>cases</td><td>Service cases</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/accounts</code></td><td>accounts</td><td>Customers, vendors and prospects. The single record adds contact people, assets, open cases, quotations, AMC contracts, work orders and invoices</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/cases</code></td><td>cases</td><td>Service cases (list only)</td></tr>
               <tr><td><span class="m m-get">GET</span><code>/quotations</code></td><td>quotations</td><td>Quotations with lines, totals and invoicing position</td></tr>
               <tr><td><span class="m m-get">GET</span><code>/standard-quotes</code></td><td>standard_quotes</td><td>Standard quotes</td></tr>
               <tr><td><span class="m m-get">GET</span><code>/sales-orders</code></td><td>sales_orders</td><td>Sales orders</td></tr>
@@ -208,7 +212,8 @@
               <tr><td><span class="m m-post">POST</span><code>/price</code></td><td>Price a product through the pricing engine. A read-scope key is enough.</td></tr>
             </tbody>
           </table>
-          <p>Field names, types and rules are described in <code class="i">GET /metadata/quotations</code>. Every API write appears in your change history as <code class="i">api:v1</code>.</p>
+          <p>Field names, types and rules are described in <code class="i">GET /metadata/quotations</code>. Every API write appears in your change history as <code class="i">api:v1</code>. Totals are always worked out by BPMSquare: a request that sends <code class="i">total</code> or a line <code class="i">amount</code> is rejected, and so is an unknown field.</p>
+          <p>Nothing else can be created, changed or deleted through the API, apart from drafting a project invoice from hours. To load or correct other records in bulk, use <a href="#beyond" style="color:var(--orange);font-weight:600">Data Workbench</a>. A <code class="i">PATCH</code> that sends <code class="i">lines</code> updates the header first and then replaces the lines, so if it fails part-way, read the quotation back and repeat the call.</p>
         </section>
 
         <section id="errors">
@@ -222,7 +227,7 @@
               <tr><td>404</td><td>The record is not in your workspace, or your workspace does not have that module.</td></tr>
               <tr><td>409</td><td>A business conflict, such as a superseded quotation or an already-billed period.</td></tr>
               <tr><td>422</td><td>Validation failed. The body lists each rejected field with a message.</td></tr>
-              <tr><td>5xx</td><td>A server or database problem. Retry later.</td></tr>
+              <tr><td>5xx</td><td>A server or database problem. Retry later. <code>/ask</code> answers 502 when the AI service is unavailable and 503 when it is not set up.</td></tr>
             </tbody>
           </table>
           <div class="code"><div class="cap"><span>422 example</span><span>JSON</span></div><pre>{
@@ -230,6 +235,7 @@
   "message": "2 fields rejected. See \"details\".",
   "details": [ { "field": "lines[0].qty", "message": "must be greater than 0" } ]
 }</pre></div>
+          <p>BPMSquare does not count your calls and returns no 429 of its own, but your hosting path might. Back off and retry on 429, 502 and 503, and do not poll faster than you need.</p>
         </section>
 
         <section id="ask">
@@ -245,13 +251,22 @@
   "compiled": "/api/v1/quotations?filter=status%3Aeq%3Adraft%3Btotal%3Agt%3A10000&amp;sort=-total&amp;limit=3",
   "data": [ { "ref": "QT-2026-0042", "status": "draft", "total": 41050 } ]
 }</pre></div>
-          <p>Maximum run time is 30 seconds. A question the data cannot answer returns <code class="i">answerable: false</code> instead of a guess.</p>
+          <p>Maximum run time is 30 seconds. A question the data cannot answer returns <code class="i">answerable: false</code> instead of a guess. The key needs read access to the object you name, and a module you did not buy answers 404.</p>
+          <p>You can ask about <code class="i">quotations</code> <code class="i">accounts</code> <code class="i">cases</code> <code class="i">inventory</code> <code class="i">products</code> <code class="i">opportunities</code> <code class="i">rfqs</code> <code class="i">standard_quotes</code> <code class="i">sales_orders</code> <code class="i">abm_programs</code> <code class="i">abm_targets</code> <code class="i">estimates</code> <code class="i">projects</code> <code class="i">project_hours</code> <code class="i">employees</code> <code class="i">invoices</code> <code class="i">purchase-orders</code>, with the scope that object needs. Four more, <code class="i">assets</code> <code class="i">suppliers</code> <code class="i">work-orders</code> and <code class="i">leads</code>, have no endpoint of their own and need an all-objects key.</p>
         </section>
 
         <section id="changes">
           <div class="sec-label">Stay in sync</div>
           <h2>Change feed</h2>
-          <p><code class="i">GET /changes</code> is an ordered log of every create, update and delete in the workspace. Poll it with the cursor from the previous response instead of re-reading whole objects. Nothing is skipped or repeated across pages.</p>
+          <p><code class="i">GET /changes</code> is an ordered log of every create, update and delete in the workspace. Poll it with the cursor from the previous response instead of re-reading whole objects. Nothing is skipped or repeated across pages, even when two changes happen in the same instant.</p>
+          <table class="tbl">
+            <thead><tr><th>Parameter</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><code>since</code></td><td>The cursor from a previous response. Leave it out to start at the beginning. A cursor that was not returned by this endpoint is a 422.</td></tr>
+              <tr><td><code>object_type</code></td><td>Only one object type, such as <code>quotes</code>. 403 if the key cannot read it.</td></tr>
+              <tr><td><code>limit</code></td><td>Default 100, at most 500.</td></tr>
+            </tbody>
+          </table>
           <div class="code"><div class="cap"><span>Request</span><span>curl</span></div><pre>curl -s -H "Authorization: Bearer $KEY" \
   "$BASE/changes?object_type=quotes&amp;since=$CURSOR&amp;limit=100"</pre></div>
           <div class="code"><div class="cap"><span>Response (abbreviated)</span><span>JSON</span></div><pre>{
@@ -271,24 +286,34 @@
   "cursor": "MjAyNi0xMC0yN1QwOTo0MToxMi4zMTgyMDQrMDA6MDB8..."
 }</pre></div>
           <ul class="dl">
-            <li>The feed shows only the object types your key may read.</li>
-            <li>Personal fields such as phone and email appear as <code class="i">[redacted]</code>. Internal cost prices are never included.</li>
+            <li><code class="i">action</code> is <code class="i">create</code>, <code class="i">update</code>, <code class="i">delete</code> or <code class="i">reopen</code>. Match on <code class="i">object_id</code>, not on the label.</li>
+            <li>The feed shows only the object types your key may read. Types with no scope of their own, such as assets, suppliers, work orders and leads, are visible only to an all-objects key. Employees, RFQs, estimates and ABM targets appear only to a key that names them.</li>
+            <li>Personal fields such as phone, email and tax number appear as <code class="i">[redacted]</code>. Internal cost prices are never included.</li>
             <li><code class="i">actor</code> is the person's email, or <code class="i">api:v1</code> for an API write.</li>
+            <li>Save your cursor only after you have processed the page. A final full page can say <code class="i">has_more: true</code> and the next call return nothing; that is normal. When a page is empty the cursor repeats your <code class="i">since</code>, so keep it.</li>
           </ul>
+          <p>The feed is a log, not a copy of the data. To get the current record, read it with its endpoint using <code class="i">object_id</code>.</p>
         </section>
 
         <section id="webhooks">
           <h2>Webhooks</h2>
-          <p>Instead of polling, a workspace admin can register an HTTPS endpoint under Settings, Webhooks. It receives the same events as the change feed, in signed batches.</p>
+          <p>Instead of polling, a workspace admin can register an HTTPS endpoint under Settings, Integrations, Webhooks (or Webhooks &amp; push, depending on the workspace). It receives the same events as the change feed, in signed batches. No API key is involved: the admin chooses the objects.</p>
           <ul class="dl">
-            <li>Each delivery is a <code class="i">POST</code> with up to 100 events, oldest first.</li>
-            <li>Any <code class="i">2xx</code> answer acknowledges the batch. Anything else, or a timeout (10 seconds), and the same events are sent again later. <b>Make your handler idempotent on <code class="i">events[].id</code>.</b></li>
-            <li>After 15 failures in a row the webhook pauses until an admin resumes it.</li>
-            <li>Only public HTTPS addresses are accepted. Private and internal addresses are refused.</li>
+            <li>Deliveries run <b>on a schedule, not the moment a record changes</b>. If you need to know within seconds, poll the change feed.</li>
+            <li>Each delivery is a <code class="i">POST</code> with up to 100 events, oldest first. A new webhook sends only changes made after it was created.</li>
+            <li>Any <code class="i">2xx</code> answer acknowledges the batch. Anything else, or a timeout (10 seconds), and the same events are sent again later with a new <code class="i">delivery_id</code>. <b>Make your handler idempotent on <code class="i">events[].id</code>.</b></li>
+            <li>After 15 failures in a row the webhook pauses until an admin resumes it. It carries on from where it stopped.</li>
+            <li>Only public HTTPS addresses are accepted, when you save and again at every delivery. Private and internal addresses are refused.</li>
+            <li><b>All objects</b> sends the everyday change types. It does not send staff records, contacts, RFQs, estimates, ABM targets, tenders or contract projects: those go only to a webhook that names them. Product cost price is never sent, and personal fields are <code class="i">[redacted]</code>.</li>
           </ul>
           <div class="code"><div class="cap"><span>Headers</span></div><pre>Content-Type: application/json
 X-BPMSquare-Signature: &lt;hex HMAC-SHA256 of the raw body&gt;
 X-BPMSquare-Delivery: &lt;delivery id&gt;</pre></div>
+          <div class="code"><div class="cap"><span>Body (abbreviated)</span><span>JSON</span></div><pre>{
+  "delivery_id": "0f1e2d3c-4b5a-4968-8777-665544332211",
+  "sent_at": "2026-10-28T20:30:04.118Z",
+  "events": [ { "id": "8b2c3d4e-...", "object_type": "quotes", "action": "update", "...": "same shape as a change-feed item" } ]
+}</pre></div>
           <div class="code"><div class="cap"><span>Verify the signature</span><span>Node</span></div><pre>import crypto from "node:crypto";
 import express from "express";
 
@@ -306,19 +331,32 @@ app.post("/hooks/bpmsquare", express.raw({ type: "application/json" }), (req, re
   for (const e of events) { /* de-duplicate on e.id, then handle e */ }
   res.sendStatus(200);
 });</pre></div>
-          <p>Sign over the raw bytes, so check the signature before you parse the JSON. The signing secret is shown once, when you create or regenerate it.</p>
+          <p>Sign over the raw bytes, so check the signature before you parse the JSON. The signing secret (<code class="i">whsec_</code> and 48 hex characters) is shown once, when you create or regenerate it. The Test button sends a signed message you can accept without treating it as a data change.</p>
         </section>
 
         <section id="mcp">
           <div class="sec-label">More</div>
           <h2>MCP server</h2>
-          <p>An AI assistant can read your workspace through the Model Context Protocol, with exactly the permissions of the key you give it. The manifest describes 34 tools, each a thin wrapper over one REST endpoint: for example <code class="i">list_accounts</code>, <code class="i">list_cases</code>, <code class="i">list_quotations</code>, <code class="i">list_invoices</code>, <code class="i">list_opportunities</code> and <code class="i">query_project_hours</code>.</p>
+          <p>An AI assistant can read your workspace through the Model Context Protocol, with exactly the permissions of the key you give it. The manifest (<code class="i">mcp.json</code>, version 1.18.0) describes 34 tools. Each is a thin wrapper over one REST endpoint and returns that endpoint's JSON; none does anything the REST API cannot.</p>
+          <table class="tbl">
+            <thead><tr><th>Area</th><th>Tools</th><th>Key needs</th></tr></thead>
+            <tbody>
+              <tr><td>Accounts, cases</td><td><code>list_accounts</code> <code>get_account</code> <code>list_cases</code></td><td>accounts, cases</td></tr>
+              <tr><td>Selling</td><td><code>list_quotations</code> <code>list_standard_quotes</code> <code>get_standard_quote</code> <code>list_sales_orders</code> <code>get_sales_order</code> <code>list_opportunities</code> <code>get_opportunity</code></td><td>quotations, standard_quotes, sales_orders, opportunities</td></tr>
+              <tr><td>Estimates, RFQs</td><td><code>list_estimates</code> <code>get_estimate</code> <code>list_rfqs</code> <code>get_rfq</code></td><td>estimates, rfqs (named)</td></tr>
+              <tr><td>Money and stock</td><td><code>list_invoices</code> <code>get_invoice</code> <code>list_purchase_orders</code> <code>get_purchase_order</code> <code>list_inventory</code> <code>get_inventory_item</code> <code>list_products</code> <code>get_product</code></td><td>invoices, purchase-orders, inventory, products</td></tr>
+              <tr><td>Projects and hours</td><td><code>list_projects</code> <code>get_project</code> <code>get_project_hours</code> <code>get_project_invoices</code> <code>query_project_hours</code> <code>create_project_invoice</code></td><td>projects (write for the last one)</td></tr>
+              <tr><td>ABM</td><td><code>list_abm_programs</code> <code>get_abm_program</code> <code>list_abm_targets</code> <code>get_abm_target</code></td><td>abm_programs, abm_targets (named)</td></tr>
+              <tr><td>Staff</td><td><code>list_employees</code> <code>get_employee</code></td><td>employees (named)</td></tr>
+            </tbody>
+          </table>
           <ul class="dl">
-            <li>Use a dedicated <b>read-only</b> scoped key and name only the objects the assistant needs.</li>
-            <li>Sensitive objects stay closed unless you name them in the key.</li>
-            <li>Creating, changing or deleting quotations is not available as a tool. Use the REST API.</li>
+            <li>Use a dedicated <b>read-only</b> scoped key and name only the objects the assistant needs. Sensitive objects stay closed unless you name them in the key.</li>
+            <li><code class="i">create_project_invoice</code> is the one tool that writes: it drafts a project invoice from hours, or previews it with <code class="i">dry_run</code>. Give an assistant write access only if you accept that.</li>
+            <li>List tools return the first page only, up to 50 rows, with the shortcut filters. For full lists and totals use the REST API. <code class="i">query_project_hours</code> is the one tool with grouping and sums.</li>
+            <li>Not available as tools: creating, changing or deleting quotations, <code class="i">/price</code>, <code class="i">/ask</code>, the change feed, a single quotation or case, and contacts. Use the REST API.</li>
           </ul>
-          <p>Ask us for the manifest and a setup note for your assistant of choice.</p>
+          <p>The assistant needs a small bridge between it and BPMSquare, which reads the manifest and makes the REST call with your key. Ask us for the manifest and the bridge for your assistant of choice.</p>
         </section>
 
         <section id="spec">
@@ -326,13 +364,28 @@ app.post("/hooks/bpmsquare", express.raw({ type: "application/json" }), (req, re
           <table class="tbl">
             <thead><tr><th>Path</th><th>What it is</th></tr></thead>
             <tbody>
-              <tr><td><span class="m m-get">GET</span><code>/openapi.json</code></td><td>The machine-readable spec. Import it into Postman or generate a client.</td></tr>
-              <tr><td><span class="m m-get">GET</span><code>/</code></td><td>A self-describing index: authentication, endpoints, query rules and conventions.</td></tr>
-              <tr><td><span class="m m-get">GET</span><code>/metadata</code></td><td>Field-level metadata for the writable objects.</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/openapi.json</code></td><td>The machine-readable spec (OpenAPI 3). Import it into Postman or generate a client.</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/</code></td><td>A self-describing index: authentication, endpoints, query rules and conventions. It needs a key like every other route.</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/metadata</code></td><td>Field-level metadata. Today it describes quotations.</td></tr>
               <tr><td><span class="m m-get">GET</span><code>/metadata/:entity</code></td><td>Every field of one object: type, whether required, allowed values.</td></tr>
             </tbody>
           </table>
+          <div class="callout"><b>Read the spec with these limits in mind.</b> Only quotations have a full field schema; every other object gets a generic list and detail path with the shared query parameters. The spec does not list everything this page lists (project hours, a project's hours and invoices, a program's targets, metadata), and it shows a single-case path that does not exist. This page and the Integration Guide are the complete list.</div>
           <div class="callout"><b>Limits worth knowing.</b> <code class="i">/ask</code> and <code class="i">/price</code> run for at most 30 seconds. A quotation request carries at most 200 lines. If you need higher volumes or a field that is not exposed yet, tell us.</div>
+        </section>
+
+        <section id="beyond">
+          <h2>Beyond the REST API</h2>
+          <p>Some jobs are better done another way. The Integration Guide has a chapter on each.</p>
+          <table class="tbl">
+            <thead><tr><th>Need</th><th>Use</th></tr></thead>
+            <tbody>
+              <tr><td>Load or correct thousands of records from a spreadsheet</td><td><b>Data Workbench</b> (Admin). Import, export and bulk update for accounts, contacts, products, quotes, sales orders, cases, invoices and more. An update needs the Record ID column that only an Export fills in, so a file can never hit the wrong record.</td></tr>
+              <tr><td>Send one record to another system when something happens</td><td><b>Call webhook</b>, fired when a Standard Quote is awarded or a button is pressed on an account. Or <b>Push to ERP</b>, on demand from a record.</td></tr>
+              <tr><td>Tell BPMSquare that an order changed in your ERP</td><td><b>Inbound order call</b>: a signed <code>POST</code> to <code>/api/middleware/webhook/sales-order</code> with the order ref or ERP id. Needs the Sales Orders and Integration middleware modules.</td></tr>
+              <tr><td>Connect Dynamics 365, SAP S/4HANA or ePROMIS</td><td><b>Connectors</b> and the <b>Integration middleware</b>: links per object, field mapping, a message monitor and resync. Gmail and a mail server connect from the same screen. Slack and Google Calendar connect and test today; no screen sends to or reads from them yet.</td></tr>
+            </tbody>
+          </table>
         </section>
 
       </div>
