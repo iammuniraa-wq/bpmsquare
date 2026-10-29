@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>API documentation — BPMSquare</title>
+<meta name="description" content="The BPMSquare REST API: scoped keys, filters and aggregates, plain-English queries, a change feed, signed webhooks and an MCP server. OpenAPI included." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="platform.html">Platform</a>
+      <a class="on" href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="hero single" id="top">
+  <div class="wrap">
+    <div>
+      <div class="label"><span class="dot"></span>API documentation</div>
+      <h1>Everything on screen<br><span>is on the API.</span></h1>
+      <p class="lead">A REST API over your own workspace. Read your records, write quotations, query in plain English, and keep other systems in step with signed webhooks. Scoped keys, JSON everywhere, OpenAPI included.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#quickstart">Quick start</a>
+        <a class="btn btn-white-outline" href="mailto:sna2care@gmail.com?subject=API%20access%20%E2%80%94%20BPMSquare">Ask for API access</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider-band">
+  <div class="wrap">
+    <span class="item">REST + JSON</span>
+    <span class="item">Scoped keys</span>
+    <span class="item">OpenAPI spec</span>
+    <span class="item">Signed webhooks</span>
+    <span class="item">Change feed</span>
+    <span class="item">MCP for AI assistants</span>
+  </div>
+</div>
+
+<section style="padding:56px 0 24px">
+  <div class="wrap">
+    <div class="docs-chips">
+      <a href="#quickstart">Quick start</a><a href="#auth">Authentication</a><a href="#scopes">Scopes</a><a href="#reading">Reading data</a><a href="#endpoints">Endpoints</a><a href="#writing">Writing</a><a href="#errors">Errors</a><a href="#ask">Ask</a><a href="#changes">Change feed</a><a href="#webhooks">Webhooks</a><a href="#mcp">MCP</a><a href="#spec">OpenAPI</a>
+    </div>
+    <div class="docs">
+      <nav class="docs-nav" aria-label="On this page">
+        <div class="grp">Start</div>
+        <a href="#quickstart">Quick start</a>
+        <a href="#base">Base URL</a>
+        <a href="#auth">Authentication</a>
+        <a href="#scopes">Scopes</a>
+        <div class="grp">Use the API</div>
+        <a href="#reading">Reading data</a>
+        <a href="#endpoints">Endpoints</a>
+        <a href="#writing">Writing</a>
+        <a href="#errors">Errors</a>
+        <a href="#ask">Ask in plain English</a>
+        <div class="grp">Stay in sync</div>
+        <a href="#changes">Change feed</a>
+        <a href="#webhooks">Webhooks</a>
+        <div class="grp">More</div>
+        <a href="#mcp">MCP server</a>
+        <a href="#spec">OpenAPI and metadata</a>
+      </nav>
+
+      <div class="docs-main">
+
+        <section id="quickstart">
+          <div class="sec-label">Start</div>
+          <h2>Quick start</h2>
+          <p>Three steps from nothing to your first response.</p>
+          <div class="qs">
+            <div class="q"><div class="n">1</div><b>Create a key</b><span>A workspace admin opens Settings, API keys &amp; developer, then New key. Pick read, write and the objects it may touch.</span></div>
+            <div class="q"><div class="n">2</div><b>Call your domain</b><span>Every workspace has its own address. Send the key as a bearer token.</span></div>
+            <div class="q"><div class="n">3</div><b>Read the spec</b><span>Fetch <code class="i">/api/v1/openapi.json</code> to generate a client or import into Postman.</span></div>
+          </div>
+          <div class="code"><div class="cap"><span>First call</span><span>curl</span></div><pre>curl -s \
+  -H "Authorization: Bearer $KEY" \
+  "https://&lt;your-workspace-domain&gt;/api/v1/accounts?limit=5&amp;sort=name"</pre></div>
+        </section>
+
+        <section id="base">
+          <h2>Base URL</h2>
+          <div class="code"><div class="cap"><span>Base URL</span></div><pre>https://&lt;your-workspace-domain&gt;/api/v1</pre></div>
+          <p>Every workspace is served on its own domain, so use yours. The key decides which workspace a call belongs to; there is no workspace id in any path. <code class="i">app.bpmsquare.com</code> is the shared demo sandbox and is not for client integrations.</p>
+          <p>Responses are JSON. CORS is open and <code class="i">OPTIONS</code> pre-flight is answered on every route.</p>
+        </section>
+
+        <section id="auth">
+          <h2>Authentication</h2>
+          <p>Send a bearer token on every call.</p>
+          <div class="code"><div class="cap"><span>Header</span></div><pre>Authorization: Bearer bpm_live_xxxxxxxx</pre></div>
+          <table class="tbl">
+            <thead><tr><th>Key</th><th>How you get it</th><th>Access</th></tr></thead>
+            <tbody>
+              <tr><td>Scoped key</td><td>Settings, API keys &amp; developer, New key. Workspace admin only.</td><td>Read and/or write, all objects or a named list, optional expiry.</td></tr>
+              <tr><td>Workspace key</td><td>Settings, API keys &amp; developer, Generate. One key per workspace.</td><td>Read and write on every object except those that need an explicit grant.</td></tr>
+            </tbody>
+          </table>
+          <div class="callout"><b>Treat a key like a password.</b> Give each integration its own scoped key, so you can revoke one without touching the others. An expired or revoked key is answered as an unknown key (401).</div>
+        </section>
+
+        <section id="scopes">
+          <h2>Scopes</h2>
+          <p>A scope is <code class="i">{ read, write, objects }</code>. A read-only key gets 403 on a write. A key limited to some objects gets 403 on any other object.</p>
+          <p>Objects a key can name: <code class="i">quotations</code> <code class="i">accounts</code> <code class="i">cases</code> <code class="i">inventory</code> <code class="i">invoices</code> <code class="i">purchase-orders</code> <code class="i">pricing</code> <code class="i">products</code> <code class="i">projects</code> <code class="i">opportunities</code> <code class="i">employees</code> <code class="i">rfqs</code> <code class="i">estimates</code> <code class="i">abm_programs</code> <code class="i">abm_targets</code> <code class="i">standard_quotes</code> <code class="i">sales_orders</code></p>
+          <h3>Personal and sensitive data is opt-in</h3>
+          <p>A key that allows "all objects" does <b>not</b> reach employees, RFQs, estimates or ABM targets. A key must name them. Existing keys never gain access to new sensitive endpoints by accident.</p>
+          <h3>A module you did not buy is not there</h3>
+          <p>Each object belongs to a module. A workspace without that module gets <code class="i">404 {"error":"Not found"}</code> on its endpoints, so the existence of the endpoint is not revealed.</p>
+        </section>
+
+        <section id="reading">
+          <div class="sec-label">Use the API</div>
+          <h2>Reading data</h2>
+          <p>Every list endpoint returns the same envelope.</p>
+          <div class="code"><div class="cap"><span>List response</span><span>JSON</span></div><pre>{
+  "data": [ { "...": "rows" } ],
+  "meta": { "count": 1, "total": 1, "page": 1, "limit": 50, "has_more": false },
+  "_links": { "self": "/api/v1/accounts", "next": null, "prev": null }
+}</pre></div>
+          <p>Query parameters work on every list endpoint, are optional and combine freely. An unknown field name is a 422 that lists the accepted fields.</p>
+          <table class="tbl">
+            <thead><tr><th>Parameter</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><code>select</code></td><td>Comma list of fields to return. Dotted for nested, such as <code>account.name</code>.</td></tr>
+              <tr><td><code>filter</code></td><td><code>field:op:value</code> clauses joined by <code>;</code> (AND). Operators: <code>eq ne gt gte lt lte like in isnull</code>. URL-encode the value.</td></tr>
+              <tr><td><code>search</code></td><td>Case-insensitive contains across the endpoint's searchable fields.</td></tr>
+              <tr><td><code>sort</code></td><td>Comma list. A leading <code>-</code> is descending, for example <code>-total,ref</code>.</td></tr>
+              <tr><td><code>page</code>, <code>limit</code></td><td>1-based page. Default limit 50, at most 200.</td></tr>
+              <tr><td><code>aggregate</code></td><td><code>count</code>, <code>sum:field</code>, <code>avg:field</code>, <code>min:field</code>, <code>max:field</code> over the filtered set.</td></tr>
+              <tr><td><code>group_by</code></td><td>Aggregate per distinct value. A date field is bucketed by <code>group_period</code> (<code>day week month quarter year</code>).</td></tr>
+              <tr><td><code>having</code>, <code>group_sort</code>, <code>group_limit</code></td><td>Filter, order and cap the groups.</td></tr>
+              <tr><td><code>count=only</code></td><td>Return <code>meta</code> without rows.</td></tr>
+            </tbody>
+          </table>
+          <h3>Example: draft quotations over 10,000, by value</h3>
+          <div class="code"><div class="cap"><span>Request</span><span>curl</span></div><pre>curl -s -H "Authorization: Bearer $KEY" \
+  "$BASE/quotations?filter=status%3Aeq%3Adraft%3Btotal%3Agt%3A10000&amp;sort=-total&amp;limit=3"</pre></div>
+          <h3>Example: totals per month, no rows</h3>
+          <div class="code"><div class="cap"><span>Request</span><span>curl</span></div><pre>curl -s -H "Authorization: Bearer $KEY" \
+  "$BASE/invoices?aggregate=sum:total&amp;group_by=issued_at&amp;group_period=month&amp;count=only"</pre></div>
+          <p>Conventions: ids are UUIDs, dates are <code class="i">YYYY-MM-DD</code>, timestamps are ISO 8601, money is a plain number in the workspace currency, and absent values are <code class="i">null</code>.</p>
+        </section>
+
+        <section id="endpoints">
+          <h2>Endpoints</h2>
+          <p>All paths are under <code class="i">/api/v1</code>. Each list also has a single-record form, <code class="i">/:id</code>.</p>
+          <table class="tbl">
+            <thead><tr><th>Path</th><th>Scope</th><th>What it returns</th></tr></thead>
+            <tbody>
+              <tr><td><span class="m m-get">GET</span><code>/accounts</code></td><td>accounts</td><td>Customers, vendors and prospects, with record counts</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/cases</code></td><td>cases</td><td>Service cases</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/quotations</code></td><td>quotations</td><td>Quotations with lines, totals and invoicing position</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/standard-quotes</code></td><td>standard_quotes</td><td>Standard quotes</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/sales-orders</code></td><td>sales_orders</td><td>Sales orders</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/invoices</code></td><td>invoices</td><td>Invoices and balances due</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/purchase-orders</code></td><td>purchase-orders</td><td>Purchase orders</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/opportunities</code></td><td>opportunities</td><td>Deals in the pipeline</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/products</code></td><td>products</td><td>Product catalogue (internal cost is never returned)</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/inventory</code></td><td>inventory</td><td>Stock items</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/projects</code></td><td>projects</td><td>Workforce projects, plus <code>/:id/hours</code> and <code>/:id/invoices</code></td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/project-hours</code></td><td>projects</td><td>Hours attributed to projects</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/employees</code></td><td>employees (named)</td><td>Employee records</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/rfqs</code></td><td>rfqs (named)</td><td>Requests for quotation and supplier replies</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/estimates</code></td><td>estimates (named)</td><td>Estimates</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/abm-programs</code></td><td>abm_programs</td><td>Account-based marketing programs</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/abm-targets</code></td><td>abm_targets (named)</td><td>Target accounts, plus <code>/abm-programs/:id/targets</code></td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="writing">
+          <h2>Writing</h2>
+          <p>Writing needs a key with write access to the object. Quotations are the writable object in v1, plus two actions.</p>
+          <table class="tbl">
+            <thead><tr><th>Path</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><span class="m m-post">POST</span><code>/quotations</code></td><td>Create a quotation with its lines (up to 200 lines per request).</td></tr>
+              <tr><td><span class="m m-patch">PATCH</span><code>/quotations/:id</code></td><td>Change a quotation. Send lines to replace them.</td></tr>
+              <tr><td><span class="m m-del">DELETE</span><code>/quotations/:id</code></td><td>Delete a quotation.</td></tr>
+              <tr><td><span class="m m-post">POST</span><code>/projects/:id/invoices</code></td><td>Bill a project period from its attributed hours.</td></tr>
+              <tr><td><span class="m m-post">POST</span><code>/price</code></td><td>Price a product through the pricing engine. A read-scope key is enough.</td></tr>
+            </tbody>
+          </table>
+          <p>Field names, types and rules are described in <code class="i">GET /metadata/quotations</code>. Every API write appears in your change history as <code class="i">api:v1</code>.</p>
+        </section>
+
+        <section id="errors">
+          <h2>Errors</h2>
+          <table class="tbl">
+            <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>400</td><td>The body is not valid JSON, or a value is malformed.</td></tr>
+              <tr><td>401</td><td>No key, an unknown key, or a revoked or expired key.</td></tr>
+              <tr><td>403</td><td>The key's scope does not allow this object, or this direction (read or write).</td></tr>
+              <tr><td>404</td><td>The record is not in your workspace, or your workspace does not have that module.</td></tr>
+              <tr><td>409</td><td>A business conflict, such as a superseded quotation or an already-billed period.</td></tr>
+              <tr><td>422</td><td>Validation failed. The body lists each rejected field with a message.</td></tr>
+              <tr><td>5xx</td><td>A server or database problem. Retry later.</td></tr>
+            </tbody>
+          </table>
+          <div class="code"><div class="cap"><span>422 example</span><span>JSON</span></div><pre>{
+  "error": "Validation failed",
+  "message": "2 fields rejected. See \"details\".",
+  "details": [ { "field": "lines[0].qty", "message": "must be greater than 0" } ]
+}</pre></div>
+        </section>
+
+        <section id="ask">
+          <h2>Ask in plain English</h2>
+          <p><code class="i">POST /ask</code> turns a question into the same validated query as above. It is never turned into SQL, it runs with your key's read scope, and the exact query is echoed back so you can reuse it. Numbers come from your data, not from the AI.</p>
+          <div class="code"><div class="cap"><span>Request</span><span>curl</span></div><pre>curl -s -X POST -H "Authorization: Bearer $KEY" \
+  -H "Content-Type: application/json" "$BASE/ask" \
+  -d '{ "object": "quotations", "question": "top 3 draft quotes over 10,000 by value" }'</pre></div>
+          <div class="code"><div class="cap"><span>Response (abbreviated)</span><span>JSON</span></div><pre>{
+  "question": "top 3 draft quotes over 10,000 by value",
+  "object": "quotations",
+  "answerable": true,
+  "compiled": "/api/v1/quotations?filter=status%3Aeq%3Adraft%3Btotal%3Agt%3A10000&amp;sort=-total&amp;limit=3",
+  "data": [ { "ref": "QT-2026-0042", "status": "draft", "total": 41050 } ]
+}</pre></div>
+          <p>Maximum run time is 30 seconds. A question the data cannot answer returns <code class="i">answerable: false</code> instead of a guess.</p>
+        </section>
+
+        <section id="changes">
+          <div class="sec-label">Stay in sync</div>
+          <h2>Change feed</h2>
+          <p><code class="i">GET /changes</code> is an ordered log of every create, update and delete in the workspace. Poll it with the cursor from the previous response instead of re-reading whole objects. Nothing is skipped or repeated across pages.</p>
+          <div class="code"><div class="cap"><span>Request</span><span>curl</span></div><pre>curl -s -H "Authorization: Bearer $KEY" \
+  "$BASE/changes?object_type=quotes&amp;since=$CURSOR&amp;limit=100"</pre></div>
+          <div class="code"><div class="cap"><span>Response (abbreviated)</span><span>JSON</span></div><pre>{
+  "data": [
+    {
+      "id": "8b2c3d4e-5f60-4b7c-9d8e-0f1a2b3c4d5e",
+      "object_type": "quotes",
+      "object_id": "b7d1e0c2-5a3f-4e18-8c92-6f4a1d9e2b03",
+      "object_label": "QT-2026-0042",
+      "action": "update",
+      "changes": [ { "field": "status", "from": "draft", "to": "sent" } ],
+      "actor": "sara.admin@example-trading.example",
+      "at": "2026-10-27T09:41:12.318204+00:00"
+    }
+  ],
+  "meta": { "count": 1, "has_more": false },
+  "cursor": "MjAyNi0xMC0yN1QwOTo0MToxMi4zMTgyMDQrMDA6MDB8..."
+}</pre></div>
+          <ul class="dl">
+            <li>The feed shows only the object types your key may read.</li>
+            <li>Personal fields such as phone and email appear as <code class="i">[redacted]</code>. Internal cost prices are never included.</li>
+            <li><code class="i">actor</code> is the person's email, or <code class="i">api:v1</code> for an API write.</li>
+          </ul>
+        </section>
+
+        <section id="webhooks">
+          <h2>Webhooks</h2>
+          <p>Instead of polling, a workspace admin can register an HTTPS endpoint under Settings, Webhooks. It receives the same events as the change feed, in signed batches.</p>
+          <ul class="dl">
+            <li>Each delivery is a <code class="i">POST</code> with up to 100 events, oldest first.</li>
+            <li>Any <code class="i">2xx</code> answer acknowledges the batch. Anything else, or a timeout (10 seconds), and the same events are sent again later. <b>Make your handler idempotent on <code class="i">events[].id</code>.</b></li>
+            <li>After 15 failures in a row the webhook pauses until an admin resumes it.</li>
+            <li>Only public HTTPS addresses are accepted. Private and internal addresses are refused.</li>
+          </ul>
+          <div class="code"><div class="cap"><span>Headers</span></div><pre>Content-Type: application/json
+X-BPMSquare-Signature: &lt;hex HMAC-SHA256 of the raw body&gt;
+X-BPMSquare-Delivery: &lt;delivery id&gt;</pre></div>
+          <div class="code"><div class="cap"><span>Verify the signature</span><span>Node</span></div><pre>import crypto from "node:crypto";
+import express from "express";
+
+const app = express();
+const SECRET = process.env.BPMSQUARE_WEBHOOK_SECRET; // the whsec_ value from Settings
+
+app.post("/hooks/bpmsquare", express.raw({ type: "application/json" }), (req, res) =&gt; {
+  const given = req.get("X-BPMSquare-Signature") || "";
+  const expected = crypto.createHmac("sha256", SECRET).update(req.body).digest("hex");
+  const ok = given.length === expected.length &amp;&amp;
+    crypto.timingSafeEqual(Buffer.from(given), Buffer.from(expected));
+  if (!ok) return res.status(401).send("bad signature");
+
+  const { events } = JSON.parse(req.body.toString("utf8"));
+  for (const e of events) { /* de-duplicate on e.id, then handle e */ }
+  res.sendStatus(200);
+});</pre></div>
+          <p>Sign over the raw bytes, so check the signature before you parse the JSON. The signing secret is shown once, when you create or regenerate it.</p>
+        </section>
+
+        <section id="mcp">
+          <div class="sec-label">More</div>
+          <h2>MCP server</h2>
+          <p>An AI assistant can read your workspace through the Model Context Protocol, with exactly the permissions of the key you give it. The manifest describes 34 tools, each a thin wrapper over one REST endpoint: for example <code class="i">list_accounts</code>, <code class="i">list_cases</code>, <code class="i">list_quotations</code>, <code class="i">list_invoices</code>, <code class="i">list_opportunities</code> and <code class="i">query_project_hours</code>.</p>
+          <ul class="dl">
+            <li>Use a dedicated <b>read-only</b> scoped key and name only the objects the assistant needs.</li>
+            <li>Sensitive objects stay closed unless you name them in the key.</li>
+            <li>Creating, changing or deleting quotations is not available as a tool. Use the REST API.</li>
+          </ul>
+          <p>Ask us for the manifest and a setup note for your assistant of choice.</p>
+        </section>
+
+        <section id="spec">
+          <h2>OpenAPI and metadata</h2>
+          <table class="tbl">
+            <thead><tr><th>Path</th><th>What it is</th></tr></thead>
+            <tbody>
+              <tr><td><span class="m m-get">GET</span><code>/openapi.json</code></td><td>The machine-readable spec. Import it into Postman or generate a client.</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/</code></td><td>A self-describing index: authentication, endpoints, query rules and conventions.</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/metadata</code></td><td>Field-level metadata for the writable objects.</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/metadata/:entity</code></td><td>Every field of one object: type, whether required, allowed values.</td></tr>
+            </tbody>
+          </table>
+          <div class="callout"><b>Limits worth knowing.</b> <code class="i">/ask</code> and <code class="i">/price</code> run for at most 30 seconds. A quotation request carries at most 200 lines. If you need higher volumes or a field that is not exposed yet, tell us.</div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Building an integration?</h2>
+    <p>Tell us the system and the objects. We will set up a scoped key and walk the first call with you.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=API%20access%20%E2%80%94%20BPMSquare">Ask for API access</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="platform.html#api">Platform overview</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:hello@bpmsquare.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>
