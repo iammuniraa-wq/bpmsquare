@@ -82,7 +82,7 @@ nav.links a.gcc{color:var(--orange);font-weight:600}
 
 /* DOORS (home) */
 .doors{padding:64px 0 24px}
-.doors-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.doors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .door{background:#fff;border:1px solid var(--border);border-radius:12px;padding:30px 28px;display:flex;flex-direction:column;gap:14px;transition:.15s;position:relative;overflow:hidden}
 .door::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--orange)}
 .door.navy::before{background:var(--navy)}
