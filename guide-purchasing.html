@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Purchase orders and suppliers — step by step — BPMSquare</title>
+<meta name="description" content="Add suppliers, raise purchase orders and receive stock against them." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Service</div>
+    <h1>Purchase orders and suppliers, step by step</h1>
+    <p>Keep your suppliers in one list, order stock from them with a purchase order, and record what arrives so the inventory updates.</p>
+    <div class="g-chips"><a href="#flow-1">Add a supplier</a><a href="#flow-2">See supplier groups</a><a href="#flow-3">Order stock from a supplier</a><a href="#flow-4">Receive stock against an order</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Add a supplier</h2>
+  <p class="g-sub">When you start buying from a new vendor or subcontractor.</p>
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>+ New Supplier</b></h3>
+      <p>On the <b>Suppliers</b> page, top right.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/01-new-supplier.jpg" alt="The Suppliers page with + New Supplier marked 1" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Type the <b>Name</b></h3>
+      <p>Required.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/02-supplier-name.jpg" alt="The supplier Name field filled in, marked 2" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Choose the <b>Type</b></h3>
+      <p><b>Vendor</b> sells parts and materials. <b>Subcontractor</b> provides labour or specialist work. The third choice is both.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/03-supplier-type.jpg" alt="The Type list marked 3" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Type the <b>City</b></h3>
+      <p><b>Phone</b>, <b>Email</b> and <b>GSTIN</b> are optional. <b>Notes</b> can hold payment terms and lead times.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/04-supplier-city.jpg" alt="The City field filled in, marked 4" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Save</b></h3>
+      <p>The supplier gets an ID such as SUP-0001.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/05-supplier-save.jpg" alt="The Save and Cancel buttons, Save marked 5" width="1100" height="498" loading="lazy"></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>See supplier groups</h2>
+  <p class="g-sub">When you keep an approved list for a client.</p>
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Groups</b></h3>
+      <p>On the <b>Suppliers</b> page. The tabs are <b>All</b>, <b>Vendors</b>, <b>Subcontractors</b>, <b>Both</b> and <b>Groups</b>.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/10-groups-tab.jpg" alt="The Groups tab marked 1 on the Suppliers page" width="1100" height="315" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>+ New group</b></h3>
+      <p>Each group has a name, a client and its members. The list shows how many members each group has.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/11-new-group.jpg" alt="The Groups list with + New group marked 2" width="1100" height="315" loading="lazy"></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-3">
+  <h2>Order stock from a supplier</h2>
+  <p class="g-sub">When you need parts from a vendor.</p>
+  <article class="gstep" id="f3s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>+ New Purchase Order</b></h3>
+      <p>On the <b>Purchase Orders</b> page, top right.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/20-new-po.jpg" alt="The Purchase Orders page with + New Purchase Order marked 1" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Choose the <b>Supplier</b></h3>
+      <p>Required. <b>Order date</b> is today's date. <b>Linked quote</b> and <b>Linked case</b> are optional.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/21-po-supplier.jpg" alt="The Supplier list on the New Purchase Order form, marked 2" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Set the <b>Expected delivery date</b></h3>
+      <p>When the order should arrive. <b>Notes</b> and <b>Terms</b> are below it.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/22-po-delivery.jpg" alt="The Expected delivery date field marked 3" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>+ Add line</b></h3>
+      <p>A first line is already there. Use the button for each further item.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/23-po-add-line.jpg" alt="The Line items card with + Add line marked 4" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Pick the item <b>From inventory</b></h3>
+      <p>The description, unit, quantity and rate fill in from the inventory item. Change the <b>Qty</b> as needed. Choose <b>— Free-text line —</b> for something that is not in inventory.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/24-po-inventory.jpg" alt="The From inventory list with Ball bearing 6308ZZ chosen, marked 5" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Save</b></h3>
+      <p>The order total is shown above the buttons.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/25-po-save.jpg" alt="The order total and the Save button, marked 6" width="1100" height="412" loading="lazy"></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-4">
+  <h2>Receive stock against an order</h2>
+  <p class="g-sub">When the goods arrive.</p>
+  <article class="gstep" id="f4s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Receive stock</b></h3>
+      <p>On the page of an order that is <b>Sent</b> or <b>Partially received</b>. It opens the <b>Lines</b> tab.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/30-receive-button.jpg" alt="A Sent purchase order with Receive stock marked 1" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f4s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Type the quantity received</h3>
+      <p>One box per line, with the number still remaining. Type what actually arrived.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/31-receive-qty.jpg" alt="The received quantity for the first line, marked 2" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f4s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Add a <b>Note</b></h3>
+      <p>Optional, for example a delivery reference.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/32-receive-note.jpg" alt="The Note field marked 3" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f4s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Record receipt</b></h3>
+      <p>The <b>Received</b> column of the <b>Line items</b> table updates and the stock goes onto the inventory item.</p>
+    </div>
+    <figure><img src="assets/guides/purchasing/33-record-receipt.jpg" alt="The Record receipt button and the Line items table, marked 4" width="1100" height="412" loading="lazy"></figure>
+  </article>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>

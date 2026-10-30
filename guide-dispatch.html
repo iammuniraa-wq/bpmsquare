@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dispatch — step by step — BPMSquare</title>
+<meta name="description" content="See which technician is booked on which work order, and book a technician for a job." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Service</div>
+    <h1>Dispatch, step by step</h1>
+    <p>Dispatch is the schedule of every active work order: who it is with, when it is booked and what the job is. You book a technician when you raise the work order.</p>
+    <div class="g-chips"><a href="#flow-1">Read the dispatch list</a><a href="#flow-2">Book a technician for a job</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Read the dispatch list</h2>
+  <p class="g-sub">When you need to know who is where today and next week.</p>
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Check the two counts</h3>
+      <p><b>Scheduled</b> and <b>In progress</b> at the top count the active work orders.</p>
+    </div>
+    <figure><img src="assets/guides/dispatch/01-counts.jpg" alt="The Scheduled and In progress counts on the Dispatch page, marked 1" width="1100" height="315" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read a row</h3>
+      <p>Each row has the work order reference, the account, the technician, the status, the scheduled date and time, the case and the scope of work.</p>
+    </div>
+    <figure><img src="assets/guides/dispatch/02-row.jpg" alt="One row of the Dispatch table, marked 2" width="1100" height="315" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click the work order reference</h3>
+      <p>The blue reference opens the work order page.</p>
+    </div>
+    <figure><img src="assets/guides/dispatch/03-ref.jpg" alt="A work order reference in the Ref column, marked 3" width="1100" height="315" loading="lazy"></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Book a technician for a job</h2>
+  <p class="g-sub">The technician and the date are set when the work order is raised, from the case.</p>
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Create work order</b> on the case</h3>
+      <p>In the <b>Work orders</b> card of the case page.</p>
+    </div>
+    <figure><img src="assets/guides/dispatch/20-01-create-from-case.jpg" alt="The Work orders card on a case with Create work order marked 1" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Choose the <b>Scheduled date</b></h3>
+      <p>The date the job is booked for.</p>
+    </div>
+    <figure><img src="assets/guides/dispatch/20-02-date.jpg" alt="The Scheduled date field in the Create work order panel, marked 2" width="729" height="432" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Choose the <b>Technician</b></h3>
+      <p>Pick who does the job.</p>
+    </div>
+    <figure><img src="assets/guides/dispatch/20-03-technician.jpg" alt="The Technician list in the panel, marked 3" width="729" height="432" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Create work order</b></h3>
+      <p>Active work orders are listed on the Dispatch page.</p>
+    </div>
+    <figure><img src="assets/guides/dispatch/20-04-create.jpg" alt="The Create work order button, marked 4" width="729" height="418" loading="lazy"></figure>
+  </article>
+  <p class="g-sub">More on the work order itself in <a href="guide-work-orders.html">Work orders</a>. To see who is free, see <a href="guide-technicians.html">Technicians</a>.</p>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>

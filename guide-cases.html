@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cases — step by step — BPMSquare</title>
+<meta name="description" content="Log a repair case, find it again and follow it from intake to close in BPMSquare." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Service</div>
+    <h1>Cases, step by step</h1>
+    <p>A case is one repair job for one customer and one piece of equipment. Log it, find it, and follow it through six stages from intake to close.</p>
+    <div class="g-chips"><a href="#flow-1">Log a new case</a><a href="#flow-2">Find a case</a><a href="#flow-3">Follow a case to the end</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Log a new case</h2>
+  <p class="g-sub">When a customer reports equipment that needs repair.</p>
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>+ New Case</b></h3>
+      <p>On the <b>Cases</b> page, top right. The <b>New Case</b> form opens.</p>
+    </div>
+    <figure><img src="assets/guides/cases/01-new-case-button.jpg" alt="The Cases page with the + New Case button marked 1" width="1026" height="567" loading="lazy"><figcaption>The button is top right.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Choose the <b>Account</b></h3>
+      <p>Pick the customer from the <b>Account</b> list. It is required.</p>
+    </div>
+    <figure><img src="assets/guides/cases/02-account.jpg" alt="The Account list on the New Case form, marked 2" width="1100" height="498" loading="lazy"><figcaption>Required field.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Choose the <b>Case type</b></h3>
+      <p>The list offers <b>Adhoc</b>, <b>Direct</b> and <b>AMC (contract)</b>.</p>
+    </div>
+    <figure><img src="assets/guides/cases/03-case-type.jpg" alt="The Case type list on the New Case form, marked 3" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Type the <b>Equipment label</b></h3>
+      <p>Brand, kW, type and serial number, for example Crompton 75 kW 3-Ph IM · CG-75-2291.</p>
+    </div>
+    <figure><img src="assets/guides/cases/04-equipment.jpg" alt="The Equipment label field filled in, marked 4" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Type the <b>Complaint</b></h3>
+      <p>Write what the customer reported. <b>Symptom</b>, just below, is optional.</p>
+    </div>
+    <figure><img src="assets/guides/cases/05-complaint.jpg" alt="The Complaint box filled in, marked 5" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Tick the customer's equipment</h3>
+      <p>Under <b>Optional</b>, <b>Assets (customer equipment)</b> lists the equipment of the account you chose. Tick the one that applies. It links the case to that asset's history.</p>
+    </div>
+    <figure><img src="assets/guides/cases/06-assets.jpg" alt="The Assets (customer equipment) list with one asset, marked 6" width="1100" height="498" loading="lazy"><figcaption>The list shows Select account first until an account is chosen.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Pick a technician</h3>
+      <p><b>Assign technician</b> is optional. Choose a person, or leave <b>— unassigned —</b>.</p>
+    </div>
+    <figure><img src="assets/guides/cases/07-technician.jpg" alt="The Assign technician list set to Ramesh Kumar, marked 7" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Click <b>Save</b></h3>
+      <p><b>Save</b> creates the case. <b>Cancel</b>, next to it, leaves without saving.</p>
+    </div>
+    <figure><img src="assets/guides/cases/08-save.jpg" alt="The Save and Cancel buttons at the bottom of the form, Save marked 8" width="1100" height="498" loading="lazy"></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Find a case</h2>
+  <p class="g-sub">When you need one case among many, or a group of them.</p>
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click a stage tab</h3>
+      <p><b>Open</b>, <b>In repair</b>, <b>Awaiting</b>, <b>Closed</b> and <b>All</b> each show one group. The number in brackets is how many cases it holds.</p>
+    </div>
+    <figure><img src="assets/guides/cases/10-status-tab.jpg" alt="The In repair tab marked 1 above the cases list" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Search the list</h3>
+      <p>Type a case reference, equipment or account name in the search box, then click <b>Filter</b>.</p>
+    </div>
+    <figure><img src="assets/guides/cases/11-search.jpg" alt="The search box marked 2" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Use <b>Advanced filters</b> when that is not enough</h3>
+      <p>Click <b>Advanced filters</b> under the search box to filter on more fields.</p>
+    </div>
+    <figure><img src="assets/guides/cases/12-advanced-filters.jpg" alt="The Advanced filters button marked 3" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>List</b></h3>
+      <p><b>Field</b>, <b>Lanes</b> and <b>List</b> change how the cases are drawn. <b>List</b> shows one row per case with its age, stage and technician.</p>
+    </div>
+    <figure><img src="assets/guides/cases/13-list-view.jpg" alt="The Field, Lanes and List switch with List marked 4" width="1100" height="498" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click the case you want</h3>
+      <p>Each row shows the account, the case reference, the age, the stage and the technician. Click the case to open its page.</p>
+    </div>
+    <figure><img src="assets/guides/cases/14-open-row.jpg" alt="A case row in the list, marked 5" width="1100" height="314" loading="lazy"></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-3">
+  <h2>Follow a case to the end</h2>
+  <p class="g-sub">Every case page has the same layout, from intake to close.</p>
+  <article class="gstep" id="f3s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Read the stage bar</h3>
+      <p>The six stages are <b>Intake</b>, <b>Inspection</b>, <b>Report</b>, <b>Quote</b>, <b>Repair</b> and <b>Close</b>. A green tick is done. The blue number is where the case is now.</p>
+    </div>
+    <figure><img src="assets/guides/cases/20-stage-bar.jpg" alt="The six-stage bar on a case page, marked 1" width="1100" height="412" loading="lazy"><figcaption>This case is at Inspection.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Open <b>Intake reference</b></h3>
+      <p>Click the <b>Intake reference</b> bar to open the notes and photos taken when the equipment arrived.</p>
+    </div>
+    <figure><img src="assets/guides/cases/21-intake-reference.jpg" alt="The Intake reference bar opened, showing intake photos, marked 2" width="1100" height="412" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click the <b>Related</b> tab</h3>
+      <p><b>Request quotation</b> asks your suppliers for a price. Their replies come back into this case.</p>
+    </div>
+    <figure><img src="assets/guides/cases/22-related-tab.jpg" alt="The Related tab marked 3" width="1100" height="412" loading="lazy"></figure><figure><img src="assets/guides/cases/23-related-content.jpg" alt="The Supplier quotations panel with two Request quotation buttons" width="1100" height="285" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click the <b>Activity</b> tab</h3>
+      <p>Write a comment, use @ to mention a teammate, and press Ctrl+Enter to post. Comments and every change appear in one stream.</p>
+    </div>
+    <figure><img src="assets/guides/cases/24-activity-tab.jpg" alt="The Activity tab marked 4" width="1100" height="412" loading="lazy"></figure><figure><img src="assets/guides/cases/25-activity-content.jpg" alt="The Timeline box with the Comment button" width="1100" height="250" loading="lazy"></figure>
+  </article>
+  <p class="g-sub">To raise the repair job for a case, see <a href="guide-work-orders.html">Work orders</a>. To write up what the technician found, see <a href="guide-inspection-reports.html">Inspection reports</a>.</p>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>
