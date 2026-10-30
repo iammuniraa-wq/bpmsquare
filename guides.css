@@ -27,3 +27,15 @@
 .g-card .g-n{font-size:12px;color:var(--mute,#8a95a6);margin-top:8px}
 .g-group{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute,#8a95a6);margin:26px 0 0}
 @media (max-width:820px){.gstep{grid-template-columns:1fr}.gstep figure{order:2}}
+
+.g-xref{background:var(--bg,#f3f6fb);border:1px solid var(--border,#d9e0ea);border-radius:10px;padding:12px 16px;margin:0 0 24px;font-size:14px;color:var(--text2,#566377)}
+.g-xref a{color:var(--navy,#0C1B33);font-weight:600;text-decoration:underline}
+.g-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:0 0 10px}
+.g-tile{display:block;border:1px solid var(--border,#d9e0ea);border-radius:14px;padding:22px;background:#fff;text-decoration:none;color:inherit}
+.g-tile:hover{box-shadow:0 12px 30px rgba(12,27,51,.12)}
+.g-tile .k{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange,#F47C20);font-weight:700;margin-bottom:6px}
+.g-tile h3{margin:0 0 8px;font-size:20px}
+.g-tile p{margin:0 0 12px;color:var(--text2,#566377);font-size:14.5px}
+.g-tile .go{font-weight:700;color:var(--navy,#0C1B33)}
+.sg-guides{margin:12px 0 0;font-size:13.5px;color:var(--text2,#566377)}
+.sg-guides a{color:var(--navy,#0C1B33);font-weight:600;text-decoration:underline}

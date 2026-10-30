@@ -304,3 +304,68 @@ footer small{color:var(--mute);font-size:12.5px}
   .docs-main .tbl{display:block;overflow-x:auto}
   .docs-main .tbl td:first-child code,.docs-main .tbl td code{white-space:normal}
 }
+
+/* NAV v2: two menus (Solutions, Docs), burger on small screens */
+nav.links{align-items:center}
+.nav-toggle{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.nav-burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;margin-left:auto}
+.nav-burger span,.nav-burger span::before,.nav-burger span::after{display:block;width:22px;height:2px;background:var(--navy);content:"";position:relative}
+.nav-burger span::before{position:absolute;top:-7px}
+.nav-burger span::after{position:absolute;top:7px}
+.dd{position:relative;height:68px;display:flex;align-items:center}
+.dd-t{color:var(--text2);font-size:14px;font-weight:500;padding:4px 0;cursor:pointer;border-bottom:2px solid transparent;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.dd-t::after{content:"";width:6px;height:6px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-top:-3px}
+.dd-t.on,.dd:hover .dd-t,.dd:focus-within .dd-t{color:var(--navy);border-bottom-color:var(--orange)}
+.dd-menu{display:none;position:absolute;top:100%;left:-14px;min-width:260px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 16px 36px rgba(12,27,51,.14);padding:8px;z-index:70}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{display:block}
+nav.links .dd-menu a{display:block;padding:9px 12px;border-radius:8px;border-bottom:0;font-size:14px;color:var(--text2)}
+nav.links .dd-menu a:hover{background:var(--bg);color:var(--navy)}
+nav.links .dd-menu a small{display:block;font-size:12px;font-weight:400;color:var(--mute)}
+nav.links .dd-menu hr{border:0;border-top:1px solid var(--border);margin:6px 4px}
+.nav-login-m{display:none}
+@media(max-width:920px){
+  header .wrap{height:68px;flex-wrap:nowrap;padding-top:0;padding-bottom:0;gap:8px}
+  .nav-burger{display:flex}
+  .nav-cta{display:none}
+  nav.links{display:none;position:absolute;top:68px;left:0;right:0;order:0;width:auto;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 14px 24px rgba(12,27,51,.08);flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px 20px 16px;max-height:calc(100vh - 68px);overflow-y:auto}
+  .nav-toggle:checked ~ nav.links{display:flex}
+  nav.links a{font-size:15px}
+  .dd{height:auto;display:block;padding:6px 0}
+  .dd-t{font-weight:700;color:var(--navy);pointer-events:none;border-bottom:0}
+  .dd-t::after{display:none}
+  .dd-menu{display:block;position:static;border:0;box-shadow:none;padding:2px 0 4px 12px;min-width:0}
+  nav.links > a.gcc{padding:10px 0}
+  .nav-login-m{display:block;padding:10px 0;font-weight:600}
+}
+
+/* NAV v2: two menus (Solutions, Docs), burger on small screens */
+.nav-toggle{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.nav-burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;margin-left:auto}
+.nav-burger span,.nav-burger span::before,.nav-burger span::after{display:block;width:22px;height:2px;background:var(--navy);content:"";position:relative}
+.nav-burger span::before{position:absolute;top:-7px}
+.nav-burger span::after{position:absolute;top:7px}
+.dd{position:relative;height:68px;display:flex;align-items:center}
+.dd-t{color:var(--text2);font-size:14px;font-weight:500;padding:4px 0;cursor:pointer;border-bottom:2px solid transparent;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.dd-t::after{content:"";width:6px;height:6px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-top:-3px}
+.dd-t.on,.dd:hover .dd-t,.dd:focus-within .dd-t{color:var(--navy);border-bottom-color:var(--orange)}
+.dd-menu{display:none;position:absolute;top:100%;left:-14px;min-width:260px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 16px 36px rgba(12,27,51,.14);padding:8px;z-index:70}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{display:block}
+nav.links .dd-menu a{display:block;padding:9px 12px;border-radius:8px;border-bottom:0;font-size:14px;color:var(--text2)}
+nav.links .dd-menu a:hover{background:var(--bg);color:var(--navy)}
+nav.links .dd-menu a small{display:block;font-size:12px;font-weight:400;color:var(--mute)}
+nav.links .dd-menu hr{border:0;border-top:1px solid var(--border);margin:6px 4px}
+.nav-login-m{display:none}
+@media(max-width:920px){
+  header .wrap{height:68px;flex-wrap:nowrap;padding-top:0;padding-bottom:0;gap:8px}
+  .nav-burger{display:flex}
+  .nav-cta{display:none}
+  nav.links{display:none;position:absolute;top:68px;left:0;right:0;order:0;width:auto;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 14px 24px rgba(12,27,51,.08);flex-direction:column;gap:0;padding:8px 20px 16px;max-height:calc(100vh - 68px);overflow-y:auto}
+  .nav-toggle:checked ~ nav.links{display:flex}
+  nav.links a{font-size:15px}
+  .dd{height:auto;display:block;padding:6px 0}
+  .dd-t{font-weight:700;color:var(--navy);pointer-events:none;border-bottom:0}
+  .dd-t::after{display:none}
+  .dd-menu{display:block;position:static;border:0;box-shadow:none;padding:2px 0 4px 12px;min-width:0}
+  nav.links > a.gcc{padding:10px 0}
+  .nav-login-m{display:block;padding:10px 0;font-weight:600}
+}

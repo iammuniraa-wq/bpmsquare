@@ -24,14 +24,29 @@
 <header>
   <div class="wrap">
     <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open the menu"><span></span></label>
     <nav class="links">
-      <a href="service-operations.html">Service operations</a>
-      <a href="workforce.html">Workforce &amp; project costing</a>
-      <a href="tenders.html">Tenders &amp; projects</a>
-      <a href="platform.html">Platform</a>
-      <a class="on" href="guides.html">Guides</a>
-      <a href="api.html">API</a>
+      <div class="dd"><span class="dd-t" tabindex="0">Solutions</span>
+        <div class="dd-menu">
+          <a href="service-operations.html">Service operations<small>Cases, work orders, dispatch, assets</small></a>
+          <a href="workforce.html">Workforce &amp; project costing<small>Attendance, roster, leave, project hours</small></a>
+          <a href="tenders.html">Tenders &amp; projects<small>BOQ, bids, contract projects, buy-out</small></a>
+          <a href="platform.html">Platform<small>Dashboard, data, integrations, AI</small></a>
+        </div>
+      </div>
+      <div class="dd"><a class="dd-t on" href="guides.html">Docs</a>
+        <div class="dd-menu">
+          <a href="guides.html">Documentation<small>All guides in one place</small></a>
+          <a href="guides.html#guides">Step-by-step guides<small>One task at a time, with close-ups</small></a>
+          <a href="solution-guide.html">Solution Guide<small>Set it up, then use it (PDF)</small></a>
+          <a href="solution-guide.html#integration">Integration Guide<small>Connect other systems (PDF)</small></a>
+          <hr>
+          <a href="api.html">API reference<small>REST, webhooks, MCP</small></a>
+        </div>
+      </div>
       <a class="gcc" href="gcc.html">Built for the GCC</a>
+      <a class="nav-login-m" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a>
     </nav>
     <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
   </div>
@@ -47,6 +62,7 @@
 </div>
 
 <main class="g-body"><div class="wrap">
+<p class="g-xref">Want the full chapter? <a href="assets/solution-guide/06-platform-and-master-data.pdf">Solution Guide, chapter 6: Platform and master data (PDF)</a> · <a href="solution-guide.html">All documentation</a></p>
 
 <section class="g-flow" id="flow-1">
   <h2>Add an account</h2>
@@ -264,9 +280,9 @@
       <a href="workforce.html">Workforce &amp; project costing</a>
       <a href="tenders.html">Tenders &amp; projects</a>
       <a href="platform.html">Platform</a>
-      <a href="guides.html">Guides</a>
-      <a href="api.html">API</a>
+      <a href="guides.html">Documentation</a>
       <a href="solution-guide.html">Solution guide</a>
+      <a href="api.html">API</a>
       <a href="gcc.html">GCC</a>
       <a href="mailto:sna2care@gmail.com">Contact</a>
     </div>
