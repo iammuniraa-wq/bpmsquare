@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sales orders, step by step â€” BPMSquare</title>
+<meta name="description" content="Create a sales order, follow it through to delivery and invoice, send it, and see its ERP number." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Sales</div>
+    <h1>Sales orders, step by step</h1>
+    <p>A sales order records what a customer has bought. Create it, check stock and dates, send the PDF, and send it to your ERP. The order shows its progress from Draft to Paid and the number your ERP gave it.</p>
+    <div class="g-chips"><a href="#flow-1">Create a sales order</a><a href="#flow-2">Open an order and follow it</a><a href="#flow-3">Send an order and see its ERP number</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Create a sales order</h2>
+  <p class="g-sub">Use this when a customer has placed an order and you need to record it.</p>
+
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>+ New Sales Order</b></h3>
+      <p>The button is at the top right of <b>Sales Orders</b>. The row of buttons above the table filters the list by status and by where the order came from.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-01-new.jpg" alt="The Sales Orders page with the + New Sales Order button marked" width="1026" height="378" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Type the customer in <b>Customer</b></h3>
+      <p>Type the first letters of the name. Matching customers appear below the field. Click one. A <b>Change</b> link replaces the field after you pick.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-02-customer.jpg" alt="The Customer field with a matching customer listed" width="1026" height="499" loading="lazy"><figcaption>The field is required. The <b>i</b> next to the label explains it.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Choose the <b>Contact</b></h3>
+      <p>Pick the person at the customer who placed the order. The list shows the customer's contacts.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-03-contact.jpg" alt="The Contact field filled in" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Check the <b>Order type</b></h3>
+      <p>Leave <b>Automatic</b> to let your rules choose. Point at the <b>i</b> to read what a type does: it sets the numbering, the PDF layout and how lines are priced.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-04-type.jpg" alt="The Order type field with its information text open" width="1026" height="378" loading="lazy"><figcaption>This workspace has one type, <b>Standard order</b>.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Type the <b>Customer PO</b></h3>
+      <p>Enter the customer's own purchase order number. It stays with the order and is searchable in the list.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-05-po.jpg" alt="The Customer PO field filled in" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Set the <b>Requested date</b></h3>
+      <p>Pick the day the customer wants the goods. Each line also has its own <b>Wanted by</b> date.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-06-date.jpg" alt="The Requested date field" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Search the catalog</h3>
+      <p>Type a product name or code in <b>Search the catalog to add a line</b> and click the product. <b>+ Add line</b> next to it adds an empty line you type into.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-07-catalog.jpg" alt="The catalog search field above the order lines" width="1100" height="384" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Fill in the line</h3>
+      <p>Each line has <b>QTY</b>, <b>UNIT</b>, <b>UNIT PRICE</b>, <b>DISC. %</b> and <b>TAX %</b>. The line total and the order <b>Subtotal</b>, <b>Tax</b> and <b>Total</b> update as you type.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-08-line.jpg" alt="The quantity, unit, price, discount and tax fields of a line" width="1100" height="384" loading="lazy"><figcaption><b>+ Printed text</b> adds a line of text that prints on the order but has no price.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Open <b>More</b></h3>
+      <p>This opens <b>Ship to</b>, <b>Ship-to address</b> and <b>Notes</b>. Ship to is filled in from the customer, so change it only if the goods go elsewhere.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-09-more.jpg" alt="The More section marked, closed" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s10">
+    <div>
+      <div class="gnum">10</div>
+      <h3>Click <b>Create order</b></h3>
+      <p>The bar at the bottom says <b>Unsaved changes</b> until you save. <b>Create order</b> saves the order and gives it a number such as <b>SO-0002</b>. <b>Cancel</b> leaves without saving.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f1-10-create.jpg" alt="The Create order button in the bottom bar" width="1100" height="311" loading="lazy"><figcaption>This guide did not save the example.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Open an order and follow it</h2>
+  <p class="g-sub">Use this to see where an order stands and what is left to do.</p>
+
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Confirmed (4)</b></h3>
+      <p>The buttons above the list filter by status: <b>Draft</b>, <b>Confirmed</b> and <b>Cancelled</b>. <b>BPMSquare</b> and <b>ERP</b> separate orders made here from orders that came from the ERP.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f2-01-chip.jpg" alt="The status filter buttons with Confirmed marked" width="1026" height="364" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Open →</b></h3>
+      <p>Each row shows the order, customer, <b>ERP NO.</b>, total, expected delivery and status. Click <b>Open →</b> at the end of a row.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f2-02-open.jpg" alt="A sales order row with Open marked" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Read the progress bar</h3>
+      <p>The bar across the top goes <b>Draft</b>, <b>Confirmed</b>, <b>Delivered</b>, <b>Invoiced</b>, <b>Paid</b>. <b>Delivered</b>, <b>Invoiced</b> and <b>Paid</b> fill in when your ERP reports them.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f2-03-progress.jpg" alt="The progress bar above an order with Confirmed current" width="1100" height="148" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click the <b>Lines</b> tab</h3>
+      <p>It lists each item with quantity, unit price, discount and line total. The number in the tab is the count of lines.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f2-04-lines.jpg" alt="The Lines tab of an order" width="1026" height="578" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click the <b>Availability</b> tab</h3>
+      <p>For each line it shows what was asked, what is confirmed and the result, for example "14 days late" or "Short by 80". <b>Refresh</b> checks again.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f2-05-availability.jpg" alt="The Availability tab with the asked and confirmed columns" width="1026" height="578" loading="lazy"><figcaption>On the Overview tab a yellow bar warns when a line is short or late.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Documents and files</b></h3>
+      <p><b>Document flow</b> shows the sales order, then its <b>Delivery</b> and <b>Invoice</b> as they appear. <b>Upload file</b> and <b>Add link</b> keep the customer's PO or a drawing with the order.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f2-06-documents.jpg" alt="The Document flow strip on the Documents and files tab" width="1026" height="472" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Read the pricing line</h3>
+      <p>The line under the customer name says where the prices came from. It reads <b>Internal pricing</b> when the pricing engine and price lists set them. An order made from a standard quote adds its number, for example "as quote SQ-2026-0017".</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f2-07-pricing.jpg" alt="The pricing line under the customer name" width="1026" height="364" loading="lazy"><figcaption>This guide only saw orders with internal pricing.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Click <b>Confirm order</b></h3>
+      <p>A Draft order has this button at the top right. Confirming moves the order to <b>Confirmed</b>. The <b>...</b> menu has <b>Edit details</b>, <b>Cancel order</b> and <b>Delete</b>.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f2-08-confirm.jpg" alt="The Confirm order button on a draft order" width="1026" height="364" loading="lazy"><figcaption>This guide did not confirm the example.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-3">
+  <h2>Send an order and see its ERP number</h2>
+  <p class="g-sub">Use this to give the customer a copy and to pass the order to your ERP.</p>
+
+  <article class="gstep" id="f3s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>PDF</b></h3>
+      <p>The row of buttons at the top right sends or shows the order. <b>PDF</b> makes the order document.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f3-01-pdf.jpg" alt="The PDF button at the top right of an order" width="1026" height="364" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Email</b></h3>
+      <p>Use it to email the order to the customer.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f3-02-email.jpg" alt="The Email button marked" width="1026" height="364" loading="lazy"><figcaption>This guide did not click it.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>WhatsApp</b></h3>
+      <p>Use it to send the order on WhatsApp. It is greyed out on some orders; the <b>i</b> next to it explains why.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f3-03-whatsapp.jpg" alt="The WhatsApp button marked" width="1026" height="364" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click the <b>ERP</b> tab</h3>
+      <p>This tab holds everything about the order in your ERP: the ERP number, checks, invoices, deliveries and a log of every transfer.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f3-04-erp-tab.jpg" alt="The ERP tab of an order" width="1026" height="472" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Send to ERP</b></h3>
+      <p><b>Check with ERP</b> beside it tests credit, price and stock first. <b>Send to ERP</b> sends the order. On this order it is greyed out because the customer is not in the ERP yet; the page says to sync customers from the ERP first.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f3-05-send-erp.jpg" alt="The Check with ERP and Send to ERP buttons" width="1026" height="499" loading="lazy"><figcaption>Set the connection up under Settings, Integration middleware. This guide did not send.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Read the ERP line</h3>
+      <p>After the order is in the ERP, one line shows the ERP name, the ERP number and <b>Open in Dynamics</b>. <b>ERP NUMBER</b> and <b>ERP STATUS</b> are below it, with <b>Refresh</b> to read the status again.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f3-06-erp-line.jpg" alt="The ERP name and number line on an order that is in the ERP" width="1026" height="472" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Read the <b>Transfer log</b></h3>
+      <p>Every send is listed with the time, who sent it and the result: <b>Already sent</b>, <b>Failed</b> with the reason, or the ERP number.</p>
+    </div>
+    <figure><img src="assets/guides/sales-orders/f3-07-log.jpg" alt="The Transfer log table at the bottom of the ERP tab" width="1100" height="444" loading="lazy"></figure>
+  </article>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>
