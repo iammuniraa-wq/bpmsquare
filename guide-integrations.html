@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Integrations and API — step by step — BPMSquare</title>
+<meta name="description" content="Find your API key and the API reference, send data out with webhooks, and see how your ERP is connected." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Settings</div>
+    <h1>Integrations and API, step by step</h1>
+    <p>Everything that connects BPMSquare to other systems sits under INTEGRATIONS in Settings: API keys, webhooks and the Integration middleware for your ERP. Only an administrator sees most of these screens. This guide never shows a key.</p>
+    <div class="g-chips"><a href="#flow-1">API keys and reference</a><a href="#flow-2">Webhooks</a><a href="#flow-3">ERP connection</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Find your API keys and the API reference</h2>
+  <p class="g-sub">Do this when a developer or another system needs to read your data through the API.</p>
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>API keys &amp; developer</b></h3>
+      <p>Open <b>Settings</b>. Under <b>INTEGRATIONS</b>, click <b>API keys &amp; developer</b>.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/01-menu.jpg" alt="The API keys and developer entry marked in the Settings menu" width="945" height="540" loading="lazy"><figcaption>Settings, then Integrations.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Know where your <b>API Key</b> is</h3>
+      <p>The top box holds your workspace <b>API Key</b>. <b>Copy key</b> copies it so you can paste it where it is needed. Treat it like a password; the key is hidden in this guide.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/02-copy-key.jpg" alt="The Copy key button marked next to the hidden API key" width="945" height="540" loading="lazy"><figcaption>Copy it, never post it.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Know what <b>Regenerate</b> does</h3>
+      <p><b>Regenerate</b> makes a new key. Systems that use the old key stop working until you give them the new one.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/03-regenerate.jpg" alt="The Regenerate button marked next to the API key" width="945" height="540" loading="lazy"><figcaption>A new key.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>+ New key</b></h3>
+      <p><b>Scoped API keys</b> are keys limited to chosen kinds of records, so a system sees only what it needs. Click <b>+ New key</b> to make one. The “i” icon explains scopes.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/04-new-key.jpg" alt="The New key button marked under Scoped API keys" width="945" height="540" loading="lazy"><figcaption>Keys with limited access.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Use the <b>API reference</b></h3>
+      <p><b>API reference</b> shows the address of the machine-readable description of the API. <b>Copy address</b> copies it. <b>Webhooks</b> next to it opens the webhooks list.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/05-api-reference.jpg" alt="The Copy address button marked next to the API reference address" width="945" height="540" loading="lazy"><figcaption>The reference.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Set up a webhook</h2>
+  <p class="g-sub">Do this to have BPMSquare call another system when something happens, or when someone presses a button on a record.</p>
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Webhooks</b></h3>
+      <p>Under <b>INTEGRATIONS</b>, click <b>Webhooks</b>. All webhooks are in one list.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/06-menu.jpg" alt="The Webhooks entry marked in the Settings menu" width="945" height="540" loading="lazy"><figcaption>Settings, then Webhooks.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the list</h3>
+      <p>Each row shows the <b>Kind</b> (<b>Call</b> or <b>Event</b>), the webhook and its address, its <b>State</b>, the <b>Last call</b> and <b>Used by</b>.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/07-list.jpg" alt="The webhooks table marked" width="945" height="540" loading="lazy"><figcaption>One list for all.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Check a row</h3>
+      <p>The name and the method and host sit under <b>Webhook</b>. Click a row to open and change it.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/08-row.jpg" alt="A webhook row marked in the list" width="945" height="540" loading="lazy"><figcaption>A webhook.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>+ New webhook</b></h3>
+      <p>Click <b>+ New webhook</b> at the top right. A panel opens with two tabs, <b>Basics</b> and <b>Request</b>.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/09-new-webhook.jpg" alt="The New webhook button marked" width="945" height="540" loading="lazy"><figcaption>Add one.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Type a <b>Name</b></h3>
+      <p>Give the webhook a name your team will recognise.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/10-name.jpg" alt="The Name field of the New webhook panel marked" width="945" height="540" loading="lazy"><figcaption>Name it.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Choose the <b>Kind</b></h3>
+      <p><b>Call</b> fires when something is awarded, a record button is pressed or a route runs. <b>Event</b> sends the change feed. The “i” icon explains each.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/11-kind.jpg" alt="The Call and Event choice marked" width="945" height="540" loading="lazy"><figcaption>Call or Event.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Choose what it <b>Sends</b></h3>
+      <p>Choose the kind of record the webhook sends, for example <b>Accounts</b>. For a <b>Call</b> you can tick <b>Button on Accounts</b> to add a button to that record.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/12-sends.jpg" alt="The Sends list marked" width="945" height="540" loading="lazy"><figcaption>What to send.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Open the <b>Request</b> tab</h3>
+      <p>The <b>Request</b> tab holds the address to call and how the call is made.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/13-request-tab.jpg" alt="The Request tab marked at the top of the panel" width="945" height="540" loading="lazy"><figcaption>The address.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Click <b>Create</b></h3>
+      <p><b>Create</b> saves the webhook. The <b>On</b> switch above it decides whether it is live straight away.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/14-create.jpg" alt="The Create button marked at the bottom of the panel" width="945" height="540" loading="lazy"><figcaption>Save.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-3">
+  <h2>See how your ERP is connected</h2>
+  <p class="g-sub">Do this to check which ERP is connected and which records flow between the two systems. This is the Integration middleware; the Connectors entry in the menu opens the same page.</p>
+  <article class="gstep" id="f3s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Choose a connector</h3>
+      <p>The chips at the top are your connectors, here <b>Dynamics 365</b> and <b>SAP S/4HANA</b>. A green dot means connected. Click a chip to work on that connector.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/15-connector-chip.jpg" alt="The Dynamics 365 connector chip marked" width="945" height="540" loading="lazy"><figcaption>Pick the ERP.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>+ Add connector</b></h3>
+      <p><b>+ Add connector</b> adds another system. The “i” icon next to it explains what you can connect.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/16-add-connector.jpg" alt="The Add connector chip marked" width="945" height="540" loading="lazy"><figcaption>Connect another system.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Read the setup line</h3>
+      <p>A line such as <b>Set up 4 of 5 · Next: open Links and save once</b> shows how far the setup is and what to do next.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/17-setup-progress.jpg" alt="The setup progress line marked below the connector chips" width="945" height="540" loading="lazy"><figcaption>Your next step.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Open <b>Links</b></h3>
+      <p><b>Links</b> lists each record type with its direction (an arrow to the ERP or from it), when it runs and an <b>On</b> switch.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/18-links.jpg" alt="The Links tab marked" width="945" height="540" loading="lazy"><figcaption>Which records flow.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Open <b>Mapping</b></h3>
+      <p><b>Mapping</b> is where you match fields between BPMSquare and the ERP.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/19-mapping.jpg" alt="The Mapping tab marked" width="945" height="540" loading="lazy"><figcaption>Match fields.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Open <b>Monitor</b></h3>
+      <p><b>Monitor</b> shows the messages that went between the systems and whether they succeeded.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/20-monitor.jpg" alt="The Monitor tab marked" width="945" height="540" loading="lazy"><figcaption>Watch the messages.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Open <b>Resync</b></h3>
+      <p><b>Resync</b> sends records again when something needs to be repeated.</p>
+    </div>
+    <figure><img src="assets/guides/integrations/21-resync.jpg" alt="The Resync tab marked" width="945" height="540" loading="lazy"><figcaption>Send again.</figcaption></figure>
+  </article>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>

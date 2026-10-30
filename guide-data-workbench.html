@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Data Workbench — step by step — BPMSquare</title>
+<meta name="description" content="Import records from Excel or CSV with a review before anything is saved, export records to CSV, and update existing records in bulk." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Data Workbench</div>
+    <h1>Data Workbench, step by step</h1>
+    <p>Data Workbench moves records in and out in bulk. Import checks every row and shows what will and will not go in before anything is saved. Export gives you a CSV. Update changes records you exported earlier.</p>
+    <div class="g-chips"><a href="#flow-1">Import records</a><a href="#flow-2">Export records</a><a href="#flow-3">Update records</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Import records from Excel or CSV</h2>
+  <p class="g-sub">Do this to load many records at once, for example a customer list. The screens below use Accounts.</p>
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click the <b>Import</b> tab</h3>
+      <p>Open <b>Data Workbench</b> from the sidebar. The three tabs are <b>Import</b>, <b>Export</b> and <b>Update</b>.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/01-import-tab.jpg" alt="The Import tab marked at the top of Data Workbench" width="945" height="540" loading="lazy"><figcaption>Import, Export, Update.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click what to import</h3>
+      <p>The list under <b>WHAT TO IMPORT</b> shows each kind of record and how many fields it has. Click <b>Accounts</b>.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/02-pick-accounts.jpg" alt="The Accounts entry marked in the what to import list" width="945" height="540" loading="lazy"><figcaption>Pick the kind of record.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Download the template</h3>
+      <p>The yellow note says which columns are <b>Required</b>, here Name and Type. <b>↓ Download Accounts template</b> gives you a spreadsheet with every column and example rows. Replace the examples with your data.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/03-template.jpg" alt="The Download Accounts template button marked" width="945" height="540" loading="lazy"><figcaption>Start from the template.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Upload your file</h3>
+      <p>Drop an Excel (.xlsx) or CSV file on the dashed box, or click it to browse. The limit is 15 MB. Your own column names are fine.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/04-upload.jpg" alt="The dashed upload box marked" width="945" height="540" loading="lazy"><figcaption>Add your file.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Check <b>Match columns</b></h3>
+      <p>Step 2 shows each column of your file with its first value. A badge such as <b>3 columns matched</b> tells you how many were matched on their own.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/05-match-heading.jpg" alt="The Match your columns heading marked" width="945" height="540" loading="lazy"><figcaption>Step 2 of 4.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Change a match</h3>
+      <p>In <b>IMPORTS INTO</b>, choose which field each column goes to. A column set to <b>don’t import</b> is left out.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/06-imports-into.jpg" alt="The Imports into list of the first column marked" width="945" height="540" loading="lazy"><figcaption>Match each column.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>Continue to review →</b></h3>
+      <p>Click <b>Continue to review →</b>. Nothing is saved yet. <b>Choose a different file</b> goes back to step 1.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/07-continue-review.jpg" alt="The Continue to review button marked" width="945" height="540" loading="lazy"><figcaption>On to the review.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Read the review</h3>
+      <p>Step 3 says <b>Rows with problems are left out — everything else is imported</b>. The chips show how many rows are ready and how many have problems. <b>Show only problems</b> hides the good rows.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/08-review-counts.jpg" alt="The 1 ready chip marked on the review step" width="945" height="540" loading="lazy"><figcaption>Ready and problems.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Read what is wrong</h3>
+      <p>A row that cannot go in shows <b>Not imported</b> and the reason in red, for example which values a field accepts. <b>↓ Download problem list</b> gives you those rows to fix.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/09-not-imported.jpg" alt="A Not imported row marked in red" width="945" height="540" loading="lazy"><figcaption>Why a row is left out.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s10">
+    <div>
+      <div class="gnum">10</div>
+      <h3>Click <b>Import</b></h3>
+      <p><b>Import 1 row</b> saves only the rows marked <b>Ready</b>. <b>← Back to columns</b> returns to step 2. Step 4, <b>Result</b>, then shows what was saved.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/10-import-button.jpg" alt="The Import 1 row button marked below the review table" width="945" height="540" loading="lazy"><figcaption>Save the good rows.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Export records to CSV</h2>
+  <p class="g-sub">Do this to take records out as a spreadsheet, or to get the file you need for an update.</p>
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click the <b>Export</b> tab</h3>
+      <p>Click <b>Export</b> next to <b>Import</b>.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/11-export-tab.jpg" alt="The Export tab marked" width="945" height="540" loading="lazy"><figcaption>Open Export.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click what to export</h3>
+      <p>Under <b>WHAT TO EXPORT</b>, click the kind of record, here <b>Accounts</b>.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/12-export-accounts.jpg" alt="The Accounts entry marked in the what to export list" width="945" height="540" loading="lazy"><figcaption>Pick the records.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Choose the columns</h3>
+      <p>Under <b>Choose columns</b>, untick the columns you do not want. <b>Record ID</b> is always included. It is what lets you upload the file again under Update.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/13-choose-columns.jpg" alt="The Choose columns heading marked" width="945" height="540" loading="lazy"><figcaption>Pick columns.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>+ Add filter</b></h3>
+      <p>Under <b>Filters</b>, click <b>+ Add filter</b> to export only matching rows. Leave it empty to export everything.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/14-add-filter.jpg" alt="The Add filter button marked" width="945" height="540" loading="lazy"><figcaption>Limit the rows.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Download CSV</b></h3>
+      <p>Click <b>↓ Download Accounts CSV</b> to get the file.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/15-download-csv.jpg" alt="The Download Accounts CSV button marked" width="945" height="540" loading="lazy"><figcaption>Get the file.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-3">
+  <h2>Update existing records</h2>
+  <p class="g-sub">Do this to change many records you already have, for example fix a column for every account.</p>
+  <article class="gstep" id="f3s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click the <b>Update</b> tab</h3>
+      <p>Click <b>Update</b>, then the kind of record, here <b>Accounts</b>. The same four steps follow: <b>Upload</b>, <b>Match columns</b>, <b>Review</b> and <b>Result</b>.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/16-update-tab.jpg" alt="The Update tab marked" width="945" height="540" loading="lazy"><figcaption>Open Update.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read what is <b>Required</b></h3>
+      <p>Update matches rows by <b>Record ID</b>, so your file must have that column. Go to <b>Export</b>, download a CSV, change the values you want, then upload it here. Everything you do not map is left as it is.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/17-required-record-id.jpg" alt="The Required note marked on the Update upload step" width="945" height="540" loading="lazy"><figcaption>Record ID is required.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Upload the edited file</h3>
+      <p>Drop the edited CSV on the dashed box. The match and review steps work as in Import.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/18-update-upload.jpg" alt="The dashed upload box marked on the Update tab" width="945" height="540" loading="lazy"><figcaption>Upload the edited file.</figcaption></figure>
+  </article>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>

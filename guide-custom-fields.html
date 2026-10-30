@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Custom fields — step by step — BPMSquare</title>
+<meta name="description" content="Add your own fields to accounts, quotes, cases and other records, then rename, require or remove them." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Settings</div>
+    <h1>Custom fields, step by step</h1>
+    <p>Custom fields add your own columns to a record, such as a PR number on an account. They show on the record, and they are included in the API and the Data Workbench templates. Only an administrator sees this screen.</p>
+    <div class="g-chips"><a href="#flow-1">Add a custom field</a><a href="#flow-2">Change or remove a field</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Add a custom field</h2>
+  <p class="g-sub">Do this when you need to keep a fact on a record that the standard fields do not hold.</p>
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Choose the record type</h3>
+      <p>Open <b>Settings</b>, then <b>Custom fields</b> under <b>DATA</b>. The buttons at the top are the record types, such as <b>Account</b>, <b>Contact</b>, <b>Case</b>, <b>Quote</b>, <b>Product</b> and <b>Employee</b>. Click the one that should get the field. The list below shows the fields it already has.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/01-record-type.jpg" alt="The Account record type marked among the record type buttons" width="945" height="540" loading="lazy"><figcaption>Pick the record type.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>+ New field</b></h3>
+      <p>Click <b>+ New field</b> at the top right. A form opens in the card below. The same button then reads <b>Cancel</b>.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/02-new-field.jpg" alt="The New field button marked at the top right" width="945" height="540" loading="lazy"><figcaption>Open the form.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Type the <b>Field label</b></h3>
+      <p>Type the name people will see, for example <b>Machine serial number</b>. The field also gets a code name that starts with <b>cf_</b>.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/03-field-label.jpg" alt="The Field label box marked in the new field form" width="945" height="540" loading="lazy"><figcaption>Name the field.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Choose the <b>Field type</b></h3>
+      <p>Choose <b>Text</b>, <b>Number</b>, <b>Date</b>, <b>Dropdown (select)</b>, <b>Checkbox (yes/no)</b> or <b>Long text</b>.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/04-field-type.jpg" alt="The Field type list marked in the new field form" width="945" height="540" loading="lazy"><figcaption>Pick the type.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Tick <b>Required field</b> if needed</h3>
+      <p>Tick <b>Required field</b> if the record cannot be saved without a value.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/05-required.jpg" alt="The Required field box marked in the new field form" width="945" height="540" loading="lazy"><figcaption>Optional or required.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Add field</b></h3>
+      <p><b>Add field</b> becomes active once the label is filled in. It adds the field to the record type, and it appears in the list with the <b>Optional</b> or <b>Required</b> tag.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/06-add-field.jpg" alt="The Add field button marked at the right of the form" width="945" height="540" loading="lazy"><figcaption>Save the field.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Rename, require or remove a field</h2>
+  <p class="g-sub">Do this to tidy up fields that are already in the list.</p>
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click the <b>⋯</b> button</h3>
+      <p>Each field row has a <b>⋯</b> button at its right. Click it to open the menu. Drag the dotted handle at the left of a row to change the order of the fields.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/07-field-menu.jpg" alt="The three-dot button of a field marked, with its menu open" width="945" height="540" loading="lazy"><figcaption>The field menu.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3><b>Rename</b></h3>
+      <p><b>Rename</b> changes the label people see. The code name stays the same, so the API does not change.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/08-rename.jpg" alt="The Rename entry marked in the field menu" width="945" height="540" loading="lazy"><figcaption>Change the label.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3><b>Make required</b></h3>
+      <p><b>Make required</b> turns the <b>Optional</b> tag into <b>Required</b>. The entry reads <b>Make optional</b> when the field is already required.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/09-make-required.jpg" alt="The Make required entry marked in the field menu" width="945" height="540" loading="lazy"><figcaption>Make it required.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3><b>Delete</b></h3>
+      <p><b>Delete</b> removes the field from the record type. Use it with care.</p>
+    </div>
+    <figure><img src="assets/guides/custom-fields/10-delete.jpg" alt="The Delete entry marked in red in the field menu" width="945" height="540" loading="lazy"><figcaption>Remove the field.</figcaption></figure>
+  </article>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>
