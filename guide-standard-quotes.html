@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Standard quotes, step by step â€” BPMSquare</title>
+<meta name="description" content="Create a standard quote, price its lines with the pricing engine, send it, and set up templates." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Sales</div>
+    <h1>Standard quotes, step by step</h1>
+    <p>A standard quote is a plain quote for an account: line items, discount, tax and shipping, on a layout you choose. Build one, let the pricing engine price the lines, then send it.</p>
+    <div class="g-chips"><a href="#flow-1">Create a standard quote</a><a href="#flow-2">Price the lines with the pricing engine</a><a href="#flow-3">Open a standard quote and send it</a><a href="#flow-4">Set up quote templates</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Create a standard quote</h2>
+  <p class="g-sub">Use this for a straightforward priced quote for one account.</p>
+
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>+ New Standard Quote</b></h3>
+      <p>The button is at the top right of <b>Standard Quotes</b>. The page also shows how many quotes are <b>Draft</b>, <b>Sent</b>, <b>Accepted</b> and <b>Rejected</b>.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-01-new.jpg" alt="The Standard Quotes page with the + New Standard Quote button marked" width="1026" height="378" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Choose the <b>Account</b></h3>
+      <p>The form has three tabs: <b>Quote details</b>, <b>Line items</b> and <b>Attachments</b>. On the first, pick the <b>Account</b>. It is required.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-02-account.jpg" alt="The Account field on the Quote details tab" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Choose the <b>Contact</b></h3>
+      <p>Pick the person the quote is for. The list shows contacts of the account. Leave <b>None</b> if you do not know yet.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-03-contact.jpg" alt="The Contact field next to the Account field" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Set <b>Valid until</b></h3>
+      <p>Enter the last day the offer holds. <b>Inquiry date</b> next to it is the day the customer asked.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-04-valid.jpg" alt="The Valid until date field" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Pick the <b>Template</b></h3>
+      <p><b>Default layout</b> is the built-in design. Templates your admin made appear in this list and set how the quote looks.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-05-template.jpg" alt="The Template selector showing Default layout" width="1026" height="499" loading="lazy"><figcaption>See the last flow for how templates are made.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click the <b>Lines</b> tab</h3>
+      <p>Go to <b>Line items</b>. The bar at the top now shows the quote name and total, and stays in view while you scroll.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-06-lines.jpg" alt="The Lines tab marked in the wizard bar" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Choose a product</h3>
+      <p>In <b>PRODUCT · DESCRIPTION</b> open <b>No product</b> and pick a catalog item. The description fills in. You can also type a free description.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-07-product.jpg" alt="The product selector on the first line" width="1026" height="378" loading="lazy"><figcaption><b>+ Add line</b> adds another line. <b>+ Alternative option</b> adds an option the customer can choose instead.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f1s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Enter the <b>QTY</b></h3>
+      <p>Type the quantity. <b>UOM</b> and <b>RATE (₹)</b> sit next to it. The <b>AMOUNT</b> is calculated.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-08-qty.jpg" alt="The quantity field on the line" width="1026" height="378" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Set <b>Discount %</b>, <b>Tax %</b> and <b>Shipping / Handling (₹)</b></h3>
+      <p>These three fields apply to the whole quote and sit under the lines. The subtotal and total update at once.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-09-tax.jpg" alt="The Tax percent field under the line items" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f1s10">
+    <div>
+      <div class="gnum">10</div>
+      <h3>Click <b>Create quote</b></h3>
+      <p>The button is in the top bar, next to the running <b>Total</b>. It saves the quote and gives it a number such as <b>SQ-2026-0021</b>.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f1-10-create.jpg" alt="The Create quote button marked in the top bar" width="1026" height="378" loading="lazy"><figcaption>This guide did not click it.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Price the lines with the pricing engine</h2>
+  <p class="g-sub">Use this to get a price from your rules and cost data instead of typing a rate.</p>
+
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Price</b> on the line</h3>
+      <p>The <b>PRICE</b> column holds a <b>Price</b> button on each line that has a product. After you click it the rate is filled in and the button reads <b>Engine</b>.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f2-01-engine.jpg" alt="The PRICE column showing the Engine chip and the filled-in rate" width="1026" height="378" loading="lazy"><figcaption>The <b>Tax %</b> field fills in too.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Or click <b>Price all</b></h3>
+      <p>This prices every line in one go. It sits above the table next to <b>Draft with AI</b>.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f2-02-price-all.jpg" alt="The Price all button marked above the line table" width="1026" height="378" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click the arrow at the end of the line</h3>
+      <p>The small <b>›</b> at the right of the line opens the working behind the price.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f2-03-arrow.jpg" alt="The expand arrow at the end of the line" width="1026" height="378" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Read how the price was built</h3>
+      <p>The panel says <b>Priced by engine, before tax</b>. Each row is one rule, for example <b>PURCHASE_COST</b>, <b>FREIGHT</b> and <b>MARGIN_MARKUP</b>, with the figure it added and the sum it came from.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f2-04-panel.jpg" alt="The price breakdown panel under the line" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f2s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Price with engine</b></h3>
+      <p>At the bottom of the panel, use this to price the line again after you change the quantity. <b>+ Add quantity break</b> and <b>Show on PDF</b> are in the same row.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f2-05-reprice.jpg" alt="The Price with engine link under the breakdown" width="1026" height="499" loading="lazy"></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-3">
+  <h2>Open a standard quote and send it</h2>
+  <p class="g-sub">Use this when a quote is ready for the customer.</p>
+
+  <article class="gstep" id="f3s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Open →</b> on a row</h3>
+      <p>In the list, each row shows the reference, account, status, total and dates. Click <b>Open →</b> at the end of the row.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f3-01-open.jpg" alt="A row of the Standard Quotes list with Open marked" width="1026" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click the <b>Lines</b> tab</h3>
+      <p>The tabs are <b>Overview</b>, <b>Lines</b>, <b>Related</b> and <b>Activity</b>. <b>Lines</b> shows the items, quantities and rates, and the number in the tab is the line count.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f3-02-lines.jpg" alt="The Lines tab on a standard quote" width="1026" height="378" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>click Edit to price the lines</b></h3>
+      <p>The saved quote shows the lines only. Engine pricing, the price breakdown and supplier requests are on the edit screen, which has the same layout as the form you used to create it.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f3-03-edit-link.jpg" alt="The hint above the line table with its Edit link marked" width="1080" height="499" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f3s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Email to customer</b></h3>
+      <p>This is the send button at the top right. Add a contact to the quote first.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f3-04-email.jpg" alt="The Email to customer button marked" width="1026" height="378" loading="lazy"><figcaption>This guide did not send the example.</figcaption></figure>
+  </article>
+  <article class="gstep" id="f3s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>...</b></h3>
+      <p>The menu has <b>Edit</b>, <b>Print / PDF</b>, <b>Mark as sent</b> and <b>Delete</b>. Use <b>Mark as sent</b> if you sent the quote some other way.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f3-05-menu.jpg" alt="The more-actions menu on a standard quote" width="1026" height="378" loading="lazy"></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-4">
+  <h2>Set up quote templates</h2>
+  <p class="g-sub">Use this when you want quotes to carry your own branded layout. It needs an admin.</p>
+
+  <article class="gstep" id="f4s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>...</b> on the list</h3>
+      <p>The three dots sit left of <b>+ New Standard Quote</b>.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f4-01-dots.jpg" alt="The three-dot button on the Standard Quotes page" width="1026" height="378" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f4s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Manage Templates</b></h3>
+      <p>The page is called <b>Standard Quote Templates</b>. It lists branded, reusable layouts. Each quote picks one when it is created.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f4-02-manage.jpg" alt="The Manage Templates menu entry marked" width="1026" height="378" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f4s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Type the <b>New template name</b></h3>
+      <p>Use a name people will recognise, for example "Formal Proposal". When there are no templates yet, quotes use the built-in default layout.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f4-03-name.jpg" alt="The New template name field" width="1026" height="364" loading="lazy"></figure>
+  </article>
+  <article class="gstep" id="f4s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>+ Create &amp; open builder</b></h3>
+      <p>This creates the template and opens the builder, where you design the layout.</p>
+    </div>
+    <figure><img src="assets/guides/standard-quotes/f4-04-create.jpg" alt="The Create and open builder button marked" width="1026" height="364" loading="lazy"><figcaption>This guide did not open the builder.</figcaption></figure>
+  </article>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>
