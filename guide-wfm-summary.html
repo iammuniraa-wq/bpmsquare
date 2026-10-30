@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Live board and monthly summary — step by step — BPMSquare</title>
+<meta name="description" content="See who is in right now, then read, filter and export the monthly attendance summary." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Workforce</div>
+    <h1>Live board and monthly summary, step by step</h1>
+    <p>See who is in, on break, late or absent right now, then read the month for payroll: days present, hours, late marks, leave and overtime. Each step shows the exact button to click.</p>
+    <div class="g-chips"><a href="#flow-1">Check who is in right now</a><a href="#flow-2">Read the monthly summary</a><a href="#flow-3">Daily detail and custom range</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Check who is in right now</h2>
+  <p class="g-sub">Do this during the day. Open app.bpmsquare.com/wfm/live-board. It shows who is in, on break, out, late or absent, per site, and refreshes by itself.</p>
+
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Read the counters</h3>
+      <p>The ring shows <b>Right now</b>. The tiles count <b>Checked in</b>, <b>On break</b>, <b>Late</b>, <b>Absent</b>, <b>On leave</b> and <b>Geofence flags</b>.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/01-tiles.jpg" alt="The Live board counters outlined and numbered 1" width="1100" height="235" loading="lazy"><figcaption>The counters are for right now.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Choose a site</h3>
+      <p>Use the <b>All sites</b> list to look at one location. <b>No site assigned</b> lists people without a home site.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/02-site.jpg" alt="The All sites list outlined and numbered 2" width="1100" height="191" loading="lazy"><figcaption>Each site gets its own table below.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Choose a status</h3>
+      <p><b>In</b>, <b>On break</b>, <b>On leave</b>, <b>Absent</b>, <b>Checked out</b> or <b>Not in yet</b>.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/03-status.jpg" alt="The All statuses list outlined and numbered 3" width="1100" height="191" loading="lazy"><figcaption>The counter beside it shows how many rows match.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Tick <b>Geofence flags only</b></h3>
+      <p>It keeps only the rows that carry a geofence flag.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/04-geofence.jpg" alt="The Geofence flags only checkbox outlined and numbered 4" width="1100" height="191" loading="lazy"><figcaption>The tile at the top counts the flags.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Search by name, code or shift</h3>
+      <p>The tables below list <b>Employee</b>, <b>Shift</b>, <b>Status</b>, <b>First in</b>, <b>Last out</b> and <b>Flags</b> for each person.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/05-search.jpg" alt="The Live board search box outlined and numbered 5" width="1100" height="185" loading="lazy"><figcaption>Each table header says how many people are present.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Choose what you see on login</h3>
+      <p>The <b>On login, show me</b> list has two choices: <b>Live board</b> and <b>Dashboard</b>.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/06-login-select.jpg" alt="The On login show me list outlined and numbered 6" width="1100" height="235" loading="lazy"><figcaption>The list is at the top right of the page.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Read the monthly summary and export it</h2>
+  <p class="g-sub">Do this at month end. Open app.bpmsquare.com/wfm/summary (Time Summary). It gives per-employee attendance for the CA: days present, hours, late marks, leave, holidays and night-shift allowance.</p>
+
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Pick the month</h3>
+      <p>The <b>Monthly summary</b> tab is open first. The month starts on the current one.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/07-month.jpg" alt="The month field on the Time Summary page outlined and numbered 1" width="1100" height="235" loading="lazy"><figcaption>The Export to Excel button is next to it.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the three rings</h3>
+      <p><b>How the month went</b> counts days late, absent or on week off. <b>Needs attention</b> counts people with late marks. <b>Headcount by site</b> splits people by site.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/08-donuts.jpg" alt="The How the month went ring outlined and numbered 2" width="1100" height="235" loading="lazy"><figcaption>The other two rings sit to its right.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Search for a person</h3>
+      <p>Type a name or code.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/09-sum-search.jpg" alt="The employee search box outlined and numbered 3" width="1100" height="235" loading="lazy"><figcaption>A counter at the right of the filters shows how many people match.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Choose a site</h3>
+      <p>Use <b>All sites</b> to look at one location. The next list filters by <b>All employment types</b>: <b>Full-time</b> or <b>Contractor</b>.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/10-sum-site.jpg" alt="The All sites list outlined and numbered 4" width="1100" height="235" loading="lazy"><figcaption>Employment type is the next list.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Narrow to people who need a look</h3>
+      <p>The last list holds <b>Everyone</b>, <b>Late marks</b>, <b>Incomplete days</b>, <b>Unpaid leave</b> and <b>Clean</b>.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/11-everyone.jpg" alt="The Everyone list outlined and numbered 5" width="1100" height="235" loading="lazy"><figcaption>The table below groups people by employment type.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Export to Excel</b></h3>
+      <p>It downloads the month as an Excel file. The table has columns <b>Days present</b>, <b>Absent</b>, <b>Hours</b>, <b>Late marks</b>, <b>Paid leave</b>, <b>Unpaid leave</b>, <b>Holidays</b>, <b>Night shifts</b>, <b>OT hrs</b> and <b>Incomplete</b>. This guide does not click it.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/12-export.jpg" alt="The Export to Excel button outlined and numbered 6" width="1100" height="235" loading="lazy"><figcaption>The same button is on the other tabs.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-3">
+  <h2>Look at one day or a custom date range</h2>
+  <p class="g-sub">Do this when the month is too wide, or when you need to see every punch.</p>
+
+  <article class="gstep" id="f3s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Open <b>Daily — detailed</b></h3>
+      <p>The rings and filters stay. Below them, each person is a row you can open.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/13-daily-tab.jpg" alt="The Time Summary page with the Daily detailed tab outlined and numbered 1" width="1100" height="235" loading="lazy"><figcaption>This is the second tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Pick a day</h3>
+      <p>The date field next to the month is for picking a day.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/14-day-pick.jpg" alt="The day field outlined and numbered 2" width="1100" height="235" loading="lazy"><figcaption>The month field is to its left.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click an employee's row</h3>
+      <p>It opens a table with every day: <b>Date</b>, <b>In</b>, <b>Out</b>, <b>Breaks taken</b>, <b>Break total</b>, <b>Gross</b>, <b>Total worked</b> and <b>Status</b>. Total worked is check-out minus check-in minus breaks.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/15-employee-row.jpg" alt="An employee's row opened to show the daily table, outlined and numbered 3" width="1100" height="159" loading="lazy"><figcaption>Click the row again to close it.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Open <b>Custom range</b></h3>
+      <p>Use it for a period that is not a calendar month.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/16-custom-tab.jpg" alt="The Time Summary page with the Custom range tab outlined and numbered 4" width="1100" height="235" loading="lazy"><figcaption>This is the third tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Set the dates</h3>
+      <p>Type the first and last day. This screen shows the summary table only. For the day-by-day breakdown of the range, use <b>Export to Excel</b>.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/17-range-from.jpg" alt="The first date of the custom range outlined and numbered 5" width="1100" height="235" loading="lazy"><figcaption>The last day is the field after <b>to</b>.</figcaption></figure>
+  </article>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>
