@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tender management — step by step — BPMSquare</title>
+<meta name="description" content="Take a tender from the client email to a won contract project: price the bill of quantities, send the bid, track versions and competitors, and hand the project over." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a class="on" href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Sales</div>
+    <h1>Tender management, step by step</h1>
+    <p>Take a tender from the client email to a won contract project. You price the bill of quantities, send the bid by email, keep every bid version, and hand the project to the ERP.</p>
+    <div class="g-chips"><a href="#flow-1">Start a tender</a><a href="#flow-2">Price the BOQ</a><a href="#flow-3">Cost rows from estimates and RFQs</a><a href="#flow-4">Submit and send the bid</a><a href="#flow-5">Work with the client and the team</a><a href="#flow-6">Track competitors</a><a href="#flow-7">Win and hand over</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Start a tender</h2>
+  <p class="g-sub">Do this when a tender arrives by email, or when you log one by hand.</p>
+
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click the email</h3>
+      <p>Open the <b>Inbox</b> and click the email from the client. Here it is <b>Plot plan for fencing (DWG)</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/01-inbox-open-email.jpg" alt="Inbox list with one email highlighted" width="904" height="455" loading="lazy"><figcaption>The email to turn into a tender.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Create from this email</b></h3>
+      <p>The button offers what to create from the email.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/02-create-from-email.jpg" alt="Create from this email button on an open email" width="904" height="397" loading="lazy"><figcaption>Create from this email.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>Deal</b></h3>
+      <p>The menu lists <b>Quote</b>, <b>Project</b>, <b>Case</b>, <b>Estimate</b>, <b>Lead</b> and <b>Deal</b>. <b>Deal</b> is a tender deal with its bid end date and bid decision.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/03-choose-deal.jpg" alt="Menu with Deal highlighted" width="904" height="397" loading="lazy"><figcaption>Deal is the tender choice.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Or click <b>+ New tender</b></h3>
+      <p>To start without an email, open Pipeline, go to the <b>Tenders</b> view and click <b>+ New tender</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/04-new-tender-button.jpg" alt="Pipeline tenders board with the New tender button highlighted" width="905" height="397" loading="lazy"><figcaption>New tender on the Pipeline.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Account</b></h3>
+      <p>Choose the issuer's account. It is required, marked with a star.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/05-new-tender-account.jpg" alt="New tender form with the Account field highlighted" width="904" height="397" loading="lazy"><figcaption>Account is required.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Tender number</b></h3>
+      <p>Type the number the client gave the tender. <b>Issuer</b>, <b>Portal</b>, <b>Bid end date</b> and <b>Source</b> are on the same form.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/06-new-tender-number.jpg" alt="Tender number field highlighted" width="905" height="397" loading="lazy"><figcaption>The client&#x27;s tender number.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>Save</b></h3>
+      <p>The tender is created at the first step, <b>Received</b>. This guide did not save a new tender.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/07-new-tender-save.jpg" alt="Save button at the bottom of the New tender form" width="904" height="397" loading="lazy"><figcaption>Save.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Read the path across the top</h3>
+      <p>Seven steps: <b>Received</b>, <b>Decision</b>, <b>BOQ</b>, <b>Costing</b>, <b>Bid</b>, <b>Submitted</b>, <b>Won or lost</b>. A tick marks a finished step. The numbered dot is where you are.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/08-tender-path.jpg" alt="The seven-step path on a tender at Received" width="1100" height="189" loading="lazy"><figcaption>The path. This tender is at Received.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Click <b>Review bid decision</b></h3>
+      <p>The blue <b>Next</b> row says what to do now and gives one main button. Here a go decision is waiting for an approver. When nobody has proposed one yet, the button reads <b>Propose bid decision</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/09-next-row.jpg" alt="Next row with the Review bid decision button highlighted" width="905" height="397" loading="lazy"><figcaption>The Next row.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s10">
+    <div>
+      <div class="gnum">10</div>
+      <h3>Read the decision panel and click <b>Approve</b></h3>
+      <p>The panel shows the proposal, a <b>Comment</b> box and the buttons <b>Approve</b> and <b>Reject</b>. A rejection needs a comment. The panel was closed without deciding.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/10-bid-decision-panel.jpg" alt="Bid decision panel with the Approve button highlighted" width="904" height="397" loading="lazy"><figcaption>Approve or reject.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s11">
+    <div>
+      <div class="gnum">11</div>
+      <h3>Click <b>Details</b></h3>
+      <p><b>Details</b> is a closed row with the main facts. It opens on a click. Its "i" explains it.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/11-details-closed.jpg" alt="Details row on a tender, closed" width="904" height="397" loading="lazy"><figcaption>Details, closed.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s12">
+    <div>
+      <div class="gnum">12</div>
+      <h3>Read <b>Bid decision</b></h3>
+      <p>Open, the row shows <b>Stage</b>, <b>Bid decision</b>, <b>Bid end date</b>, <b>Bid guarantee</b> and <b>Open work</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/12-details-open.jpg" alt="Details open with the Bid decision tile highlighted" width="904" height="397" loading="lazy"><figcaption>Details, open.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Price the BOQ</h2>
+  <p class="g-sub">Load the client's bill of quantities, set a markup and price the lines. The tender shown from here is <b>SAMPLE-NUD-2026-077</b>.</p>
+
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Bill of quantities</b></h3>
+      <p>The tab holds the client's lines.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/20-boq-tab.jpg" alt="Tender tabs with Bill of quantities highlighted" width="904" height="397" loading="lazy"><figcaption>The Bill of quantities tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Upload revised BOQ</b></h3>
+      <p>Use it to load the client's Excel file (.xlsx). The columns are read for you. You check them, then create the lines. The upload screen was not opened in this guide.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/21-boq-upload.jpg" alt="Upload revised BOQ button highlighted" width="904" height="397" loading="lazy"><figcaption>Upload revised BOQ.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>Markup on cost</b></h3>
+      <p>Type a percent. It is added to the cost to make the rate. Here it is 15.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/22-boq-markup.jpg" alt="Markup on cost field highlighted" width="1100" height="157" loading="lazy"><figcaption>Markup on cost, in percent.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Price all lines</b></h3>
+      <p>It prices each line from supplier quotes first, then the bill of materials, then past projects. Only fresh prices are used. The button is grey here because every line is already priced.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/23-boq-price-all.jpg" alt="Price all lines button highlighted" width="904" height="397" loading="lazy"><figcaption>Price all lines.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Read the <b>Priced</b> tile</h3>
+      <p>It shows how much of the BOQ is priced. Here it reads <b>100%</b>, "all lines priced". The filters <b>Unpriced</b> and <b>Stale</b> list lines that still need work. <b>Total</b> is at cost plus markup.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/29-boq-priced-tile.jpg" alt="Priced tile reading 100 percent" width="904" height="397" loading="lazy"><figcaption>The Priced tile.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click the "i" next to <b>Cost from</b></h3>
+      <p>It explains where the cost behind a rate came from: an estimate, an awarded RFQ, a past project, the client's file or a hand-typed figure. Every column head has an "i".</p>
+    </div>
+    <figure><img src="assets/guides/tenders/24-boq-cost-from-tip.jpg" alt="Cost from column with its explanation open" width="904" height="397" loading="lazy"><figcaption>The &quot;i&quot; on Cost from.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click an item number, <b>2.1</b></h3>
+      <p>The row opens in a panel on the right. It shows <b>Quantity</b>, <b>Rate</b> and <b>Where the cost came from</b>.</p>
+    </div>
+    <div style="display:grid;gap:12px"><figure><img src="assets/guides/tenders/25-boq-click-row.jpg" alt="BOQ table with item 2.1 highlighted" width="904" height="397" loading="lazy"><figcaption>Click the item number.</figcaption></figure><figure><img src="assets/guides/tenders/26-boq-row-panel.jpg" alt="Row panel with cost source and Cost per unit" width="775" height="435" loading="lazy"><figcaption>The row panel.</figcaption></figure></div>
+  </article>
+
+  <article class="gstep" id="f2s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Click <b>Cost / unit</b></h3>
+      <p>Type your own cost per unit. <b>Save cost</b> next to it stays grey until the cost changes.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/27-boq-edit-cost.jpg" alt="Cost per unit field in the row panel" width="904" height="397" loading="lazy"><figcaption>Cost / unit.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Click <b>Save cost</b></h3>
+      <p>It saves your figure as <b>Manual</b> and keeps the source it replaced. This guide did not save a cost.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/28-boq-save-cost.jpg" alt="Save cost button highlighted" width="905" height="397" loading="lazy"><figcaption>Save cost.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-3">
+  <h2>Cost rows from estimates and RFQs</h2>
+  <p class="g-sub">When a row has no cost, price it from an estimate you build or from supplier quotes. The tender shown here is <b>Floor tiles for a 120 m2 showroom</b>.</p>
+
+  <article class="gstep" id="f3s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Costing</b></h3>
+      <p>The tab shows how each BOQ row gets its cost.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/30-costing-tab.jpg" alt="Tender tabs with Costing highlighted" width="904" height="397" loading="lazy"><figcaption>The Costing tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the four tiles</h3>
+      <p><b>Rows priced</b>, <b>Still need a cost</b>, <b>RFQs out</b> and <b>Replies in</b>. Each has an "i". <b>Show them in the Bill of quantities</b> jumps to the rows that still need a cost.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/31-costing-tiles.jpg" alt="The four Costing tiles" width="1100" height="198" loading="lazy"><figcaption>The four tiles.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Read <b>Cost sources</b></h3>
+      <p>One table of estimates and RFQs. <b>Prices BOQ rows</b> names the rows each one prices. Each BOQ row takes its cost from one source.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/32-costing-sources.jpg" alt="Cost sources table with two estimates" width="1100" height="240" loading="lazy"><figcaption>Cost sources.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>New RFQ</b></h3>
+      <p>It opens a new RFQ to ask suppliers for prices. <b>New estimate</b> sits next to it. The guides <a href="guide-rfqs.html">RFQs and supplier replies</a> and <a href="guide-estimates.html">Estimates</a> show both step by step.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/33b-costing-new-rfq.jpg" alt="New RFQ button highlighted" width="905" height="397" loading="lazy"><figcaption>New RFQ.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Add rows</b></h3>
+      <p>It gives an estimate more BOQ rows to price. A panel lists the rows it can price, each with a tick, and a <b>Markup %</b>.</p>
+    </div>
+    <div style="display:grid;gap:12px"><figure><img src="assets/guides/tenders/33-costing-add-rows.jpg" alt="Add rows button on an estimate row" width="905" height="397" loading="lazy"><figcaption>Add rows.</figcaption></figure><figure><img src="assets/guides/tenders/34-add-rows-panel.jpg" alt="Add rows panel with markup and a list of BOQ rows" width="775" height="435" loading="lazy"><figcaption>The Add rows panel.</figcaption></figure></div>
+  </article>
+
+  <article class="gstep" id="f3s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Apply to 3 rows</b></h3>
+      <p>The button at the bottom applies the estimate's cost to the ticked rows. This guide did not apply it.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/35-add-rows-apply.jpg" alt="Apply to 3 rows button highlighted" width="587" height="395" loading="lazy"><figcaption>Apply to 3 rows.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>Open</b></h3>
+      <p>It opens the estimate that prices the rows.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/36-costing-open-estimate.jpg" alt="Open button on an estimate row" width="905" height="397" loading="lazy"><figcaption>Open an estimate.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Click <b>Back to the BOQ</b></h3>
+      <p>The estimate shows its tender at the top (<b>Back to the tender</b>). <b>Back to the BOQ</b> returns you to the rows it prices. A tender estimate has no <b>Create quote</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/37-estimate-back.jpg" alt="Estimate header with Back to the BOQ link highlighted" width="905" height="397" loading="lazy"><figcaption>Back to the BOQ.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-4">
+  <h2>Submit and send the bid</h2>
+  <p class="g-sub">Check the bid, read its versions and send the priced BOQ to the client by email. The tender shown is <b>SAMPLE-NUD-2026-077</b>, already at version 3.</p>
+
+  <article class="gstep" id="f4s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Bid</b></h3>
+      <p>The number on the tab is how many bids were submitted.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/40-bid-tab.jpg" alt="Tender tabs with Bid highlighted" width="904" height="397" loading="lazy"><figcaption>The Bid tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the tiles</h3>
+      <p><b>Lines total now</b>, <b>Last submitted</b>, <b>Bids submitted</b> and <b>Vs previous bid</b>. The green bar above them reads <b>Ready to submit</b>. If something is missing, it lists what.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/41-bid-tiles.jpg" alt="Bid tiles with Ready to submit bar" width="1100" height="203" loading="lazy"><figcaption>The Bid tiles.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>Revise bid</b></h3>
+      <p>Before the first submit this place holds <b>Submit bid</b>. It saves the lines and total as a numbered version and moves the tender to <b>Submitted</b>. Cost and markup are never saved in a version. This tender is already submitted, so the button reads <b>Revise bid</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/42-revise-bid.jpg" alt="Revise bid button highlighted" width="904" height="397" loading="lazy"><figcaption>Revise bid.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Compare</b></h3>
+      <p>Under <b>Compare versions</b> choose <b>From</b> and <b>To</b>, then click <b>Compare</b>. Each version in the list above shows its total, who submitted it and why it was revised.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/43-compare-versions.jpg" alt="Compare versions form with Compare button highlighted" width="904" height="397" loading="lazy"><figcaption>Compare versions.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Choose <b>Payment terms</b></h3>
+      <p>The list holds the payment-term templates set up in Settings. This workspace has none yet, so it reads <b>None chosen</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/44-payment-terms.jpg" alt="Payment terms list with None chosen" width="904" height="397" loading="lazy"><figcaption>Payment terms.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Send by email</b></h3>
+      <p>It sits next to <b>Download priced BOQ</b>. A second one sits next to <b>Export answer sheet</b>. Costs and markup are never in the file.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/45-send-by-email-button.jpg" alt="Send by email button next to Download priced BOQ" width="904" height="397" loading="lazy"><figcaption>Send by email.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>To</b></h3>
+      <p>A side panel opens. Type the client's address in <b>To</b>. <b>Note</b> is optional.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/46-send-panel-to.jpg" alt="Send by email panel with the To field highlighted" width="797" height="397" loading="lazy"><figcaption>The To field.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Click <b>Send</b></h3>
+      <p>The mail goes out through the tender. This guide did not send it.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/47-send-panel-send.jpg" alt="Send button at the bottom of the panel" width="797" height="441" loading="lazy"><figcaption>Send.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Read <b>Sent to client</b></h3>
+      <p>It lists every file that went to the client. Here it reads "Nothing sent yet".</p>
+    </div>
+    <figure><img src="assets/guides/tenders/48-sent-to-client.jpg" alt="Sent to client section" width="904" height="397" loading="lazy"><figcaption>Sent to client.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s10">
+    <div>
+      <div class="gnum">10</div>
+      <h3>Click <b>+ Record a send</b></h3>
+      <p>Use it for a portal upload or a mail sent outside the tender. The panel asks for <b>Document</b>, <b>How</b>, <b>To</b>, <b>Version</b> and <b>Note</b>.</p>
+    </div>
+    <div style="display:grid;gap:12px"><figure><img src="assets/guides/tenders/49-record-a-send.jpg" alt="Record a send button highlighted" width="904" height="397" loading="lazy"><figcaption>Record a send.</figcaption></figure><figure><img src="assets/guides/tenders/50-record-a-send-panel.jpg" alt="Record a send panel" width="951" height="435" loading="lazy"><figcaption>The Record a send panel.</figcaption></figure></div>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-5">
+  <h2>Work with the client and the team</h2>
+  <p class="g-sub">Keep client mail on the tender and talk to your team in the room, which the client never sees.</p>
+
+  <article class="gstep" id="f5s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Interactions</b></h3>
+      <p>Sent mail, replies and the source email form one timeline here.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/51-interactions-tab.jpg" alt="Tender tabs with Interactions highlighted" width="904" height="397" loading="lazy"><figcaption>Interactions.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>New email</b></h3>
+      <p>It writes to the client from the tender. This tender has no mail yet.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/52-new-email.jpg" alt="New email button highlighted" width="905" height="397" loading="lazy"><figcaption>New email.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>To</b></h3>
+      <p>In the panel type the address, then write the <b>Subject</b> and <b>Message</b>. This guide did not send it.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/53-new-email-panel.jpg" alt="New email panel with the To field highlighted" width="797" height="435" loading="lazy"><figcaption>The To field.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Room</b></h3>
+      <p>The team room is internal. It has four sub-tabs: <b>Discussion</b>, <b>Team</b>, <b>Decisions</b> and <b>Documents</b>. <b>Log a call</b> sits above them.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/54b-room-tab.jpg" alt="Tender tabs with Room highlighted" width="904" height="397" loading="lazy"><figcaption>The Room tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Team</b></h3>
+      <p>It lists who is in the room. <b>Add by name...</b> adds someone.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/55-room-team.jpg" alt="Team sub-tab with the member list" width="904" height="397" loading="lazy"><figcaption>Team.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Decisions</b></h3>
+      <p>Pin one-line decisions, for example "Agreed to...".</p>
+    </div>
+    <figure><img src="assets/guides/tenders/56-room-decisions.jpg" alt="Decisions sub-tab" width="904" height="397" loading="lazy"><figcaption>Decisions.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>Documents</b></h3>
+      <p>It lists files attached to messages in <b>Discussion</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/57-room-documents.jpg" alt="Documents sub-tab" width="904" height="397" loading="lazy"><figcaption>Documents.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-6">
+  <h2>Track competitors</h2>
+  <p class="g-sub">Keep a short list of who else is bidding and what they may charge. The tender shown is <b>SAMPLE-NUD-2026-077</b>.</p>
+
+  <article class="gstep" id="f6s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Competitors</b></h3>
+      <p>The tab shows how many are on the tender and how many are expected below you.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/58-competitors-tab.jpg" alt="Tender tabs with Competitors highlighted" width="904" height="397" loading="lazy"><figcaption>Competitors.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Add competitor</b></h3>
+      <p>To add one yourself. The list has three columns: <b>Company</b>, <b>Expected price</b> and <b>Status</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/59-competitors-add.jpg" alt="Add competitor button highlighted" width="905" height="397" loading="lazy"><figcaption>Add competitor.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Fill in the <b>Add competitor</b> panel</h3>
+      <p>The panel asks for <b>Company</b> (required), <b>Website</b>, <b>Country</b>, <b>Expected price</b>, <b>Strengths</b> and a <b>Note</b>. Save it with <b>Save</b>. This guide did not save one.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/62-add-competitor-panel.jpg" alt="Add competitor panel with the Company field highlighted" width="775" height="463" loading="lazy"><figcaption>The Add competitor panel.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click a row, <b>Amiantit</b></h3>
+      <p>A panel opens with the evidence for that competitor. The status reads <b>Added by you</b> or <b>Proposed</b>.</p>
+    </div>
+    <div style="display:grid;gap:12px"><figure><img src="assets/guides/tenders/60-competitor-row.jpg" alt="Competitors list with the Amiantit row highlighted" width="904" height="397" loading="lazy"><figcaption>Click a row.</figcaption></figure><figure><img src="assets/guides/tenders/61-competitor-panel.jpg" alt="Competitor panel opened from a row" width="775" height="435" loading="lazy"><figcaption>The competitor panel.</figcaption></figure></div>
+  </article>
+
+  <article class="gstep" id="f6s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Suggest from market research</b></h3>
+      <p>It proposes competitors with a source for each fact. It uses part of your AI allowance, so use it once per tender.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/63-suggest.jpg" alt="Suggest from market research button highlighted" width="905" height="397" loading="lazy"><figcaption>Suggest from market research.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Supply only</b></h3>
+      <p>It first asks what it needs, starting with: is this a supply-only tender, or supply and install? Nothing runs until every question is answered. This guide did not run a search.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/64-suggest-questions.jpg" alt="First question of the market research with Supply only highlighted" width="904" height="397" loading="lazy"><figcaption>The first question.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-7">
+  <h2>Win and hand over</h2>
+  <p class="g-sub">Record the outcome, open the contract project and hand its budget to the ERP.</p>
+
+  <article class="gstep" id="f7s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Record the outcome</b></h3>
+      <p>The <b>Next</b> row of a submitted tender holds the button.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/65-record-outcome.jpg" alt="Next row with Record the outcome highlighted" width="905" height="397" loading="lazy"><figcaption>Record the outcome.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Won</b></h3>
+      <p>The panel reads "Close this deal as..." with <b>Won</b>, <b>Lost</b> and <b>Dropped</b>. <b>Confirm</b> saves your choice.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/66-outcome-won.jpg" alt="Close this deal as panel with Won highlighted" width="1080" height="472" loading="lazy"><figcaption>Won, Lost or Dropped.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>Create contract project now</b></h3>
+      <p>A won tender starts its contract project from here. This guide did not create one. Later the <b>Next</b> row offers <b>Open contract project</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/67-create-project.jpg" alt="Create contract project now button highlighted" width="1080" height="472" loading="lazy"><figcaption>Create contract project now.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Open</b> on a project</h3>
+      <p>The <b>Contract Projects</b> list shows each project with its contract value, budget and margin.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/p01-list-open.jpg" alt="Contract Projects list with Open highlighted" width="1100" height="315" loading="lazy"><figcaption>Open a project.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click the tender link</h3>
+      <p>The link at the top left, here <b>Tender OPP-0014</b>, goes back to the tender the project came from.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/p02-back-to-tender.jpg" alt="Contract project header with the tender link highlighted" width="904" height="397" loading="lazy"><figcaption>Back to the tender.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Read the project path</h3>
+      <p><b>Draft</b>, <b>Baseline waiting</b>, <b>Active</b>, <b>Handed over</b>, <b>Closed</b>. The <a href="guide-contract-projects.html">Contract projects</a> guide covers each tab.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/p03-path.jpg" alt="Project path with the current step highlighted" width="1100" height="190" loading="lazy"><figcaption>The project path.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>Handover</b></h3>
+      <p>The tab holds <b>Hand over to the ERP</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/p31-handover-tab.jpg" alt="Project tabs with Handover highlighted" width="904" height="397" loading="lazy"><figcaption>The Handover tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Click <b>Download Excel</b></h3>
+      <p>It downloads the budget file for the current revision. <b>Send to ePROMIS</b> sits next to it, grey here.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/p32-handover-download.jpg" alt="Download Excel button highlighted" width="904" height="397" loading="lazy"><figcaption>Download Excel.</figcaption></figure>
+  </article>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>

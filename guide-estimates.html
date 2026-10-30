@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Estimates — step by step — BPMSquare</title>
+<meta name="description" content="Build a price from a template: enter the room, the material and the margin, read the price and the bill of materials, and use the estimate to price a tender." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <nav class="links">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a class="on" href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Sales</div>
+    <h1>Estimates, step by step</h1>
+    <p>Pick a template, enter the sizes and the margin, and read the price and the bill of materials. Use an estimate to price rows of a tender.</p>
+    <div class="g-chips"><a href="#flow-1">Build an estimate and read the price</a><a href="#flow-2">Use an estimate on a tender</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+
+<section class="g-flow" id="flow-1">
+  <h2>Build an estimate and read the price</h2>
+  <p class="g-sub">The example is the <b>Floor tiles (illustrative)</b> template.</p>
+
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>+ New Estimate</b></h3>
+      <p>The button is on the Estimates list.</p>
+    </div>
+    <figure><img src="assets/guides/estimates/e10-list-new.jpg" alt="Estimates list with New Estimate highlighted" width="904" height="397" loading="lazy"><figcaption>New Estimate.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click a template</h3>
+      <p>"Choose a template. You can paste the customer's email on the next page." Here: <b>Floor tiles (illustrative)</b>. Others include <b>Chain-link fence</b>, <b>Pipes and fittings</b>, <b>Porta cabin</b> and <b>Precast elements</b>.</p>
+    </div>
+    <figure><img src="assets/guides/estimates/e11-templates.jpg" alt="Template cards with Floor tiles highlighted" width="904" height="397" loading="lazy"><figcaption>Templates.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>Source: start from an email</b></h3>
+      <p>The section is closed by default. Open, it asks you to paste the customer's email, or you can fill in the details below.</p>
+    </div>
+    <div style="display:grid;gap:12px"><figure><img src="assets/guides/estimates/e08-source-email-closed.jpg" alt="Source start from an email section, closed" width="1100" height="208" loading="lazy"><figcaption>Source, closed.</figcaption></figure><figure><img src="assets/guides/estimates/e09-source-email-open.jpg" alt="Source section open with the paste box" width="1100" height="233" loading="lazy"><figcaption>Source, open.</figcaption></figure></div>
+  </article>
+
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Room length (m)</b></h3>
+      <p>Under <b>2. About the floor</b> enter the room, the tile and the layout. Each field shows its allowed range.</p>
+    </div>
+    <figure><img src="assets/guides/estimates/e01-inputs-room-length.jpg" alt="Room length field highlighted" width="904" height="397" loading="lazy"><figcaption>Room length.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Margin on cost (%)</b></h3>
+      <p>It is added to the cost to give the price. The customer only sees the price. Change any number and the model and the price update at once.</p>
+    </div>
+    <figure><img src="assets/guides/estimates/e02-inputs-margin.jpg" alt="Margin on cost field highlighted" width="904" height="397" loading="lazy"><figcaption>Margin on cost.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Read <b>3. Price</b></h3>
+      <p>The total including VAT, then <b>Tiles and materials</b>, <b>Laying and finishing</b>, <b>Delivery and site</b>, <b>Overhead</b>, <b>Total before VAT</b> and <b>VAT 18%</b>. <b>Tile range options</b> compares <b>Basic</b>, <b>Standard</b> and <b>Premium</b>.</p>
+    </div>
+    <figure><img src="assets/guides/estimates/e03-price.jpg" alt="Price panel with totals and tile range options" width="1100" height="517" loading="lazy"><figcaption>The price.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>How the price is built</b></h3>
+      <p>The section is for your team. Open, it shows the cost build-up as a bar and a list.</p>
+    </div>
+    <div style="display:grid;gap:12px"><figure><img src="assets/guides/estimates/e04-how-price-built.jpg" alt="How the price is built section, closed" width="1100" height="216" loading="lazy"><figcaption>How the price is built.</figcaption></figure><figure><img src="assets/guides/estimates/e05-how-price-built-open.jpg" alt="The cost build-up, open" width="1100" height="383" loading="lazy"><figcaption>Cost build-up.</figcaption></figure></div>
+  </article>
+
+  <article class="gstep" id="f1s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Click <b>Bill of materials</b></h3>
+      <p>The section is for your team and the factory. Open, it lists each item with unit, quantity, unit cost and cost, and an <b>Edit</b> link.</p>
+    </div>
+    <div style="display:grid;gap:12px"><figure><img src="assets/guides/estimates/e06-bom.jpg" alt="Bill of materials section, closed" width="1100" height="216" loading="lazy"><figcaption>Bill of materials.</figcaption></figure><figure><img src="assets/guides/estimates/e07-bom-open.jpg" alt="The bill of materials, open" width="1100" height="383" loading="lazy"><figcaption>Items and costs.</figcaption></figure></div>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Use an estimate on a tender</h2>
+  <p class="g-sub">An estimate can price rows of a tender BOQ. The <a href="guide-tenders.html">Tender management</a> guide shows the whole tender.</p>
+
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Costing</b></h3>
+      <p>On the tender, the <b>Costing</b> tab lists estimates and RFQs as <b>Cost sources</b>.</p>
+    </div>
+    <figure><img src="assets/guides/estimates/30-costing-tab.jpg" alt="Tender tabs with Costing highlighted" width="904" height="397" loading="lazy"><figcaption>The Costing tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Add rows</b></h3>
+      <p>It gives an estimate more BOQ rows to price.</p>
+    </div>
+    <div style="display:grid;gap:12px"><figure><img src="assets/guides/estimates/33-costing-add-rows.jpg" alt="Add rows button on an estimate row" width="905" height="397" loading="lazy"><figcaption>Add rows.</figcaption></figure><figure><img src="assets/guides/estimates/34-add-rows-panel.jpg" alt="Add rows panel" width="775" height="435" loading="lazy"><figcaption>The Add rows panel.</figcaption></figure></div>
+  </article>
+
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>Apply to 3 rows</b></h3>
+      <p>Applies the estimate's cost to the ticked rows, with the markup. This guide did not apply it.</p>
+    </div>
+    <figure><img src="assets/guides/estimates/35-add-rows-apply.jpg" alt="Apply to 3 rows button highlighted" width="587" height="395" loading="lazy"><figcaption>Apply to 3 rows.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Open</b></h3>
+      <p>It opens the estimate.</p>
+    </div>
+    <figure><img src="assets/guides/estimates/36-costing-open-estimate.jpg" alt="Open button on an estimate row" width="905" height="397" loading="lazy"><figcaption>Open.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Back to the BOQ</b></h3>
+      <p>The estimate shows its tender at the top. <b>Back to the BOQ</b> returns you to the rows it prices.</p>
+    </div>
+    <figure><img src="assets/guides/estimates/37-estimate-back.jpg" alt="Estimate header with Back to the BOQ highlighted" width="905" height="397" loading="lazy"><figcaption>Back to the BOQ.</figcaption></figure>
+  </article>
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>Bring a tender. Leave with a priced bid.</h2>
+    <p>Twenty minutes on a live workspace. Your BOQ, your suppliers.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Tenders">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="gcc.html">Built for the GCC</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="api.html">API</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>
