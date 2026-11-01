@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>API documentation — BPMSquare</title>
-<meta name="description" content="The BPMSquare REST API: scoped keys, filters and aggregates, plain-English queries, a change feed, signed webhooks and an MCP server with 34 tools. OpenAPI included." />
+<meta name="description" content="The BPMSquare REST API: scoped keys, filters and aggregates, plain-English queries, a change feed, signed webhooks and an MCP server with 37 tools. OpenAPI included." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,7 +73,7 @@
     <span class="item">OpenAPI spec</span>
     <span class="item">Signed webhooks</span>
     <span class="item">Change feed</span>
-    <span class="item">MCP, 34 tools</span>
+    <span class="item">MCP, 37 tools</span>
   </div>
 </div>
 
@@ -146,10 +146,10 @@
         <section id="scopes">
           <h2>Scopes</h2>
           <p>A scope is <code class="i">{ read, write, objects }</code>. A read-only key gets 403 on a write. A key limited to some objects gets 403 on any other object.</p>
-          <p>Objects a key can name: <code class="i">quotations</code> <code class="i">accounts</code> <code class="i">cases</code> <code class="i">inventory</code> <code class="i">invoices</code> <code class="i">purchase-orders</code> <code class="i">pricing</code> <code class="i">products</code> <code class="i">projects</code> <code class="i">opportunities</code> <code class="i">employees</code> <code class="i">rfqs</code> <code class="i">estimates</code> <code class="i">abm_programs</code> <code class="i">abm_targets</code> <code class="i">standard_quotes</code> <code class="i">sales_orders</code></p>
+          <p>Objects a key can name: <code class="i">quotations</code> <code class="i">accounts</code> <code class="i">cases</code> <code class="i">inventory</code> <code class="i">invoices</code> <code class="i">purchase-orders</code> <code class="i">pricing</code> <code class="i">products</code> <code class="i">projects</code> <code class="i">opportunities</code> <code class="i">employees</code> <code class="i">rfqs</code> <code class="i">estimates</code> <code class="i">abm_programs</code> <code class="i">abm_targets</code> <code class="i">standard_quotes</code> <code class="i">sales_orders</code> <code class="i">tenders</code></p>
           <h3>Personal and sensitive data is opt-in</h3>
-          <p>A key that allows "all objects" does <b>not</b> reach employees, RFQs, estimates or ABM targets. A key must name them. Existing keys never gain access to new sensitive endpoints by accident.</p>
-          <p>Contacts, tenders and contract projects have no endpoint at all. Contact people do appear inside <code class="i">GET /accounts/:id</code> with their phone and email, under the <code class="i">accounts</code> scope, so give that scope only to integrations that may see them. The cost price of a product is never returned, and estimates and sales orders carry no cost or margin.</p>
+          <p>A key that allows "all objects" does <b>not</b> reach employees, RFQs, estimates, ABM targets or tenders. A key must name them. A key with access to everything gets 403 on the tender endpoints. Existing keys never gain access to new sensitive endpoints by accident.</p>
+          <p>Contacts and contract projects have no endpoint at all. Tenders have a read-only one and need a key that names <code class="i">tenders</code>. The cost of a tender line, the markup, the supplier behind a price, decision reasons and the source e-mail are never returned. Contact people do appear inside <code class="i">GET /accounts/:id</code> with their phone and email, under the <code class="i">accounts</code> scope, so give that scope only to integrations that may see them. The cost price of a product is never returned, and estimates and sales orders carry no cost or margin.</p>
           <h3>A module you did not buy is not there</h3>
           <p>Each object belongs to a module. A workspace without that module gets <code class="i">404 {"error":"Not found"}</code> on its endpoints, so the existence of the endpoint is not revealed.</p>
         </section>
@@ -211,6 +211,9 @@
               <tr><td><span class="m m-get">GET</span><code>/estimates</code></td><td>estimates (named)</td><td>Estimates</td></tr>
               <tr><td><span class="m m-get">GET</span><code>/abm-programs</code></td><td>abm_programs</td><td>Account-based marketing programs</td></tr>
               <tr><td><span class="m m-get">GET</span><code>/abm-targets</code></td><td>abm_targets (named)</td><td>Target accounts, plus <code>/abm-programs/:id/targets</code></td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/tenders</code></td><td>tenders (named)</td><td>Tender deals. Filters: <code>stage</code>, <code>outcome</code>, <code>decision</code>, <code>portal</code>, <code>closing</code> (days to the bid end date). Needs the GCC tender module</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/tenders/:id</code></td><td>tenders (named)</td><td>One tender with a summary of its Bill of quantities</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/tenders/:id/boq</code></td><td>tenders (named)</td><td>The Bill of quantities, one row per line: item number, name, details, the client's own columns, unit, quantity, rate and amount. No cost or markup</td></tr>
             </tbody>
           </table>
         </section>
@@ -268,7 +271,7 @@
   "data": [ { "ref": "QT-2026-0042", "status": "draft", "total": 41050 } ]
 }</pre></div>
           <p>Maximum run time is 30 seconds. A question the data cannot answer returns <code class="i">answerable: false</code> instead of a guess. The key needs read access to the object you name, and a module you did not buy answers 404.</p>
-          <p>You can ask about <code class="i">quotations</code> <code class="i">accounts</code> <code class="i">cases</code> <code class="i">inventory</code> <code class="i">products</code> <code class="i">opportunities</code> <code class="i">rfqs</code> <code class="i">standard_quotes</code> <code class="i">sales_orders</code> <code class="i">abm_programs</code> <code class="i">abm_targets</code> <code class="i">estimates</code> <code class="i">projects</code> <code class="i">project_hours</code> <code class="i">employees</code> <code class="i">invoices</code> <code class="i">purchase-orders</code>, with the scope that object needs. Four more, <code class="i">assets</code> <code class="i">suppliers</code> <code class="i">work-orders</code> and <code class="i">leads</code>, have no endpoint of their own and need an all-objects key.</p>
+          <p>You can ask about <code class="i">quotations</code> <code class="i">accounts</code> <code class="i">cases</code> <code class="i">inventory</code> <code class="i">products</code> <code class="i">opportunities</code> <code class="i">rfqs</code> <code class="i">standard_quotes</code> <code class="i">sales_orders</code> <code class="i">abm_programs</code> <code class="i">abm_targets</code> <code class="i">estimates</code> <code class="i">projects</code> <code class="i">project_hours</code> <code class="i">employees</code> <code class="i">invoices</code> <code class="i">purchase-orders</code>, with the scope that object needs. <code class="i">tenders</code> and <code class="i">tender_boq_lines</code> need a key that names <code class="i">tenders</code>. Four more, <code class="i">assets</code> <code class="i">suppliers</code> <code class="i">work-orders</code> and <code class="i">leads</code>, have no endpoint of their own and need an all-objects key.</p>
         </section>
 
         <section id="changes">
@@ -303,7 +306,7 @@
 }</pre></div>
           <ul class="dl">
             <li><code class="i">action</code> is <code class="i">create</code>, <code class="i">update</code>, <code class="i">delete</code> or <code class="i">reopen</code>. Match on <code class="i">object_id</code>, not on the label.</li>
-            <li>The feed shows only the object types your key may read. Types with no scope of their own, such as assets, suppliers, work orders and leads, are visible only to an all-objects key. Employees, RFQs, estimates and ABM targets appear only to a key that names them.</li>
+            <li>The feed shows only the object types your key may read. Types with no scope of their own, such as assets, suppliers, work orders and leads, are visible only to an all-objects key. Employees, RFQs, estimates, ABM targets and tenders appear only to a key that names them. A tender's cost entries are held back from the feed.</li>
             <li>Personal fields such as phone, email and tax number appear as <code class="i">[redacted]</code>. Internal cost prices are never included.</li>
             <li><code class="i">actor</code> is the person's email, or <code class="i">api:v1</code> for an API write.</li>
             <li>Save your cursor only after you have processed the page. A final full page can say <code class="i">has_more: true</code> and the next call return nothing; that is normal. When a page is empty the cursor repeats your <code class="i">since</code>, so keep it.</li>
@@ -353,7 +356,7 @@ app.post("/hooks/bpmsquare", express.raw({ type: "application/json" }), (req, re
         <section id="mcp">
           <div class="sec-label">More</div>
           <h2>MCP server</h2>
-          <p>An AI assistant can read your workspace through the Model Context Protocol, with exactly the permissions of the key you give it. The manifest (<code class="i">mcp.json</code>, version 1.18.0) describes 34 tools. Each is a thin wrapper over one REST endpoint and returns that endpoint's JSON; none does anything the REST API cannot.</p>
+          <p>An AI assistant can read your workspace through the Model Context Protocol, with exactly the permissions of the key you give it. The manifest (<code class="i">mcp.json</code>, version 1.20.0) describes 37 tools. Each is a thin wrapper over one REST endpoint and returns that endpoint's JSON; none does anything the REST API cannot.</p>
           <table class="tbl">
             <thead><tr><th>Area</th><th>Tools</th><th>Key needs</th></tr></thead>
             <tbody>
@@ -364,6 +367,7 @@ app.post("/hooks/bpmsquare", express.raw({ type: "application/json" }), (req, re
               <tr><td>Projects and hours</td><td><code>list_projects</code> <code>get_project</code> <code>get_project_hours</code> <code>get_project_invoices</code> <code>query_project_hours</code> <code>create_project_invoice</code></td><td>projects (write for the last one)</td></tr>
               <tr><td>ABM</td><td><code>list_abm_programs</code> <code>get_abm_program</code> <code>list_abm_targets</code> <code>get_abm_target</code></td><td>abm_programs, abm_targets (named)</td></tr>
               <tr><td>Staff</td><td><code>list_employees</code> <code>get_employee</code></td><td>employees (named)</td></tr>
+              <tr><td>Tenders</td><td><code>list_tenders</code> <code>get_tender</code> <code>get_tender_boq</code></td><td>tenders (named)</td></tr>
             </tbody>
           </table>
           <ul class="dl">
@@ -396,7 +400,7 @@ app.post("/hooks/bpmsquare", express.raw({ type: "application/json" }), (req, re
           <table class="tbl">
             <thead><tr><th>Need</th><th>Use</th></tr></thead>
             <tbody>
-              <tr><td>Load or correct thousands of records from a spreadsheet</td><td><b>Data Workbench</b> (Admin). Import, export and bulk update for accounts, contacts, products, quotes, sales orders, cases, invoices and more. An update needs the Record ID column that only an Export fills in, so a file can never hit the wrong record.</td></tr>
+              <tr><td>Load or correct thousands of records from a spreadsheet</td><td><b>Data Workbench</b> (Admin). Import, export and bulk update for accounts, contacts, products, quotes, sales orders, cases, invoices and more. An update needs the Record ID column that only an Export fills in, so a file can never hit the wrong record. The tender Bill of quantities is there too, as <b>Tender BOQ lines</b>: import adds lines and updates them by item number but never removes one, export carries the Record ID, and update uses it.</td></tr>
               <tr><td>Send one record to another system when something happens</td><td><b>Call webhook</b>, fired when a Standard Quote is awarded or a button is pressed on an account. Or <b>Push to ERP</b>, on demand from a record.</td></tr>
               <tr><td>Tell BPMSquare that an order changed in your ERP</td><td><b>Inbound order call</b>: a signed <code>POST</code> to <code>/api/middleware/webhook/sales-order</code> with the order ref or ERP id. Needs the Sales Orders and Integration middleware modules.</td></tr>
               <tr><td>Connect Dynamics 365, SAP S/4HANA or ePROMIS</td><td><b>Connectors</b> and the <b>Integration middleware</b>: links per object, field mapping, a message monitor and resync. Gmail and a mail server connect from the same screen. Slack and Google Calendar connect and test today; no screen sends to or reads from them yet.</td></tr>
