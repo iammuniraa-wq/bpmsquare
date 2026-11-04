@@ -57,7 +57,7 @@
     <div class="crumb"><a href="guides.html">Guides</a> / Workforce</div>
     <h1>Live board and monthly summary, step by step</h1>
     <p>See who is in, on break, late or absent right now, then read the month for payroll: days present, hours, late marks, leave and overtime. Each step shows the exact button to click.</p>
-    <div class="g-chips"><a href="#flow-1">Check who is in right now</a><a href="#flow-2">Read the monthly summary</a><a href="#flow-3">Daily detail and custom range</a></div>
+    <div class="g-chips"><a href="#flow-1">Check who is in right now</a><a href="#flow-2">Read the monthly summary</a><a href="#flow-3">Daily detail and custom range</a><a href="#flow-4">Set the report options</a></div>
   </div>
 </div>
 
@@ -229,6 +229,61 @@
       <p>Type the first and last day. This screen shows the summary table only. For the day-by-day breakdown of the range, use <b>Export to Excel</b>.</p>
     </div>
     <figure><img src="assets/guides/wfm-summary/17-range-from.jpg" alt="The first date of the custom range outlined and numbered 5" width="1100" height="235" loading="lazy"><figcaption>The last day is the field after <b>to</b>.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-4">
+  <h2>Set the report options</h2>
+  <p class="g-sub">Do this once, as an admin, when your accountant wants the payroll report by location or a minimum for overtime. The options are on the <b>Rules</b> tab of <b>Settings → Workforce</b>.</p>
+
+  <article class="gstep" id="f4s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Report by location</b></h3>
+      <p>It is a switch on the <b>Rules</b> tab of <b>Settings → Workforce</b>. On, the monthly Excel export gets one sheet for each location and employment type. Off keeps the usual sheets. This guide did not switch it on.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/wfm01-report-by-location.jpg" alt="Report by location switch highlighted on the Rules tab" width="904" height="300" loading="lazy"><figcaption>Report by location.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s2" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the sheets and columns it adds</h3>
+      <p>Each sheet is named <b>&lt;Location&gt; - &lt;Type&gt;</b>, for example <b>Workshop - Full-time</b>. A person with no home site goes to <b>No location - &lt;Type&gt;</b>. Every sheet gains <b>Sl No</b>, a serial number, and <b>Category</b>, the employment type. It also gains <b>Standard Hrs</b>, the shift length on each day the person was expected to work, and <b>Actual Hrs</b>, hours worked less standard. A minus sign marks time below standard, for example <b>-01:30</b>. Weekly offs, holidays and full leave days add no standard hours.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f4s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Type <b>Minimum overtime per day (minutes)</b></h3>
+      <p>The field shows when <b>Overtime</b> is ticked under <b>Extra punch types</b>. Overtime on a day shorter than this many minutes is shown but not counted or paid. A day at or above it counts in full, not only the part over the minimum. <b>0</b> counts everything. This guide did not change it.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/wfm02-ot-minimum.jpg" alt="Minimum overtime per day field highlighted" width="904" height="300" loading="lazy"><figcaption>Minimum overtime per day.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s4" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Read <b>OT not counted</b> in the Excel file</h3>
+      <p>With a minimum set, the export adds an <b>OT not counted</b> column next to the overtime hours. The day's status reads <b>OT below minimum, not counted</b>.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f4s5" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Save</b></h3>
+      <p><b>Save</b> is at the top right of the page. The Rules, Leave, Alerts and Billing tabs save together. The next export uses the new options.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f4s6" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Read the employment type message</h3>
+      <p>When you save an employee with a type the workspace has not set up, the message names the types you can use: <b>Employment type 'x' is not set up. Add it in Settings &gt; Workforce or use one of: …</b>. Add the type under <b>Employment types</b> on the same Rules tab, or pick one from the list.</p>
+    </div>
   </article>
 </section>
 

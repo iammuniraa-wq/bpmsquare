@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tender management — step by step — BPMSquare</title>
-<meta name="description" content="Take a tender from the client email to a won contract project: price the bill of quantities, send the bid, track versions and competitors, and hand the project over." />
+<meta name="description" content="Take a tender from the client email to a won contract project: price the bill of quantities, group it into a WBS, send the bid, track versions and competitors, and hand the project over." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@
     <div class="crumb"><a href="guides.html">Guides</a> / Sales</div>
     <h1>Tender management, step by step</h1>
     <p>Take a tender from the client email to a won contract project. You price the bill of quantities, send the bid by email, keep every bid version, and hand the project to the ERP.</p>
-    <div class="g-chips"><a href="#flow-1">Start a tender</a><a href="#flow-2">Price the BOQ</a><a href="#flow-3">Cost rows from estimates and RFQs</a><a href="#flow-4">Submit and send the bid</a><a href="#flow-5">Work with the client and the team</a><a href="#flow-6">Track competitors</a><a href="#flow-7">Win and hand over</a></div>
+    <div class="g-chips"><a href="#flow-1">Start a tender</a><a href="#flow-2">Price the BOQ</a><a href="#flow-2b">Group the BOQ into a WBS</a><a href="#flow-3">Cost rows from estimates and RFQs</a><a href="#flow-4">Submit and send the bid</a><a href="#flow-5">Work with the client and the team</a><a href="#flow-6">Track competitors</a><a href="#flow-7">Win and hand over</a></div>
   </div>
 </div>
 
@@ -264,6 +264,167 @@
     <figure><img src="assets/guides/tenders/28-boq-save-cost.jpg" alt="Save cost button highlighted" width="905" height="397" loading="lazy"><figcaption>Save cost.</figcaption></figure>
   </article>
 </section>
+
+<section class="g-flow" id="flow-2b">
+  <h2>Group the BOQ into a WBS</h2>
+  <p class="g-sub">Group BOQ lines into WBS items so you can plan the work in your own order. A line sits in one item, or you share it across items. The tender shown is <b>SAMPLE-NUD-2026-077</b>.</p>
+
+  <article class="gstep" id="f2bs1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>WBS</b></h3>
+      <p>Two buttons sit above the table: <b>BOQ</b> and <b>WBS</b>. BOQ shows the client's order. WBS shows the same lines grouped the way you will run the work. Its "i" says so.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs01-view-switch.jpg" alt="BOQ and WBS buttons with WBS highlighted" width="904" height="397" loading="lazy"><figcaption>The BOQ and WBS switch.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the WBS view</h3>
+      <p>One bar for each top-level item shows its share of the client amount. Under the bars the tree lists <b>Item</b>, <b>Owner</b>, <b>Lines</b>, <b>Client amount</b> and <b>Cost</b>. A parent adds up its own lines and its sub-items, so nothing is counted twice. The <b>Lines</b> tile above reads, for example, "2 WBS items · 9 unassigned".</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs02-tree.jpg" alt="The WBS tree with two items and their share bars" width="1140" height="350" loading="lazy"><figcaption>The tree. Each item is one row.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>New WBS item</b></h3>
+      <p>It opens a side panel. Start here when the tender has no WBS yet.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs03-new-item.jpg" alt="New WBS item button highlighted" width="904" height="397" loading="lazy"><figcaption>New WBS item.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Type the <b>Name</b></h3>
+      <p>The name is the only required field. Use a work area, for example <b>Earthworks</b>.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs04-item-name.jpg" alt="New WBS item panel with the Name field highlighted" width="775" height="435" loading="lazy"><figcaption>The Name field.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Read <b>Code</b>, <b>Parent</b> and <b>Owner</b></h3>
+      <p><b>Code</b> numbers itself: 1, 1.1, 1.1.1. Type your own, for example your ERP's code, and it is kept. <b>Parent</b> is optional. An item can sit up to three levels deep. If the parent already holds lines, they move into the new item and the panel says so. <b>Owner</b> is optional while bidding. Click <b>Save</b> to add the item. This guide did not save one.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs05-item-fields.jpg" alt="Code, Parent and Owner fields highlighted" width="775" height="435" loading="lazy"><figcaption>Code, Parent and Owner.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Tick the lines on the <b>BOQ</b> view</h3>
+      <p>Click <b>BOQ</b>, then tick the box in front of each line. A bar shows how many are ticked, here <b>2 selected</b>. <b>Clear</b> removes the ticks. The box in the table head ticks every row on the page.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs06-tick-lines.jpg" alt="Two BOQ lines ticked and the selection bar above the table" width="904" height="440" loading="lazy"><figcaption>Ticked lines and the selection bar.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>Group into WBS</b></h3>
+      <p>A menu lists <b>New WBS item…</b> and every bottom-level item with its code. Click an item to put the ticked lines in it. A line sits in one item, so a line that was split is no longer split. This guide did not move any lines.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs07-group-menu.jpg" alt="Group into WBS button highlighted" width="904" height="397" loading="lazy"><figcaption>Group into WBS.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Or click <b>New WBS item…</b> in the menu</h3>
+      <p>Type a name, choose a parent if you want one and read the code it will get. <b>Create and group</b> makes the item and puts the ticked lines in it in one go.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs08-new-in-menu.jpg" alt="Name field of the new item inside the Group menu highlighted" width="904" height="397" loading="lazy"><figcaption>Make an item and group in one step.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Tick one line and click <b>Split…</b></h3>
+      <p>Use it when one line belongs to more than one item, for example a pipe laid in two areas. The button shows when exactly one line is ticked. Each row also has a <b>Split</b> button at its far right.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs09-split-button.jpg" alt="Split button in the selection bar highlighted" width="904" height="397" loading="lazy"><figcaption>Split.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs10">
+    <div>
+      <div class="gnum">10</div>
+      <h3>Choose an item and type a share</h3>
+      <p>Each part has a WBS item and a share in percent. Under it you see the quantity and amount that share gives: 60 % of 420 m is 252 m, worth 47,880. <b>+ Add part</b> adds another item. <b>New WBS item…</b> in the item list makes an item from the part.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs11-split-parts.jpg" alt="Split panel with two parts, 60 and 40 percent" width="775" height="435" loading="lazy"><figcaption>Two parts, 60 % and 40 %.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs11">
+    <div>
+      <div class="gnum">11</div>
+      <h3>Click <b>Quantity</b></h3>
+      <p>Use it to type a quantity for each part. The percent follows. The share is kept as a percent, so a revised quantity re-derives the quantities and keeps your split.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs12-split-qty.jpg" alt="Quantity button next to the percent button highlighted" width="775" height="435" loading="lazy"><figcaption>Share as % or as quantity.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs12">
+    <div>
+      <div class="gnum">12</div>
+      <h3>Click <b>Save split</b></h3>
+      <p>The button stays grey until the shares add up to 100 % and every part has an item. The panel says <b>Balanced</b>, or how many percent are left or too many, and prints what is wrong. <b>Unsplit</b> puts the whole line in its first item. This guide did not save a split.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs13-split-save.jpg" alt="Save split button highlighted" width="775" height="435" loading="lazy"><figcaption>Save split.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs13">
+    <div>
+      <div class="gnum">13</div>
+      <h3>Click <b>Split 2</b></h3>
+      <p>A split line shows a chip in the WBS column. It opens the parts under the row, each with its item, percent, quantity and amount. <b>Edit split</b> and <b>Unsplit</b> are under them.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs14-split-chip.jpg" alt="Split 2 chip highlighted with its two parts under the row" width="904" height="397" loading="lazy"><figcaption>The chip opens the parts.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs14">
+    <div>
+      <div class="gnum">14</div>
+      <h3>Click the arrow in front of an item</h3>
+      <p>It opens the lines the item holds. A split line shows its part, for example 60 % of 420 m. The arrow on a parent folds its sub-items. Folds are remembered in this browser.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs15-open-item.jpg" alt="Arrow in front of item 1 highlighted with its three lines open" width="1140" height="340" loading="lazy"><figcaption>Open an item.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs15">
+    <div>
+      <div class="gnum">15</div>
+      <h3>Click the three dots</h3>
+      <p>Each item has a menu: <b>Rename</b>, <b>Code</b>, <b>Add sub-item</b>, <b>Move to…</b>, <b>Set owner</b> and <b>Remove</b>. <b>Remove</b> asks first. Its lines go to Unassigned and its sub-items move up one level.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs16-row-menu.jpg" alt="Three dots button of item 1 highlighted with its menu open" width="904" height="397" loading="lazy"><figcaption>The item menu.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs16">
+    <div>
+      <div class="gnum">16</div>
+      <h3>Click <b>Renumber</b></h3>
+      <p>It asks first. Codes you typed are kept. The rest are numbered again in order. This guide did not renumber.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs10-renumber.jpg" alt="Renumber button highlighted" width="904" height="397" loading="lazy"><figcaption>Renumber.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs17">
+    <div>
+      <div class="gnum">17</div>
+      <h3>Read <b>Unassigned</b></h3>
+      <p>The amber list holds lines that sit in no item. A split line whose item was removed shows what is left unassigned, and you fix it with <b>Edit split</b>. Tick lines here and use the same <b>Group into WBS</b> bar. Five lines show. <b>Show all 9</b> lists the rest.</p>
+    </div>
+    <figure><img src="assets/guides/tenders/wbs17-unassigned.jpg" alt="Unassigned list highlighted, showing five of nine lines" width="1140" height="390" loading="lazy"><figcaption>Lines in no item.</figcaption></figure>
+  </article>
+</section>
+
+<div class="callout" style="margin:-8px 0 26px"><b>A revised BOQ keeps your grouping.</b> Lines are matched by item number. New lines land in <b>Unassigned</b>. A priced line that is no longer in the file stays and is flagged <b>no longer in the file</b>. When the tender is won and you create the contract project, the project takes a copy of this WBS. See <a href="guide-contract-projects.html#flow-2b">Contract projects</a>.</div>
+
 
 <section class="g-flow" id="flow-3">
   <h2>Cost rows from estimates and RFQs</h2>

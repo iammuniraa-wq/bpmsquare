@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Contract projects — step by step — BPMSquare</title>
-<meta name="description" content="Run an awarded contract: allocate the budget, buy out packages, record client changes and billing, and hand the project to the ERP." />
+<meta name="description" content="Run an awarded contract: allocate the budget, group lines into a WBS, buy out packages, record client changes and billing, and hand the project to the ERP." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@
     <div class="crumb"><a href="guides.html">Guides</a> / Sales</div>
     <h1>Contract projects, step by step</h1>
     <p>A won tender becomes a contract project. You allocate the budget, buy out packages from suppliers, record client changes and billing, and hand the budget to the ERP.</p>
-    <div class="g-chips"><a href="#flow-1">Open a project and read its numbers</a><a href="#flow-2">Allocate the budget</a><a href="#flow-3">Buy out packages</a><a href="#flow-4">Client changes, billing and handover</a></div>
+    <div class="g-chips"><a href="#flow-1">Open a project and read its numbers</a><a href="#flow-2">Allocate the budget</a><a href="#flow-2b">Group lines into a WBS</a><a href="#flow-3">Buy out packages</a><a href="#flow-4">Client changes, billing and handover</a></div>
   </div>
 </div>
 
@@ -131,9 +131,9 @@
     <div>
       <div class="gnum">1</div>
       <h3>Click <b>Allocate by</b></h3>
-      <p>Choose <b>BOQ line</b> to type a cost on each line, or <b>Work package</b> to type one cost per package. Open the <b>Budget</b> tab first.</p>
+      <p>Choose <b>BOQ line</b> to type a cost on each line, or <b>WBS</b> to type one cost on each bottom-level WBS item. Open the <b>Budget</b> tab first. Once a baseline is approved or waiting for approval, the choice is locked.</p>
     </div>
-    <figure><img src="assets/guides/contract-projects/p07-allocate-by.jpg" alt="Allocate by choice on the Budget tab" width="904" height="397" loading="lazy"><figcaption>Allocate by.</figcaption></figure>
+    <figure><img src="assets/guides/contract-projects/p07b-allocate-by.jpg" alt="Allocate by choice with BOQ line and WBS on the Budget tab" width="904" height="397" loading="lazy"><figcaption>Allocate by.</figcaption></figure>
   </article>
 
   <article class="gstep" id="f2s2">
@@ -163,22 +163,105 @@
     <figure><img src="assets/guides/contract-projects/p34-revision-select.jpg" alt="Revision list highlighted" width="904" height="397" loading="lazy"><figcaption>Revision.</figcaption></figure>
   </article>
 
-  <article class="gstep" id="f2s5">
+    <article class="gstep" id="f2s5" style="grid-template-columns:1fr">
     <div>
       <div class="gnum">5</div>
-      <h3>Click <b>Work breakdown (WBS)</b></h3>
-      <p>It groups BOQ lines into work packages. It shows how many packages exist and how many lines are unassigned.</p>
+      <h3>Type one cost on each WBS item</h3>
+      <p>With <b>WBS</b> chosen, the Budget table lists the WBS items. Type a cost on each bottom-level item. Its lines follow. A parent shows the total of its sub-items and cannot be typed. <b>Left</b> and <b>Margin so far</b> work as before. Switching clears the typed costs and keeps your WBS. Set the WBS up first, as shown in the next section. The demo project has no WBS items yet, so this step has no screenshot.</p>
     </div>
-    <figure><img src="assets/guides/contract-projects/p10-wbs.jpg" alt="Work breakdown section highlighted" width="904" height="397" loading="lazy"><figcaption>Work breakdown.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-2b">
+  <h2>Group lines into a WBS</h2>
+  <p class="g-sub">A WBS groups budget lines into the parts of work you will run, each with an owner. It is the same tree you build on the tender. Lines are never counted twice.</p>
+
+  <article class="gstep" id="f2bs1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>WBS</b></h3>
+      <p>The tab sits next to <b>Budget</b>. The number on it is how many WBS items the project has.</p>
+    </div>
+    <figure><img src="assets/guides/contract-projects/cpw01-wbs-tab.jpg" alt="Project tabs with WBS highlighted" width="904" height="397" loading="lazy"><figcaption>The WBS tab.</figcaption></figure>
   </article>
 
-  <article class="gstep" id="f2s6">
+  <article class="gstep" id="f2bs2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read where the WBS came from</h3>
+      <p>A project made from a tender that has a WBS starts with a copy of it: the items, their owners, the lines in them and any splits. The project keeps its own copy, so a change here never touches the tender. When the tender had no WBS, the tab reads <b>No WBS was copied from the tender. Add the first item.</b></p>
+    </div>
+    <figure><img src="assets/guides/contract-projects/cpw02b-no-wbs.jpg" alt="Empty WBS tab with the message highlighted" width="904" height="370" loading="lazy"><figcaption>A project with no copied WBS.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>New WBS item</b></h3>
+      <p>A side panel opens. <b>Renumber</b> sits next to the button once the project has items.</p>
+    </div>
+    <figure><img src="assets/guides/contract-projects/cpw02-new-item.jpg" alt="New WBS item button highlighted" width="904" height="385" loading="lazy"><figcaption>New WBS item.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Type the <b>Name</b> and, if you want, the <b>Code</b></h3>
+      <p>The name is required. Leave <b>Code</b> empty and it numbers itself: 1, 1.1, 1.1.1. Type your ERP's code and it is kept. <b>Parent</b> nests the item, up to three levels.</p>
+    </div>
+    <figure><img src="assets/guides/contract-projects/cpw04a-code-name.jpg" alt="New WBS item panel with Code and Name highlighted" width="775" height="400" loading="lazy"><figcaption>Code and Name.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Choose an <b>Owner</b></h3>
+      <p>The owner runs this part of the work. Only an employee with a login can own an item. Employees without one are under <b>No login yet</b>. Pick one and the panel offers <b>Create login</b>. The item cannot be saved until the login exists.</p>
+    </div>
+    <figure><img src="assets/guides/contract-projects/cpw04-owner.jpg" alt="Owner list highlighted in the New WBS item panel" width="775" height="435" loading="lazy"><figcaption>The Owner list.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs6">
     <div>
       <div class="gnum">6</div>
-      <h3>Click <b>New work package</b></h3>
-      <p>The panel asks for <b>Code</b>, <b>Name</b>, <b>Owner</b>, the <b>Lines</b> to include and a <b>Note</b>. Save it with <b>Save work package</b>. This guide did not save one.</p>
+      <h3>Tick the <b>Lines</b></h3>
+      <p>The list holds the budget lines. A line already in another item is greyed and shows which one. A line sits in one item. An item with sub-items holds no lines itself. Add a <b>Note</b> if you want, then click <b>Save WBS item</b>. This guide did not save one.</p>
     </div>
-    <div style="display:grid;gap:12px"><figure><img src="assets/guides/contract-projects/p11-new-work-package.jpg" alt="New work package button highlighted" width="904" height="397" loading="lazy"><figcaption>New work package.</figcaption></figure><figure><img src="assets/guides/contract-projects/p12-work-package-panel.jpg" alt="New work package panel" width="775" height="518" loading="lazy"><figcaption>The panel.</figcaption></figure></div>
+    <figure><img src="assets/guides/contract-projects/cpw05-lines.jpg" alt="Lines list highlighted in the New WBS item panel" width="775" height="435" loading="lazy"><figcaption>The Lines list.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Read <b>Unassigned</b></h3>
+      <p>Lines in no item are listed in amber. Tick lines, choose an item in the bar that appears and click <b>Group into WBS</b>. A line inside an item has <b>Split</b>, which shares it across items in the same panel as on the tender.</p>
+    </div>
+    <figure><img src="assets/guides/contract-projects/cpw03-unassigned.jpg" alt="Unassigned list highlighted on the WBS tab" width="904" height="385" loading="lazy"><figcaption>Lines in no item.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs8" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Read the tree</h3>
+      <p>Each item shows <b>Owner</b>, <b>Lines</b>, <b>Client amount</b> and <b>Allocated</b>. A parent adds up its sub-items. When several people own items, owner buttons above the tree show one person's items. An amber line counts the items that still have no owner. The demo project has no items, so this step has no screenshot.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f2bs9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Read <b>Locked</b></h3>
+      <p>Once the baseline is approved, the budget is locked and no cost can be typed. When you allocate by WBS, the lines also stay where they are, and the WBS tab says <b>Allocation locked: baseline approved</b>. Names, codes, parents and owners can still change.</p>
+    </div>
+    <figure><img src="assets/guides/contract-projects/cpw06-locked.jpg" alt="Locked label next to the Baseline revision on the Budget tab" width="904" height="397" loading="lazy"><figcaption>Locked after approval.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2bs10" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">10</div>
+      <h3>Start a revision to move lines or costs</h3>
+      <p>Open the <b>Revisions</b> tab and click <b>Start revision</b>. The new revision is a draft, so costs and line moves open up again. It needs its own approval. The demo project already has a draft revision, so this guide did not start one.</p>
+    </div>
   </article>
 </section>
 
