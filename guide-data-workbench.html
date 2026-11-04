@@ -57,7 +57,7 @@
     <div class="crumb"><a href="guides.html">Guides</a> / Data Workbench</div>
     <h1>Data Workbench, step by step</h1>
     <p>Data Workbench moves records in and out in bulk. Import checks every row and shows what will and will not go in before anything is saved. Export gives you a CSV. Update changes records you exported earlier.</p>
-    <div class="g-chips"><a href="#flow-1">Import records</a><a href="#flow-2">Export records</a><a href="#flow-3">Update records</a></div>
+    <div class="g-chips"><a href="#flow-1">Import records</a><a href="#flow-2">Export records</a><a href="#flow-3">Update records</a><a href="#flow-4">Tender WBS in bulk</a></div>
   </div>
 </div>
 
@@ -271,6 +271,73 @@
       <p>Drop the edited CSV on the dashed box. The match and review steps work as in Import.</p>
     </div>
     <figure><img src="assets/guides/data-workbench/dw16-update-upload.jpg" alt="Dashed upload box highlighted on the Update tab" width="904" height="397" loading="lazy"><figcaption>Upload the edited file.</figcaption></figure>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-4">
+  <h2>Work with a tender's WBS in bulk</h2>
+  <p class="g-sub">Load a WBS from your ERP, check it in Excel, or regroup many BOQ lines at once. These objects need the tender module. They are listed under <b>Sales</b>.</p>
+
+  <article class="gstep" id="f4s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Tender WBS items</b></h3>
+      <p>Type <b>wbs</b> in <b>Find an object</b>. The object holds the WBS items of your tenders. It sits under Deals (pipeline), so a chip says <b>Needs Deals (pipeline) first</b>.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/dwwbs01-pick.jpg" alt="Tender WBS items entry highlighted after typing wbs" width="904" height="240" loading="lazy"><figcaption>Find the object.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read <b>Required</b> on <b>Import</b></h3>
+      <p>Import adds items to a tender that exists. <b>Tender</b> is its Deal ID (for example OPP-0044) or its tender number. <b>Name</b> is the other required column. <b>WBS code</b> is optional: empty gets the next number, and a code already on the tender is skipped, so loading the same file twice adds nothing. <b>Parent code</b> says where an item sits, and its parent may be a row further down the file. <b>Owner (email)</b> must belong to an active employee. One file can hold several tenders. Items go up to three levels deep.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/dwwbs02-import-required.jpg" alt="Required chip reading Tender, Name highlighted" width="904" height="230" loading="lazy"><figcaption>Tender and Name are required.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click the <b>Export</b> tab and read the columns</h3>
+      <p>Export lists the items of every tender, with <b>Record ID</b>, the tender's Deal ID, <b>WBS code</b>, <b>Name</b>, <b>Parent code</b>, <b>Owner (email)</b> and <b>Note</b>. Three columns are only for reading: <b>Lines</b>, <b>Shared lines</b> and <b>Client amount</b>, all rolled up from the sub-items. A WBS item has no price of its own, and no cost is ever in the file.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/dwwbs03-export-columns.jpg" alt="Export columns for Tender WBS items highlighted" width="904" height="180" loading="lazy"><figcaption>The export columns.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click the <b>Update</b> tab</h3>
+      <p>Update matches each row by its <b>Record ID</b> from an export. <b>Required</b> reads <b>Record ID, Name</b>. It changes <b>Name</b>, <b>WBS code</b>, <b>Parent code</b>, <b>Owner (email)</b> and <b>Note</b>. A value that says what the item already has is <b>No change</b>. An empty <b>Parent code</b> moves the item to the top level, and an empty <b>Owner (email)</b> clears the owner. An empty <b>WBS code</b> is left alone.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/dwwbs04-update-required.jpg" alt="Required chip reading Record ID, Name on the Update tab highlighted" width="904" height="230" loading="lazy"><figcaption>Record ID and Name.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Find <b>WBS code</b> on <b>Tender BOQ lines</b></h3>
+      <p>Which lines sit in which item is set on the lines, not on the items. Open <b>Tender BOQ lines</b>, then <b>Export</b>. The <b>WBS code</b> column holds the item code for a whole line, a list such as <b>2.1:60;2.2:15;2.3:25</b> (code, a colon, the percent) for a split line, and nothing for a line in no item. The column is on Export and Update only. Import never reads it, so a revised BOQ file does not regroup lines.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/dwwbs05-boq-export.jpg" alt="WBS code column highlighted among the Tender BOQ lines export columns" width="904" height="190" loading="lazy"><figcaption>WBS code on the export.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Match <b>WBS code</b> on <b>Update</b></h3>
+      <p>Open <b>Update</b> and upload the exported file. Rows are matched by <b>Record ID</b>, and the file must also carry <b>Description</b> and <b>Quantity</b>, as an export does. On <b>Match columns</b> point the column at <b>WBS code</b>. The screenshot uses a small example file, and nothing was saved.</p>
+    </div>
+    <figure><img src="assets/guides/data-workbench/dwwbs06-boq-match.jpg" alt="WBS code row highlighted on the Match columns step" width="904" height="350" loading="lazy"><figcaption>Match the WBS code column.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s7" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Read why a row fails on <b>Review</b></h3>
+      <p>Type a code to put the whole line in that item, <b>code:percent</b> pairs joined by a semicolon to split it, or leave the cell empty to make the line Unassigned. The line is checked against the items of its own tender. A row fails with a plain reason when a code does not exist, when the shares do not add up to 100 %, or when the item has sub-items, because lines go in bottom-level items. A cell that already matches is <b>No change</b>. Nothing is saved until you click <b>Update</b>, and the change history records each move. This step has no screenshot.</p>
+    </div>
   </article>
 </section>
 

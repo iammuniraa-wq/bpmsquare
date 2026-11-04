@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>API documentation — BPMSquare</title>
-<meta name="description" content="The BPMSquare REST API: scoped keys, filters and aggregates, plain-English queries, a change feed, signed webhooks and an MCP server with 37 tools. OpenAPI included." />
+<meta name="description" content="The BPMSquare REST API: scoped keys, filters and aggregates, plain-English queries, a change feed, signed webhooks and an MCP server with 38 tools. OpenAPI included." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,7 +73,7 @@
     <span class="item">OpenAPI spec</span>
     <span class="item">Signed webhooks</span>
     <span class="item">Change feed</span>
-    <span class="item">MCP, 37 tools</span>
+    <span class="item">MCP, 38 tools</span>
   </div>
 </div>
 
@@ -213,7 +213,8 @@
               <tr><td><span class="m m-get">GET</span><code>/abm-targets</code></td><td>abm_targets (named)</td><td>Target accounts, plus <code>/abm-programs/:id/targets</code></td></tr>
               <tr><td><span class="m m-get">GET</span><code>/tenders</code></td><td>tenders (named)</td><td>Tender deals. Filters: <code>stage</code>, <code>outcome</code>, <code>decision</code>, <code>portal</code>, <code>closing</code> (days to the bid end date). Needs the GCC tender module</td></tr>
               <tr><td><span class="m m-get">GET</span><code>/tenders/:id</code></td><td>tenders (named)</td><td>One tender with a summary of its Bill of quantities</td></tr>
-              <tr><td><span class="m m-get">GET</span><code>/tenders/:id/boq</code></td><td>tenders (named)</td><td>The Bill of quantities, one row per line: item number, name, details, the client's own columns, unit, quantity, rate and amount. No cost or markup</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/tenders/:id/boq</code></td><td>tenders (named)</td><td>The Bill of quantities, one row per line: item number, name, details, the client's own columns, unit, quantity, rate and amount, and where the line sits in the WBS: <code>wbs_code</code> (an item code, or for a split line <code>2.1:60;2.2:15;2.3:25</code>, code and percent) and <code>wbs_parts</code> (each share with its quantity and amount). No cost or markup</td></tr>
+              <tr><td><span class="m m-get">GET</span><code>/tenders/:id/wbs</code></td><td>tenders (named)</td><td>The tender's WBS, one row per item in tree order: code, name, parent, level (up to three), the owner's name, and lines, shared (split) lines, priced lines and client amount rolled up the tree. <code>parts</code> lists each line's share of the item with its quantity and amount. The meta carries the whole-WBS <code>total</code> and what is still <code>unassigned</code>. Client amounts only: no cost or margin. A tender with no WBS gives an empty list. Filters, search and sort work as on any list</td></tr>
             </tbody>
           </table>
         </section>
@@ -356,7 +357,7 @@ app.post("/hooks/bpmsquare", express.raw({ type: "application/json" }), (req, re
         <section id="mcp">
           <div class="sec-label">More</div>
           <h2>MCP server</h2>
-          <p>An AI assistant can read your workspace through the Model Context Protocol, with exactly the permissions of the key you give it. The manifest (<code class="i">mcp.json</code>, version 1.20.0) describes 37 tools. Each is a thin wrapper over one REST endpoint and returns that endpoint's JSON; none does anything the REST API cannot.</p>
+          <p>An AI assistant can read your workspace through the Model Context Protocol, with exactly the permissions of the key you give it. The manifest (<code class="i">mcp.json</code>, version 1.21.0) describes 38 tools. Each is a thin wrapper over one REST endpoint and returns that endpoint's JSON; none does anything the REST API cannot.</p>
           <table class="tbl">
             <thead><tr><th>Area</th><th>Tools</th><th>Key needs</th></tr></thead>
             <tbody>
@@ -367,7 +368,7 @@ app.post("/hooks/bpmsquare", express.raw({ type: "application/json" }), (req, re
               <tr><td>Projects and hours</td><td><code>list_projects</code> <code>get_project</code> <code>get_project_hours</code> <code>get_project_invoices</code> <code>query_project_hours</code> <code>create_project_invoice</code></td><td>projects (write for the last one)</td></tr>
               <tr><td>ABM</td><td><code>list_abm_programs</code> <code>get_abm_program</code> <code>list_abm_targets</code> <code>get_abm_target</code></td><td>abm_programs, abm_targets (named)</td></tr>
               <tr><td>Staff</td><td><code>list_employees</code> <code>get_employee</code></td><td>employees (named)</td></tr>
-              <tr><td>Tenders</td><td><code>list_tenders</code> <code>get_tender</code> <code>get_tender_boq</code></td><td>tenders (named)</td></tr>
+              <tr><td>Tenders</td><td><code>list_tenders</code> <code>get_tender</code> <code>get_tender_boq</code> <code>get_tender_wbs</code></td><td>tenders (named)</td></tr>
             </tbody>
           </table>
           <ul class="dl">
@@ -400,7 +401,7 @@ app.post("/hooks/bpmsquare", express.raw({ type: "application/json" }), (req, re
           <table class="tbl">
             <thead><tr><th>Need</th><th>Use</th></tr></thead>
             <tbody>
-              <tr><td>Load or correct thousands of records from a spreadsheet</td><td><b>Data Workbench</b> (Admin). Import, export and bulk update for accounts, contacts, products, quotes, sales orders, cases, invoices and more. An update needs the Record ID column that only an Export fills in, so a file can never hit the wrong record. The tender Bill of quantities is there too, as <b>Tender BOQ lines</b>: import adds lines and updates them by item number but never removes one, export carries the Record ID, and update uses it.</td></tr>
+              <tr><td>Load or correct thousands of records from a spreadsheet</td><td><b>Data Workbench</b> (Admin). Import, export and bulk update for accounts, contacts, products, quotes, sales orders, cases, invoices and more. An update needs the Record ID column that only an Export fills in, so a file can never hit the wrong record. The tender Bill of quantities is there too, as <b>Tender BOQ lines</b>: import adds lines and updates them by item number but never removes one, export carries the Record ID, and update uses it. The tender's WBS is there as <b>Tender WBS items</b> (import adds items, export carries the Record ID and the roll-ups, update changes name, code, parent, owner and note), and <b>Tender BOQ lines</b> has a <b>WBS code</b> column on export and update that regroups lines or splits them across items.</td></tr>
               <tr><td>Send one record to another system when something happens</td><td><b>Call webhook</b>, fired when a Standard Quote is awarded or a button is pressed on an account. Or <b>Push to ERP</b>, on demand from a record.</td></tr>
               <tr><td>Tell BPMSquare that an order changed in your ERP</td><td><b>Inbound order call</b>: a signed <code>POST</code> to <code>/api/middleware/webhook/sales-order</code> with the order ref or ERP id. Needs the Sales Orders and Integration middleware modules.</td></tr>
               <tr><td>Connect Dynamics 365, SAP S/4HANA or ePROMIS</td><td><b>Connectors</b> and the <b>Integration middleware</b>: links per object, field mapping, a message monitor and resync. Gmail and a mail server connect from the same screen. Slack and Google Calendar connect and test today; no screen sends to or reads from them yet.</td></tr>

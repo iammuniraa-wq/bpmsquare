@@ -57,7 +57,7 @@
     <div class="crumb"><a href="guides.html">Guides</a> / Sales</div>
     <h1>Contract projects, step by step</h1>
     <p>A won tender becomes a contract project. You allocate the budget, buy out packages from suppliers, record client changes and billing, and hand the budget to the ERP.</p>
-    <div class="g-chips"><a href="#flow-1">Open a project and read its numbers</a><a href="#flow-2">Allocate the budget</a><a href="#flow-2b">Group lines into a WBS</a><a href="#flow-3">Buy out packages</a><a href="#flow-4">Client changes, billing and handover</a></div>
+    <div class="g-chips"><a href="#flow-1">Open a project and read its numbers</a><a href="#flow-2">Allocate the budget</a><a href="#flow-2b">Group lines into a WBS</a><a href="#flow-3">Buy out packages</a><a href="#flow-3b">Buy out from a WBS item</a><a href="#flow-4">Client changes, billing and handover</a></div>
   </div>
 </div>
 
@@ -324,6 +324,43 @@
   </article>
 </section>
 
+<section class="g-flow" id="flow-3b">
+  <h2>Make a buy-out package from a WBS item</h2>
+  <p class="g-sub">Start a package from the lines an item holds, so you do not tick them one by one. It needs an approved baseline and the Buy-out tab.</p>
+
+  <article class="gstep" id="f3bs1" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Open a WBS item</h3>
+      <p>On the <b>WBS</b> tab open the three dots of an item and click <b>Edit</b>. The item opens in a side panel. The demo project has no WBS items, so this step has no screenshot.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f3bs2" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Make buy-out package</b></h3>
+      <p>The button sits under the <b>Lines</b> list, with an &quot;i&quot;. It shows for an item that already exists, on a project you can change and that has Buy-out. The item panel closes and the new package panel opens. If the baseline is not approved yet, the tab says <b>Packages are made from the approved baseline. Approve the baseline first.</b> The demo project has no WBS items, so this step has no screenshot.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f3bs3" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Check what is ticked</h3>
+      <p>The <b>Name</b> starts as the item's name. The ticked lines are the item's lines in the approved budget, sub-items included. A line split across items goes in whole, because a supplier prices the whole line, and grey text beside it shows the share this item holds, for example <b>60 % in this WBS item</b>. A line already in another package is listed unticked and names that package. Reserve lines are left out. The demo project has no WBS items, so this step has no screenshot.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f3bs4" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Click <b>Create package</b></h3>
+      <p>Change the name, choose the <b>Kind</b> or tick and untick lines first if you want. <b>Create package</b> saves it and opens the <b>Buy-out</b> tab. Go on as in <a href="#flow-3">Buy out packages</a>. The demo project has no WBS items, so this step has no screenshot.</p>
+    </div>
+  </article>
+</section>
+
 <section class="g-flow" id="flow-4">
   <h2>Client changes, billing and handover</h2>
   <p class="g-sub">Record what the client changes after the award, bill in milestones and hand the budget to the ERP.</p>
@@ -398,6 +435,22 @@
       <p>It downloads the budget file for the current revision. <b>Send to ePROMIS</b> sits next to it, grey here.</p>
     </div>
     <figure><img src="assets/guides/contract-projects/p32-handover-download.jpg" alt="Download Excel button highlighted" width="904" height="397" loading="lazy"><figcaption>Download Excel.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s9" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Read <b>WBS item</b> on the <b>Budget</b> sheet</h3>
+      <p>The workbook's <b>Budget</b> sheet has two columns for where a line sits. <b>Item no.</b> is the client's own item number from their BOQ. <b>WBS item</b> is the project's WBS: the item code for a whole line, a list such as 1.1 60 % &middot; 1.2 15 % &middot; 2 25 % for a split line, and empty for a line in no item. Excel files are not shown in this guide, so this step has no screenshot.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f4s10" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">10</div>
+      <h3>Read the <b>WBS</b> sheet</h3>
+      <p>A new <b>WBS</b> sheet comes with the file when the project has WBS items. It has one row for each item in tree order: <b>WBS</b>, <b>Name</b>, <b>Parent</b>, <b>Owner</b>, <b>Client amount</b>, <b>Allocated</b> and <b>Lines</b>, with sub-items rolled up. Under an item, one row for each part of a split line shows its <b>Share %</b>, <b>Qty</b>, <b>Unit</b> and client amount. Whole lines are not repeated, because the Budget sheet already says where they sit. The file is internal and carries cost.</p>
+    </div>
   </article>
 </section>
 
