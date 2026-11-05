@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Live board and monthly summary — step by step — BPMSquare</title>
-<meta name="description" content="See who is in right now, then read, filter and export the monthly attendance summary." />
+<meta name="description" content="See who is in right now, read, filter and export the monthly attendance summary, and open any past day's punches with selfie and location." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@
     <div class="crumb"><a href="guides.html">Guides</a> / Workforce</div>
     <h1>Live board and monthly summary, step by step</h1>
     <p>See who is in, on break, late or absent right now, then read the month for payroll: days present, hours, late marks, leave and overtime. Each step shows the exact button to click.</p>
-    <div class="g-chips"><a href="#flow-1">Check who is in right now</a><a href="#flow-2">Read the monthly summary</a><a href="#flow-3">Daily detail and custom range</a><a href="#flow-4">Set the report options</a></div>
+    <div class="g-chips"><a href="#flow-1">Check who is in right now</a><a href="#flow-2">Read the monthly summary</a><a href="#flow-3">Daily detail and custom range</a><a href="#flow-4">Set the report options</a><a href="#flow-5">See a past day's punches</a></div>
   </div>
 </div>
 
@@ -120,6 +120,14 @@
       <p>The <b>On login, show me</b> list has two choices: <b>Live board</b> and <b>Dashboard</b>.</p>
     </div>
     <figure><img src="assets/guides/wfm-summary/06-login-select.jpg" alt="The On login show me list outlined and numbered 6" width="1100" height="235" loading="lazy"><figcaption>The list is at the top right of the page.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s7" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click a row to see today's punches</h3>
+      <p>Click anywhere on a person's row, except the name, which opens their page. The row opens to today's punches with selfie and location, newest first. A door-tablet punch reads <b>Recorded at the kiosk at</b> the site, because a tablet has no GPS. The Live board shows today only. For an earlier day, follow <a href="#flow-5">See a past day's punches</a> below.</p>
+    </div>
   </article>
 </section>
 
@@ -283,6 +291,64 @@
       <div class="gnum">6</div>
       <h3>Read the employment type message</h3>
       <p>When you save an employee with a type the workspace has not set up, the message names the types you can use: <b>Employment type 'x' is not set up. Add it in Settings &gt; Workforce or use one of: …</b>. Add the type under <b>Employment types</b> on the same Rules tab, or pick one from the list.</p>
+    </div>
+  </article>
+</section>
+
+<section class="g-flow" id="flow-5">
+  <h2>See a past day's punches, selfie and location</h2>
+  <p class="g-sub">Do this when you need to check where and how someone punched on an earlier day. Open Workforce, then the employee. You see people in your own scope; an employee sees their own days.</p>
+
+  <article class="gstep" id="f5s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Attendance</b></h3>
+      <p>On the employee's page, <b>Attendance</b> lists <b>Daily attendance</b>, one row for every date up to today. Use the month field at the top right of the table to go to an earlier month.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/18-attendance-tab.jpg" alt="The Attendance tab on an employee page outlined and numbered 1" width="904" height="180" loading="lazy"><figcaption>Open the employee from the Workforce employees list.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Punches ▾</b> on the day</h3>
+      <p>The button is next to <b>Correct</b>. A row opens under the day. Click it again to close. Only one day is open at a time, and changing the month closes it.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/19-punches-button.jpg" alt="The Punches button on a day row outlined and numbered 2" width="904" height="180" loading="lazy"><figcaption>Punches does not change anything. Only Correct does.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Read each punch</h3>
+      <p>Punches are listed newest first. Each shows the selfie (click it to open it full size), the kind (<b>Check in</b>, <b>Check out</b>, <b>Break start</b> or <b>Break end</b>) and the time. Chips follow: where it came from (<b>Kiosk</b>, <b>Manual</b> or <b>Corrected</b>; a phone punch has none), the site name or <b>Outside geofence</b>, and the face and location flags that apply. Where no selfie was taken, the box reads <b>no selfie</b>.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/20-punch-rows.jpg" alt="The opened punches of one day with the first punch outlined and numbered 3" width="904" height="240" loading="lazy"><figcaption>The latest punch is at the top.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Read the location</h3>
+      <p>Under the chips is the street address when one is known, the coordinates with their accuracy, and <b>View on map ↗</b>, which opens the spot in a map. Where no address was found, only the coordinates show.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/21-location.jpg" alt="The coordinates and View on map link of a punch outlined and numbered 4" width="904" height="252" loading="lazy"><figcaption>The coordinates are always kept, even when no address is found.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Check a day with no punches</h3>
+      <p>A day without punches says <b>No punches on this day.</b> Absent days, week offs and leave days look like this. Click <b>Punches ▴</b> again to close the row.</p>
+    </div>
+    <figure><img src="assets/guides/wfm-summary/22-no-punches.jpg" alt="The message No punches on this day outlined and numbered 5" width="904" height="150" loading="lazy"><figcaption>Nothing is hidden: an empty day is an empty day.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s6" style="grid-template-columns:1fr">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Read a kiosk punch or a removed selfie</h3>
+      <p>A door-tablet punch has no GPS, because the tablet is a fixed device registered to a site. It reads <b>Recorded at the kiosk at</b> the site name, with the site address and <b>Site location (not a GPS fix)</b> and <b>View on map</b>. A supervisor correction reads <b>Corrected by a supervisor: no location recorded</b>. The amber <b>No location captured</b> appears only on a phone or manual punch that truly has no coordinates. A punch older than the selfie retention period reads <b>Selfie removed after N days</b> in place of the photo; the punch and its location stay.</p>
     </div>
   </article>
 </section>
