@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI automation — step by step — BPMSquare</title>
+<meta name="description" content="Open the AI automation gallery, read what Tender Watch and Attendance Anomalies found and why, dismiss a suggestion, send a drafted note after you edit it, read a run, and set up and pause the agents." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="guides.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F47C20"/><stop offset="1" stop-color="#D85F06"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 40 40"><rect x="0" y="0" width="40" height="40" rx="9" fill="url(#iconGrad)"/><rect x="8" y="8" width="10" height="10" rx="2.5" fill="#fff"/><rect x="22" y="8" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="8" y="22" width="10" height="10" rx="2.5" fill="#fff" opacity=".5"/><rect x="22" y="22" width="10" height="10" rx="2.5" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark"><use href="#mark"/></svg><span class="name">BPM<span>Square</span></span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open the menu"><span></span></label>
+    <nav class="links">
+      <div class="dd"><span class="dd-t" tabindex="0">Solutions</span>
+        <div class="dd-menu">
+          <a href="service-operations.html">Service operations<small>Cases, work orders, dispatch, assets</small></a>
+          <a href="workforce.html">Workforce &amp; project costing<small>Attendance, roster, leave, project hours</small></a>
+          <a href="tenders.html">Tenders &amp; projects<small>BOQ, bids, contract projects, buy-out</small></a>
+          <a href="platform.html">Platform<small>Dashboard, data, integrations, AI</small></a>
+        </div>
+      </div>
+      <div class="dd"><a class="dd-t on" href="guides.html">Docs</a>
+        <div class="dd-menu">
+          <a href="guides.html">Documentation<small>All guides in one place</small></a>
+          <a href="guides.html#guides">Step-by-step guides<small>One task at a time, with close-ups</small></a>
+          <a href="solution-guide.html">Solution Guide<small>Set it up, then use it (PDF)</small></a>
+          <a href="solution-guide.html#integration">Integration Guide<small>Connect other systems (PDF)</small></a>
+          <hr>
+          <a href="api.html">API reference<small>REST, webhooks, MCP</small></a>
+        </div>
+      </div>
+      <a class="gcc" href="gcc.html">Built for the GCC</a>
+      <a class="nav-login-m" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="https://app.bpmsquare.com" target="_blank" rel="noopener">Log in</a></div>
+  </div>
+</header>
+
+<div class="g-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="guides.html">Guides</a> / Platform</div>
+    <h1>AI automation, step by step</h1>
+    <p>Agents that watch your workspace and suggest the next step. Tender Watch finds tenders at risk of missing their bid end date. Attendance Anomalies finds patterns a daily list hides. They only suggest: a person approves everything that reaches someone.</p>
+    <div class="g-chips"><a href="#flow-1">Open the gallery</a><a href="#flow-2">Read a Tender Watch finding</a><a href="#flow-3">See why the agent said it</a><a href="#flow-4">Dismiss, or mark Not an issue</a><a href="#flow-5">Review and send a drafted note</a><a href="#flow-6">Read a run</a><a href="#flow-7">Read an Attendance Anomalies finding</a><a href="#flow-8">Set up an agent</a><a href="#flow-9">Pause all agents</a></div>
+  </div>
+</div>
+
+<main class="g-body"><div class="wrap">
+<p class="g-xref">Want the full chapter? <a href="assets/solution-guide/07-ai-automation.pdf">Solution Guide, chapter 7: AI automation (PDF)</a> · <a href="solution-guide.html">All documentation</a></p>
+<p class="g-xref">Everything here is off until the BPMSquare team switches it on for your workspace, and an administrator turns each agent on. The pictures come from a demonstration workspace with made-up data.</p>
+<section class="g-flow" id="flow-1">
+  <h2>Open the gallery</h2>
+  <p class="g-sub">Do this to see your agents, what they found, and how much of the monthly allowance they have used.</p>
+
+  <article class="gstep" id="f1s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click the <b>AI automation</b> icon</h3>
+      <p>In the left menu, between <b>Workforce</b> and <b>Insights</b>, the sparkle icon opens AI automation. If you do not see it, the BPMSquare team has not switched it on for your workspace, or your business role hides it.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f1-01-menu.jpg" alt="Left menu with the AI automation icon highlighted" width="904" height="441" loading="lazy"><figcaption>The AI automation menu item.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the status chip</h3>
+      <p>Each live agent has one tile. The chip says <b>On</b>, <b>Off</b>, <b>Paused</b>, <b>Needs setup</b>, <b>Set your time zone</b> or <b>Allowance reached</b>. Everything is off until the BPMSquare team switches it on and an administrator turns the agent on.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f1-02-status.jpg" alt="Tender Watch tile with the On chip highlighted" width="904" height="457" loading="lazy"><figcaption>The status chip.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Read <b>Last run</b> and <b>Open findings</b></h3>
+      <p><b>Last run</b> is when the agent last looked. <b>Open findings</b> counts the suggestions nobody has closed yet.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f1-03-lastrun.jpg" alt="Tender Watch tile with Last run and Open findings highlighted" width="904" height="457" loading="lazy"><figcaption>Last run and open findings.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Read <b>This month</b></h3>
+      <p>The tokens the agent has used this month against its cap. Tokens are the units AI use is counted in. When the cap is spent the agent pauses; the rest of BPMSquare keeps working.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f1-04-month.jpg" alt="Tender Watch tile with the This month meter highlighted" width="904" height="457" loading="lazy"><figcaption>The monthly allowance.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Review</b></h3>
+      <p>The tab lists the open suggestions of every agent, most urgent first. The number is how many are open.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f1-05-review-tab.jpg" alt="Tabs with Review highlighted" width="904" height="191" loading="lazy"><figcaption>Review shows every agent's suggestions.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Runs</b></h3>
+      <p>Every time an agent looked, and what came of it. Only people who may see an agent&#x27;s runs see this tab.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f1-06-runs-tab.jpg" alt="Tabs with Runs highlighted" width="904" height="191" loading="lazy"><figcaption>Runs.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Read the roadmap tiles</h3>
+      <p><b>Quote Follow-up</b>, <b>Invoice Chaser</b>, <b>Lead Nurture</b> and <b>Contract Renewal</b> are marked <b>Coming soon</b>. They are planned, you cannot open them, and no data is read for them.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f1-07-roadmap.jpg" alt="Four Coming soon tiles under On the roadmap" width="904" height="280" loading="lazy"><figcaption>Planned agents.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Click the <b>Tender Watch</b> tile</h3>
+      <p>A live tile is one link. It opens the agent&#x27;s own page. <b>Attendance Anomalies</b> opens the same way.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f1-08-tile.jpg" alt="Tender Watch tile highlighted" width="904" height="336" loading="lazy"><figcaption>Open an agent.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f1s9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Read the top of the agent page</h3>
+      <p>The name, the status chip and, for administrators, <b>Run now</b>. Under them are three tabs: <b>Review</b>, <b>Runs</b> and <b>Settings</b>.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f1-09-agent-page.jpg" alt="Tender Watch page header with the name, On chip and Run now button" width="904" height="123" loading="lazy"><figcaption>The agent page.</figcaption></figure>
+  </article>
+
+</section>
+
+<section class="g-flow" id="flow-2">
+  <h2>Read a Tender Watch finding</h2>
+  <p class="g-sub">Tender Watch looks at your open tenders each morning. It says which one may miss its bid end date, and who is holding it up. It only suggests.</p>
+
+  <article class="gstep" id="f2s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Review</b></h3>
+      <p>On the Tender Watch page the <b>Review</b> tab is the one that opens first. The number is how many suggestions are open.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f2-01-review.jpg" alt="Tender Watch page with the Review tab highlighted" width="904" height="123" loading="lazy"><figcaption>The Review tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the chip and the title</h3>
+      <p><b>Review soon</b> is the most urgent. <b>Worth a look</b> comes next. <b>Note</b> is for information. The title is one sentence.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f2-02-severity.jpg" alt="Suggestion title with the Review soon chip highlighted" width="904" height="312" loading="lazy"><figcaption>Severity and title.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Read the bar</h3>
+      <p>Lines priced, out of all the lines in the bill of quantities. The figures come from your own records, never from the AI.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f2-03-bar.jpg" alt="Priced and unpriced bar highlighted" width="904" height="204" loading="lazy"><figcaption>Lines priced.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Read the ring</h3>
+      <p>Days left to the bid end date. The ring turns red at three days or fewer.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f2-04-ring.jpg" alt="Days left ring highlighted" width="904" height="350" loading="lazy"><figcaption>Days left.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Read the sentence</h3>
+      <p>It names the tender and what the agent saw. Here no supplier reply is recorded for the open lines, and the room has been quiet for three days.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f2-05-summary.jpg" alt="Sentence below the title highlighted" width="904" height="195" loading="lazy"><figcaption>What the agent saw.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f2s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Open tender</b></h3>
+      <p>It opens the tender so you can act. This guide did not open it. Tender Watch never predicts a win, suggests a price or a margin, or advises bid or no-bid.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f2-06-open.jpg" alt="Open tender button highlighted" width="904" height="147" loading="lazy"><figcaption>Open tender.</figcaption></figure>
+  </article>
+
+</section>
+
+<section class="g-flow" id="flow-3">
+  <h2>See why the agent said it</h2>
+  <p class="g-sub">Every suggestion shows the evidence it rests on.</p>
+
+  <article class="gstep" id="f3s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Why</b></h3>
+      <p>The evidence is folded away until you ask. A small <b>i</b> next to it explains the word.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f3-01-why.jpg" alt="Why link highlighted under a suggestion" width="904" height="195" loading="lazy"><figcaption>Why.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the chips</h3>
+      <p>Each chip is a piece of evidence, here <b>Unpriced lines</b> and <b>Days left</b>. A chip with a record behind it opens that record. If the agent could not read something, <b>Could not check</b> lines appear under the chips. It says so instead of guessing.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f3-02-chips.jpg" alt="Evidence chips highlighted" width="904" height="226" loading="lazy"><figcaption>The evidence.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f3s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>See the run</b></h3>
+      <p>It opens the run that made the suggestion. <a href="#flow-6">Read a run</a> shows what is on that page.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f3-03-seerun.jpg" alt="See the run chip highlighted" width="904" height="226" loading="lazy"><figcaption>See the run.</figcaption></figure>
+  </article>
+
+</section>
+
+<section class="g-flow" id="flow-4">
+  <h2>Dismiss, or mark Not an issue</h2>
+  <p class="g-sub">Close a suggestion you do not need. The two buttons do different things. This guide pressed neither.</p>
+
+  <article class="gstep" id="f4s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Dismiss</b></h3>
+      <p>It means &ldquo;not now&rdquo;. The suggestion returns tomorrow if it is still true.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f4-01-dismiss.jpg" alt="Dismiss button highlighted" width="904" height="147" loading="lazy"><figcaption>Dismiss.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click <b>Not an issue</b></h3>
+      <p>It silences the same situation for 30 days. It comes back sooner only if it gets worse.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f4-02-notissue.jpg" alt="Not an issue button highlighted" width="904" height="147" loading="lazy"><figcaption>Not an issue.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f4s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click the small <b>i</b></h3>
+      <p>It explains <b>Not an issue</b> in two sentences. Both choices are recorded in Change history.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f4-03-info.jpg" alt="Information tip next to Not an issue" width="904" height="195" loading="lazy"><figcaption>The explanation.</figcaption></figure>
+  </article>
+
+</section>
+
+<section class="g-flow" id="flow-5">
+  <h2>Review and send a drafted note</h2>
+  <p class="g-sub">For some suggestions Tender Watch drafts a short, polite note to the colleague who is holding a tender up. Nothing is sent until a person edits and approves it.</p>
+
+  <article class="gstep" id="f5s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Find the drafted note in a run</h3>
+      <p>Open a run and the <b>Proposed</b> section. It shows the note, its state (here <b>pending</b>) and who it is for. In the demonstration workspace this note is addressed to another colleague, so it is not offered to the signed-in person on the Review tab. The steps after this one therefore have no pictures.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f5-01-proposed.jpg" alt="Proposed section of a run with a pending drafted note" width="904" height="108" loading="lazy"><figcaption>The drafted note, in the run.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f5s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Open the suggestion in Review</h3>
+      <p>If you are one of the people who may approve the note, a <b>Suggested note</b> box appears under <b>Why</b>. It shows a <b>To:</b> line and the draft.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f5s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Click <b>Edit and send</b></h3>
+      <p>The text opens for editing. There is no one-tap send for text that reaches a colleague.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f5s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Change the words</h3>
+      <p>Edit the note until it says what you would say. It can be up to 1,500 characters.</p>
+    </div>
+  </article>
+
+  <article class="gstep" id="f5s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Click <b>Send</b></h3>
+      <p>The note goes out as your own: a Deal Room mention when the tender has a room, and an e-mail to the colleague through your workspace&#x27;s normal outgoing mail. It is logged. Click <b>Reject</b> instead to discard the draft. Nothing is sent.</p>
+    </div>
+  </article>
+
+</section>
+
+<section class="g-flow" id="flow-6">
+  <h2>Read a run</h2>
+  <p class="g-sub">A run is one time an agent looked. The run page shows what it read, what it concluded, what it proposed and what it could not check.</p>
+
+  <article class="gstep" id="f6s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Runs</b></h3>
+      <p>Each row is one run: <b>When</b>, <b>Because</b>, <b>Result</b> and <b>Tokens</b>. <b>Because</b> says what started it: a daily pass, <b>Run now</b>, or something that changed.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f6-01-runs.jpg" alt="Runs tab highlighted above the list of runs" width="904" height="180" loading="lazy"><figcaption>The Runs tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click the time</h3>
+      <p>The time opens the run page.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f6-02-row.jpg" alt="A run row highlighted" width="904" height="180" loading="lazy"><figcaption>Open a run.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Read the top</h3>
+      <p><b>Because</b>, <b>Status</b>, <b>Started</b>, <b>Tokens in / out</b> and <b>Share of cap</b>, the part of the agent&#x27;s monthly allowance this run used. The AI model is named too.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f6-03-header.jpg" alt="Run header with status, tokens and share of cap highlighted" width="904" height="84" loading="lazy"><figcaption>The run header.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Open <b>Looked at</b></h3>
+      <p>Each source the agent read, with links to the records. Administrators have a <b>Raw</b> switch for the stored data. A quiet pass reads nothing and says so, as this demonstration run does.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f6-04-looked.jpg" alt="Looked at section highlighted" width="904" height="77" loading="lazy"><figcaption>What it read.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Open <b>Concluded</b></h3>
+      <p>Each suggestion, with the evidence under it. The numbers come from your records, never from the AI.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f6-05-concluded.jpg" alt="Concluded section with two suggestions highlighted" width="904" height="154" loading="lazy"><figcaption>What it concluded.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Open <b>Proposed</b></h3>
+      <p>Each drafted note with its state and who it is for.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f6-06-proposed.jpg" alt="Proposed section highlighted" width="904" height="108" loading="lazy"><figcaption>What it proposed.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Open <b>Could not check / left out</b></h3>
+      <p>Anything the agent could not read, and any suggestion it dropped because it did not pass the checks, with the reason. It is empty here.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f6-07-left.jpg" alt="Could not check section highlighted" width="904" height="96" loading="lazy"><figcaption>What it could not check.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f6s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Find <b>Run now</b></h3>
+      <p>Administrators see this button on an agent&#x27;s page. It starts a run at once instead of waiting for the next scheduled time. The result appears under <b>Runs</b> within a few minutes. It allows one manual run per agent per hour. This guide did not press it.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f6-08-runnow.jpg" alt="Run now button highlighted" width="904" height="124" loading="lazy"><figcaption>Run now.</figcaption></figure>
+  </article>
+
+</section>
+
+<section class="g-flow" id="flow-7">
+  <h2>Read an Attendance Anomalies finding</h2>
+  <p class="g-sub">Attendance Anomalies looks for patterns a daily list hides: a site, a day or a setting, not just a person. Every finding is a suggestion to review, not a verdict.</p>
+
+  <article class="gstep" id="f7s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Read the <b>Review suggestion</b> tag</h3>
+      <p>Every attendance finding carries it. The severity words are <b>Worth a look</b>, <b>Review soon</b> and <b>For information</b>. They are never a charge.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f7-01-tag.jpg" alt="Review suggestion tag and Worth a look chip highlighted" width="904" height="299" loading="lazy"><figcaption>The tag.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Read the strip of dots</h3>
+      <p>One dot per shift-day. A filled dot is a day the pattern is made of. A paler dot is a day with other attendance notes. A dashed dot is a day nobody was expected.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f7-02-strip.jpg" alt="Strip of dots highlighted" width="904" height="299" loading="lazy"><figcaption>One dot per shift-day.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Read <b>What was observed</b></h3>
+      <p>The facts, counted by the system. Here five of eight people checked in late on five of the last fourteen shift-days.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f7-03-observed.jpg" alt="What was observed highlighted" width="904" height="299" loading="lazy"><figcaption>What was observed.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Read <b>What else could explain it</b></h3>
+      <p>At least one reason that is not about a person: a shift start or grace setting, a gate or transport routine, a device problem.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f7-04-explain.jpg" alt="What else could explain it highlighted" width="904" height="299" loading="lazy"><figcaption>Other explanations.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Read <b>What you could do</b></h3>
+      <p>The options, including doing nothing. Nothing is decided or sent for you.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f7-05-do.jpg" alt="What you could do highlighted" width="904" height="299" loading="lazy"><figcaption>What you could do.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Click <b>Why</b></h3>
+      <p>The chips show the evidence: here <b>People late</b> and <b>Days</b>. <b>See the run</b> opens the run page.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f7-06-why.jpg" alt="Evidence chips People late, Days and See the run highlighted" width="904" height="312" loading="lazy"><figcaption>The evidence.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>Open live board</b></h3>
+      <p>It opens the live board. A finding about one person offers <b>Open employee</b> instead.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f7-07-board.jpg" alt="Open live board button highlighted" width="904" height="312" loading="lazy"><figcaption>Open the records.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f7s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Use <b>Ask for a recheck</b> when it is offered</h3>
+      <p>For a pattern that points at a few people, a card lists the people it would reach. You clear the tick on anyone who should be left out, then click <b>Edit and send</b>. It goes out as your own recheck request, in neutral words, and never mentions the agent. The demonstration workspace has no recheck card, so there is no picture.</p>
+    </div>
+  </article>
+
+</section>
+
+<section class="g-flow" id="flow-8">
+  <h2>Set up an agent</h2>
+  <p class="g-sub">Administrators set when an agent looks and how sensitive it is. Changes apply to the next run. This guide saved nothing.</p>
+
+  <article class="gstep" id="f8s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Click <b>Settings</b></h3>
+      <p>It is the third tab on the agent page. Everyone who can see the agent can read it. Only administrators can change it.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f8-01-settings.jpg" alt="Settings tab highlighted" width="904" height="123" loading="lazy"><figcaption>The Settings tab.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f8s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Check <b>On</b></h3>
+      <p>Off by default. An agent cannot be switched on until your workspace time zone is set under <b>Settings</b>, Workforce.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f8-02-on.jpg" alt="On switch highlighted" width="904" height="371" loading="lazy"><figcaption>On.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f8s3">
+    <div>
+      <div class="gnum">3</div>
+      <h3>Set <b>When</b></h3>
+      <p>The time of day in your workspace&#x27;s own clock, and the days it looks. A day with nothing to report costs nothing.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f8-03-when.jpg" alt="Time and days highlighted" width="904" height="371" loading="lazy"><figcaption>When.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f8s4">
+    <div>
+      <div class="gnum">4</div>
+      <h3>Choose <b>How sensitive</b></h3>
+      <p><b>Quiet</b> speaks up only when fairly sure. <b>Thorough</b> also raises early signs. <b>Balanced</b> sits between. One choice replaces several thresholds.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f8-04-sens.jpg" alt="Quiet, Balanced and Thorough highlighted" width="904" height="221" loading="lazy"><figcaption>How sensitive.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f8s5">
+    <div>
+      <div class="gnum">5</div>
+      <h3>Switch <b>My daily e-mail</b></h3>
+      <p>An e-mail to you alone with what is open. It never goes to anyone else. For Attendance Anomalies it carries counts and severity words only, never a name.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f8-05-email.jpg" alt="My daily e-mail switch highlighted" width="904" height="171" loading="lazy"><figcaption>Your own digest.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f8s6">
+    <div>
+      <div class="gnum">6</div>
+      <h3>Read <b>Allowance</b></h3>
+      <p>Tokens used this month against the agent&#x27;s cap. You cannot change it here. The BPMSquare team sets the cap.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f8-06-allowance.jpg" alt="Allowance line highlighted" width="904" height="77" loading="lazy"><figcaption>The allowance.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f8s7">
+    <div>
+      <div class="gnum">7</div>
+      <h3>Click <b>More options</b></h3>
+      <p>For Tender Watch this shows the <b>Watch window</b>: tenders closing within this many days are looked at, 21 by default. Closer ones are always looked at.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f8-07-window.jpg" alt="Watch window field highlighted" width="904" height="207" loading="lazy"><figcaption>Watch window.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f8s8">
+    <div>
+      <div class="gnum">8</div>
+      <h3>Choose what Attendance Anomalies <b>Looks for</b></h3>
+      <p><b>Late arrivals</b>, <b>Missing check-outs</b> and <b>Punches far from the site</b>. Each can be switched off. The <b>Where</b> row above it chooses the sites, and none chosen means every site.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f8-08-looks.jpg" alt="Looks for options highlighted" width="904" height="179" loading="lazy"><figcaption>Looks for.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f8s9">
+    <div>
+      <div class="gnum">9</div>
+      <h3>Click <b>Save</b></h3>
+      <p>It saves the settings. This guide did not press it.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f8-09-save.jpg" alt="Save button highlighted" width="904" height="207" loading="lazy"><figcaption>Save.</figcaption></figure>
+  </article>
+
+</section>
+
+<section class="g-flow" id="flow-9">
+  <h2>Pause all agents</h2>
+  <p class="g-sub">One switch stops every agent. This guide did not press it.</p>
+
+  <article class="gstep" id="f9s1">
+    <div>
+      <div class="gnum">1</div>
+      <h3>Find <b>Pause all agents</b></h3>
+      <p>At the top right of the gallery, for administrators. Pressing it stops every agent between steps. The tiles say <b>Paused</b>, and <b>Run now</b> disappears. Suggestions already made stay, and a drafted note can still be approved or rejected. Press the switch again to resume.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f9-01-switch.jpg" alt="Pause all agents switch highlighted" width="904" height="233" loading="lazy"><figcaption>The switch.</figcaption></figure>
+  </article>
+
+  <article class="gstep" id="f9s2">
+    <div>
+      <div class="gnum">2</div>
+      <h3>Click the small <b>i</b></h3>
+      <p>It says the same in three lines. Each agent also has its own <b>On</b> switch in its settings.</p>
+    </div>
+    <figure><img src="assets/guides/ai-automation/f9-02-info.jpg" alt="Information tip next to Pause all agents" width="904" height="233" loading="lazy"><figcaption>The explanation.</figcaption></figure>
+  </article>
+
+</section>
+
+</div></main>
+
+<div class="cta-sec" id="demo">
+  <div class="wrap">
+    <h2>See it on your own data.</h2>
+    <p>Twenty minutes on a live workspace, with your files and your team.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:sna2care@gmail.com?subject=Demo%20request%20%E2%80%94%20Guides">Book a demo</a>
+      <a class="btn btn-white-outline" href="https://wa.me/917483984767" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-white-outline" href="guides.html">All guides</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg class="mark" style="width:28px;height:28px"><use href="#mark"/></svg><span class="name" style="font-size:16px">BPM<span>Square</span></span></a>
+    <div class="fnav">
+      <a href="service-operations.html">Service operations</a>
+      <a href="workforce.html">Workforce &amp; project costing</a>
+      <a href="tenders.html">Tenders &amp; projects</a>
+      <a href="platform.html">Platform</a>
+      <a href="guides.html">Documentation</a>
+      <a href="solution-guide.html">Solution guide</a>
+      <a href="api.html">API</a>
+      <a href="gcc.html">GCC</a>
+      <a href="mailto:sna2care@gmail.com">Contact</a>
+    </div>
+    <small>© 2026 BPMSquare · bpmsquare.com</small>
+  </div>
+</footer>
+
+</body>
+</html>
